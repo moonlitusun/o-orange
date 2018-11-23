@@ -1,0 +1,16 @@
+example/
+example-dist/
+dev/
+coverage/
+__mocks__/
+__tests__/
+src/
+.travis.yml
+.babelrc
+.gitattributes
+.gitignore
+postcss.config.js
+README.md
+tsconfig.json
+yarn-error.log
+yarn.lock
