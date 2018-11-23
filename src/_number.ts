@@ -10,7 +10,7 @@ class Number {
    * @returns { string }
    * @since 0.0.1
    */
-  pad(targetNum = 0, length = 2): string {
+  public pad(targetNum = 0, length = 2): string {
     return targetNum < Math.pow(10, length) ? `${'0'.repeat(length - 1)}${targetNum}` : targetNum.toString();
   }
 
