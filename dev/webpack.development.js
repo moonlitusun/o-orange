@@ -10,7 +10,7 @@ module.exports = env => {
       devtool: 'inline-source-map',
       mode: 'development',
       output: {
-        filename: '[name].development.js'
+        filename: '[name].dev.js'
       },
       module: {
         rules: [

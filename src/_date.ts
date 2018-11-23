@@ -1,4 +1,4 @@
-import { perfixNumber } from './_number';
+import { pad } from './_number';
 
 const _date = new class {
   /**
@@ -15,7 +15,7 @@ const _date = new class {
 
     utilDate.setTime(queryDate.getTime() + offset * 60 * 1000 + timezone * 60 * 60 * 1000);
 
-    return `${utilDate.getMonth() + 1}-${utilDate.getDate()} ${perfixNumber(utilDate.getHours())}:${perfixNumber(utilDate.getMinutes())}:${perfixNumber(utilDate.getSeconds())}`
+    return `${utilDate.getMonth() + 1}-${utilDate.getDate()} ${pad(utilDate.getHours())}:${pad(utilDate.getMinutes())}:${pad(utilDate.getSeconds())}`
   }
 }();
 

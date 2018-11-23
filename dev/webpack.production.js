@@ -9,7 +9,7 @@ module.exports = env => {
     {
       mode: 'production',
       output: {
-        filename: '[name].production.min.js'
+        filename: '[name].js'
       },
       module: {
         rules: [

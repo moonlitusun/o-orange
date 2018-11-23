@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./dist/o-orange.production.min');
+  module.exports = require('./dist/o-orange');
 } else {
-  module.exports = require('./dist/o-orange.development');
+  module.exports = require('./dist/o-orange.dev');
 }

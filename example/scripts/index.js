@@ -1,7 +1,7 @@
 import _array, { shuffle } from '../../src/_array'
 import _date, { queryTimezoneTime } from '../../src/_date';
 import _location, { normalizeSearch } from '../../src/_location';
-import _number from '../../src/_number';
+import _number, { pad, convertToThousand, convertToPercent, sss } from '../../src/_number';
 import _timerd, { fixedTimerd } from '../../src/_timerd';
 
 /**
@@ -29,14 +29,15 @@ import _timerd, { fixedTimerd } from '../../src/_timerd';
 /**
  * timerd
  */
-fixedTimerd(2000, () => {
-  console.log(23);
-})
+// fixedTimerd(2000, () => {
+//   console.log(23);
+// })
  
 /**
  * _number
  */
-// console.log(_number.convertTHSSeparator(''));
-// console.log(_number.convertPercent('1.045645', 0));
-// console.log(_number.convertFixed('zzzz', 3));
+console.log(pad('sdffs'));
+console.log(convertToThousand('23424'))
+console.log(convertToPercent('dfsdfsd', 3));
+console.log(sss);
 

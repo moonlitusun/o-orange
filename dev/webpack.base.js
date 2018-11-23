@@ -10,7 +10,7 @@ module.exports = env => {
       "location": './_location',
       "number": './_number',
       "timerd": './_timerd',
-      "_type": './_type',
+      "type": './_type',
     },
     resolve: {
       extensions: ['.ts', '.js'],
