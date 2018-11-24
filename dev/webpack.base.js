@@ -9,7 +9,7 @@ module.exports = env => {
       "date": './_date',
       "location": './_location',
       "number": './_number',
-      "timerd": './_timerd',
+      "time": './_time',
       "type": './_type',
     },
     resolve: {

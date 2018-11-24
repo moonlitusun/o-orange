@@ -2,9 +2,10 @@ import { pad } from './_number';
 
 const _date = new class {
   /**
-   * @name queryTimezoneTime-查询时区时间
-   * @param { number } timezone 要查询的时区
-   * @param { string | number } date 要查询的时间
+   * Query time zone time
+   * 
+   * @param { number } timezone The timezone to query
+   * @param { string | number } date The time to query
    * @returns { string }
    */
   public queryTimezoneTime(timezone: number = 8, date: string | number = Date.now()): string {

@@ -1,8 +1,9 @@
 const _location = new class {
   /**
-   * @name normalizeSearch-格式化location.search
-   * @param { string } key 需要查询的参数
-   * @param { string } [type = brower] 类型 'brower' | 'hash'
+   * normalize location.search
+   * 
+   * @param { string } key 
+   * @param { string } [type = brower] 'brower' | 'hash'
    */
   public normalizeSearch(key: string, type: string = 'brower'): string | object {
     const { search, hash } = window.location;

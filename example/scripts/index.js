@@ -1,8 +1,10 @@
 import _array, { shuffle } from '../../src/_array'
 import _date, { queryTimezoneTime } from '../../src/_date';
 import _location, { normalizeSearch } from '../../src/_location';
-import _number, { pad, convertToThousand, convertToPercent, sss } from '../../src/_number';
-import _timerd, { fixedTimerd } from '../../src/_timerd';
+import _number, { pad, convertToThousand, convertToPercent } from '../../src/_number';
+import _time, { fixedTimerd, dateFormat } from '../../src/_time';
+import { debounce } from '../../src/_decorator';
+import { decorators } from 'handlebars';
 
 /**
  * _array
@@ -27,17 +29,23 @@ import _timerd, { fixedTimerd } from '../../src/_timerd';
 
 
 /**
- * timerd
+ * time
  */
 // fixedTimerd(2000, () => {
 //   console.log(23);
 // })
+
+// console.log(dateFormat('2015-5-23', 'yyyy-MM-dd HH-mm-ss'));
  
 /**
  * _number
  */
-console.log(pad('sdffs'));
+// console.log(pad('sdffs'));
 console.log(convertToThousand('23424'))
-console.log(convertToPercent('dfsdfsd', 3));
-console.log(sss);
+// console.log(convertToPercent('dfsdfsd', 3));
+
+/**
+ * decorators
+ */
+
 
