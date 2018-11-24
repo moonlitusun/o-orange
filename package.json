@@ -1,6 +1,6 @@
 {
   "name": "o-orange",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "a javascript utility library",
   "main": "./dist",
   "scripts": {
