@@ -4,19 +4,17 @@ import _location, { normalizeSearch } from '../../src/_location';
 import _number, { pad, convertToThousand, convertToPercent } from '../../src/_number';
 import _time, { fixedTimerd, dateFormat } from '../../src/_time';
 import { debounce } from '../../src/_decorator';
-import { decorators } from 'handlebars';
 
 /**
  * _array
  */
 // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-// const parseArr = _array.pagination(arr, 2, -1);
-// const parseArr = shuffle(arr);
+// const parseArr = _array.pagination(arr, -1, 5);
 
-// console.log(parseArr);
-// console.log(_array);
-// console.log(shuffle);
+const arr = [1, 2, 3, 4, 5];
+const parseArr = shuffle(arr);
 
+console.log(parseArr);
 /**
  * _date
  */
@@ -41,7 +39,7 @@ import { decorators } from 'handlebars';
  * _number
  */
 // console.log(pad('sdffs'));
-console.log(convertToThousand('23424'))
+// console.log(convertToThousand('23424'))
 // console.log(convertToPercent('dfsdfsd', 3));
 
 /**

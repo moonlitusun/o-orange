@@ -10,8 +10,9 @@ import _type from './_type';
 export default {
   ..._array,
   ..._date,
-  ..._time,
   ..._decorator,
   ..._location,
+  ..._number,
+  ..._time,
   ..._type,
 }

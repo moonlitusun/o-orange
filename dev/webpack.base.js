@@ -11,6 +11,7 @@ module.exports = env => {
       "number": './_number',
       "time": './_time',
       "type": './_type',
+      "decorator": './_decorator',
     },
     resolve: {
       extensions: ['.ts', '.js'],

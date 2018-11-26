@@ -3,7 +3,7 @@ import { arrayParamCheck } from './utils/aop/_array';
 class _ {
   /**
    * Cut the array
-   * 
+   *
    * @param { array } sourceArr The Array to execute
    * @param { number } [pageNum = 1] Current page number(Calculate the page number from the back when it is negative)
    * @param { number } [pageSize = 10] One page of Size
@@ -21,7 +21,7 @@ class _ {
 
   /**
    * Upset the array
-   * 
+   *
    * @param { array } sourceArr The Array to execute
    * @returns { array }
    */

@@ -1,7 +1,8 @@
 import { isArray } from'../../_type';
 
 /**
- * @name arrayParamCheck-检查函数第一个参数是否为数组
+ * Check if the first argument of the function is an array
+ * 
  */
 export function arrayParamCheck(): any {
   return function(target: any, propertyKey: string, descriptor: PropertyDescriptor): object {
