@@ -11,14 +11,16 @@ import { debounce } from '../../src/_decorator';
 // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 // const parseArr = _array.pagination(arr, -1, 5);
 
-const arr = [1, 2, 3, 4, 5];
-const parseArr = shuffle(arr);
+// const arr = [1, 2, 3, 4, 5];
+// const parseArr = shuffle(arr);
 
-console.log(parseArr);
+// console.log(parseArr);
+
 /**
  * _date
  */
-// console.log(queryTimezoneTime(-2, '2018-10-20'));
+// console.log(queryTimezoneTime(15, '2018-10-20 5:30:20'));
+console.log(queryTimezoneTime(-8, '2018-10-20 5:30:20'));
 
  /**
   * _location
