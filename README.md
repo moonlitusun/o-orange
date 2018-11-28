@@ -14,6 +14,52 @@ yarn add o-orange
 
 # Usage
 
+- [_array](#_array)
+
+  - [pagination()](#pagination())
+
+  - [pagination()](#shuffle())
+
+- [_date](#_date)
+
+  - [queryTimezoneTime()](#queryTimezoneTime())
+
+- [_decorator](#_decorator)
+
+  - [bind](#bind)
+
+  - [debounce](#debounce)
+
+- [_location](#_location)
+
+  - [normalizeSearch()](#normalizeSearch())
+
+- [_number](#_number)
+
+  - [pad()](#pad())
+
+  - [convertToThousand()](#convertToThousand())
+
+  - [convertToPercent()](#convertToPercent())
+
+  - [convertToFixed()](#convertToFixed())
+
+- [_time](#_time)
+
+  - [fixedTimerd()](#fixedTimerd())
+
+  - [dateFormat()](#dateFormat())
+
+- [_type](#_type)
+
+  - [isArray()](#isArray())
+
+  - [isObject()](#isObject())
+
+  - [isUndefined()](#isUndefined())
+
+  - [isNumber()](#isNumber())
+
 ## _array
 
 ```shell
@@ -324,7 +370,7 @@ or
 import { fixedTimerd, ... } from 'o-orange/dist/time';
 ```
 
-### fixedTimerd
+### fixedTimerd()
 
 ```js
 /**
@@ -345,7 +391,7 @@ fixedTimerd(2000, () => console.log('run')) // run run run ....
 
 ---
 
-### dateFormat
+### dateFormat()
 
 ```js
 /**
@@ -378,7 +424,7 @@ or
 import { isArray, ... } from 'o-orange/dist/type';
 ```
 
-### isArray
+### isArray()
 
 ```js
 /**
@@ -399,7 +445,7 @@ isArray([]) // true
 
 ---
 
-### isObject
+### isObject()
 
 ```js
 /**
@@ -420,7 +466,7 @@ isObject({}) // true
 
 ---
 
-### isUndefined
+### isUndefined()
 
 ```js
 /**
@@ -441,7 +487,7 @@ isUndefined({}.property) // true
 
 ---
 
-### isNumber
+### isNumber()
 
 ```js
 /**
