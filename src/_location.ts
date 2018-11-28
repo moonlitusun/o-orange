@@ -4,6 +4,7 @@ const _location = new class {
    * 
    * @param { string } key 
    * @param { string } [type = brower] 'brower' | 'hash'
+   * @since 0.0.1
    */
   public normalizeSearch(key: string, type: string = 'brower'): string | object {
     const { search, hash } = window.location;

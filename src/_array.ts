@@ -8,6 +8,7 @@ class _ {
    * @param { number } [pageNum = 1] Current page number(Calculate the page number from the back when it is negative)
    * @param { number } [pageSize = 10] One page of Size
    * @returns { array }
+   * @since 0.0.1
    */
   @arrayParamCheck()
   public pagination(sourceArr: Array<any>, pageNum: number = 1, pageSize: number = 10): Array<any> {
@@ -24,6 +25,7 @@ class _ {
    *
    * @param { array } sourceArr The Array to execute
    * @returns { array }
+   * @since 0.0.1
    */
   @arrayParamCheck()
   public shuffle(sourceArr: Array<any>): Array<any> {

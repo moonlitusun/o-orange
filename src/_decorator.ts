@@ -1,6 +1,8 @@
 /**
  * bind this
  * 
+ * @since 0.0.3
+ * 
  */
 export function bind(...args) {
   return function bindDecorator(target, name, descriptor) {
@@ -18,6 +20,7 @@ export function bind(...args) {
  * debounce
  * 
  * @param { number } [duration = 2000]
+ * @since 0.0.3
  */
 export function debounce(duration: number = 2000) {
   return function debounceDecorator(target, name, descriptor) {

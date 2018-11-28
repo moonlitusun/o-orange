@@ -1,27 +1,39 @@
 const _type = new class {
   /**
-   * @name check-array
+   * check-array
+   * 
+   * @returns { boolean }
+   * @since 0.0.1
    */
   public isArray(param) {
     return param instanceof Array || Object.prototype.toString.call(param) === '[object Array]';
   }
 
   /**
-   * @name check-object
+   * check-object
+   * 
+   * @returns { boolean }
+   * @since 0.0.1
    */
   public isObject(param) {
     return param !== null && Object.prototype.toString.call(param) === '[object Object]';
   }
 
   /**
-   * @name check-undefined
+   * check-undefined
+   * 
+   * @returns { boolean }
+   * @since 0.0.1
    */
   public isUndefined(param) {
     return param === void 0;
   }
 
   /**
-   * @name check-number
+   * check-number
+   * 
+   * @returns { boolean }
+   * @since 0.0.1
    */
   public isNumber(param) {
     return typeof param === 'number' || Object.prototype.toString.call(param) === '[object Number]';

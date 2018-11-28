@@ -34,10 +34,14 @@ class Number {
    * 
    * @param { number } targetNum The number to convert
    * @param { number } [length = 2] The length to Keep
+   * @param { string } [replace = '---'] Replace string when targetNum is NaN or not number
+   * @returns { string }
    * @since 0.0.1
    */
   @bind()
-  public convertToPercent(targetNum: number = 0, length: number = 2): string {
+  public convertToPercent(targetNum: number = 0, length: number = 2, replace: string = '---'): string {
+    if (!isNumber(targetNum - 0) || isNaN(targetNum)) return replace;
+
     return `${this.convertToFixed((targetNum - 0) * 100, length)}%`;
   }
 

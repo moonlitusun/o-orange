@@ -8,11 +8,11 @@ import _number from './_number';
 import _type from './_type';
 
 export default {
-  ..._array,
-  ..._date,
-  ..._decorator,
-  ..._location,
-  ..._number,
-  ..._time,
-  ..._type,
+  _array,
+  _date,
+  _decorator,
+  _location,
+  _number,
+  _time,
+  _type,
 }

@@ -4,7 +4,8 @@ const _time = new class {
    * 
    * @param  { number } duration The time of timerd
    * @param  { function } handleFn The function of timerd
-   * @returns { void } 
+   * @returns { void }
+   * @since 0.0.1
    */
   public fixedTimerd(duration: number, handleFunc: Function): void {
     let prevTimestamp: number = Date.now();
@@ -27,8 +28,8 @@ const _time = new class {
   /**
    * dateFormat
    * 
-   * @param date 
-   * @param format 
+   * @param { Date } date The Date to convert
+   * @param { string } format [yyyy, M, MM, dd, d, HH, H, mm, m, ss, s]
    */
   public dateFormat(date, format) {
     if (!date) return '';
@@ -69,7 +70,3 @@ export const fixedTimerd = _time.fixedTimerd;
 export const dateFormat = _time.dateFormat;
 
 export default _time;
-
-
-
-

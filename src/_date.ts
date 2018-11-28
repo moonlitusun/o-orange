@@ -7,6 +7,8 @@ const _date = new class {
    * @param { number } timezone The timezone to query
    * @param { string | number } date The time to query
    * @returns { string }
+   * 
+   * @since 0.0.1
    */
   public queryTimezoneTime(timezone: number = 8, date: string | number = Date.now()): string {
     const
