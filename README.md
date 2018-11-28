@@ -18,7 +18,7 @@ yarn add o-orange
 
   - [pagination()](#pagination)
 
-  - [pagination()](#shuffle)
+  - [shuffle()](#shuffle)
 
 - [_date](#_date)
 
