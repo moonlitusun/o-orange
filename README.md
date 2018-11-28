@@ -16,13 +16,13 @@ yarn add o-orange
 
 - [_array](#_array)
 
-  - [pagination()](#pagination())
+  - [pagination()](#pagination)
 
-  - [pagination()](#shuffle())
+  - [pagination()](#shuffle)
 
 - [_date](#_date)
 
-  - [queryTimezoneTime()](#queryTimezoneTime())
+  - [queryTimezoneTime()](#queryTimezoneTime)
 
 - [_decorator](#_decorator)
 
@@ -32,33 +32,33 @@ yarn add o-orange
 
 - [_location](#_location)
 
-  - [normalizeSearch()](#normalizeSearch())
+  - [normalizeSearch()](#normalizeSearch)
 
 - [_number](#_number)
 
-  - [pad()](#pad())
+  - [pad()](#pad)
 
-  - [convertToThousand()](#convertToThousand())
+  - [convertToThousand()](#convertToThousand)
 
-  - [convertToPercent()](#convertToPercent())
+  - [convertToPercent()](#convertToPercent)
 
-  - [convertToFixed()](#convertToFixed())
+  - [convertToFixed()](#convertToFixed)
 
 - [_time](#_time)
 
-  - [fixedTimerd()](#fixedTimerd())
+  - [fixedTimerd()](#fixedTimerd)
 
-  - [dateFormat()](#dateFormat())
+  - [dateFormat()](#dateFormat)
 
 - [_type](#_type)
 
-  - [isArray()](#isArray())
+  - [isArray()](#isArray)
 
-  - [isObject()](#isObject())
+  - [isObject()](#isObject)
 
-  - [isUndefined()](#isUndefined())
+  - [isUndefined()](#isUndefined)
 
-  - [isNumber()](#isNumber())
+  - [isNumber()](#isNumber)
 
 ## _array
 
