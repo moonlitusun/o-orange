@@ -1,8 +1,14 @@
 {
   "name": "o-orange",
-  "version": "0.0.3",
+  "version": "1.0.1",
   "description": "a javascript utility library",
   "main": "./dist",
+  "keywords": [
+    "utils",
+    "util",
+    "javascript",
+    "frontend"
+  ],
   "scripts": {
     "clean": "rimraf dist/",
     "dist": "npm run clean && webpack --config ./dev/webpack.config.js",
@@ -17,14 +23,19 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/moonlitusun/o-orange"
   },
   "author": "moonlit",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/moonlitusun/o-orange/issues"
   },
-  "homepage": "https://github.com/moonlitusun/o-orange",
+  "files": [
+    "dist",
+    "index.js",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://moonlitusun.github.io/o-orange/",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
