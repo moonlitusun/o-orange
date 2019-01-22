@@ -1,4 +1,4 @@
-import { isArray } from'../../_type';
+import isArray from'../../isArray';
 
 /**
  * Check if the first argument of the function is an array

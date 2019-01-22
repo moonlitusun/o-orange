@@ -1,4 +1,4 @@
-import { pad } from './_number';
+import pad from './pad';
 
 const _date = new class {
   /**

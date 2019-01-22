@@ -1,18 +1,8 @@
-import { isNumber } from './_type';
+import isNumber from './isNumber';
 import { bind } from './_decorator';
 
 class Number {
-  /**
-   * Fill the number to the specified length
-   * 
-   * @param {number} targetNum The number to convert
-   * @param {number} [length = 2] The length to limit
-   * @returns { string }
-   * @since 0.0.1
-   */
-  public pad(targetNum = 0, length = 2): string {
-    return targetNum < 10 * (length - 1) ? `${'0'.repeat(length - 1)}${targetNum}` : targetNum.toString();
-  }
+  
 
   /**
    * Convert numbers to thousands of digits
@@ -65,7 +55,6 @@ const _number = new Number();
 
 export { _number as sss };
 
-export const pad = _number.pad;
 export const convertToThousand = _number.convertToThousand;
 export const convertToPercent = _number.convertToPercent;
 export const convertToFixed = _number.convertToFixed;

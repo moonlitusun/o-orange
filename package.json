@@ -1,6 +1,6 @@
 {
   "name": "o-orange",
-  "version": "1.0.1",
+  "version": "2.0.1",
   "description": "a javascript utility library",
   "main": "./dist",
   "keywords": [
@@ -58,6 +58,8 @@
   },
   "dependencies": {},
   "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
     ],
