@@ -2,8 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const join = require('path').join;
 
-
-
 /**
  * 
  * @param startPath
