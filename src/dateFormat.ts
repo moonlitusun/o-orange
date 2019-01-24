@@ -6,6 +6,11 @@
   * @param {string | number} date The date to convert
   * @param {string} format [yyyy, M, MM, dd, d, HH, H, mm, m, ss, s]
   * @returns
+  * @example
+  * 
+  * dateFormat(1548297785895, 'yyyy-MM-dd HH:mm:ss')
+  * // => 2019-01-24 10:43:05
+  * 
   */
 function dateFormat(date: string | number, format: string): string {
   if (!date) throw new Error('Invalid Date');
