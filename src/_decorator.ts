@@ -1,22 +1,4 @@
 /**
- * bind this
- * 
- * @since 0.0.3
- * 
- */
-export function bind(...args) {
-  return function bindDecorator(target, name, descriptor) {
-    return {
-      configurable: descriptor.configurable,
-      enumerable: descriptor.enumerable,
-      get() {
-        return descriptor.value.bind(this, ...args);
-      },
-    };
-  };
-}
-
-/**
  * debounce
  * 
  * @param { number } [duration = 2000]
@@ -43,6 +25,5 @@ export function debounce(duration: number = 2000) {
 }
 
 export default {
-  bind,
   debounce,
 };

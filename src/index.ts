@@ -1,8 +1,9 @@
 
+import bind from './bind';
 import compose from './compose';
 import curry from './curry';
 import dateFormat from './dateFormat';
-import interval from './interval';
+import debounce from './debounce';
 import isArray from './isArray';
 import isNumber from './isNumber';
 import isObject from './isObject';
@@ -15,10 +16,11 @@ import toPercent from './toPercent';
 import toThousand from './toThousand';
 
 export default {
+  bind,
   compose,
   curry,
   dateFormat,
-  interval,
+  debounce,
   isArray,
   isNumber,
   isObject,

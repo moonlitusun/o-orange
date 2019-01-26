@@ -8,29 +8,21 @@ function log(...rest) {
 
 }
 
-let lastTime = Date.now();
+class bird {
+  name = 'eagle';
 
-O.interval(4000, () => {
-  let i = 1;
-  while (i++ < 1000000) {
-    let c = Math.random(4) * 44;
+  getName() {
+    console.log(this);
   }
-  const currTime = Date.now();
-  // console.log('我' + (lastTime - currTime))
-  lastTime = currTime;
-})
 
-let lastTime2 = Date.now();
-
-setInterval(() => {
-  let i = 1;
-  while (i++ < 1000000) {
-    let c = Math.random(4) * 44;
+  setName() {
+    console.log(this.name)
   }
-  const currTime = Date.now();
-  console.log('你' + (lastTime2 - currTime))
-  lastTime2 = currTime;
-}, 4000)
+}
+
+var Bird = new bird();
+
+Bird.setName();
 
 log(
 );
