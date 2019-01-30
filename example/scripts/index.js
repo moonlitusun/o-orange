@@ -5,24 +5,14 @@ function log(...rest) {
   for (let v of rest) {
     console.log(`${v}\n`);
   }
-
 }
 
-class bird {
-  name = 'eagle';
+const move = O.debounce((time) => {
+  log(time);
+  move.cancel();
+}, 1000)
 
-  getName() {
-    console.log(this);
-  }
-
-  setName() {
-    console.log(this.name)
-  }
-}
-
-var Bird = new bird();
-
-Bird.setName();
+window.addEventListener('mousemove', () => move(+new Date))
 
 log(
 );

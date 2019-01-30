@@ -17,7 +17,7 @@ function findSync(startPath) {
     const stats = fs.statSync(fPath);
     // if (stats.isDirectory()) findSync(fPath);
     if (stats.isFile()) {
-      let name = fPath.match(/src\/(\S*).ts/)[1];
+      let name = fPath.match(/src\/(\S*).[ts|js]/)[1];
 
       if (name === 'index') {
         entryList['o-orange'] = `./${name}.ts`
