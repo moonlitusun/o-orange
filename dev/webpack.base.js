@@ -17,13 +17,14 @@ function findSync(startPath) {
     const stats = fs.statSync(fPath);
     // if (stats.isDirectory()) findSync(fPath);
     if (stats.isFile()) {
-      let name = fPath.match(/src\/(\S*).[ts|js]/)[1];
+      let match = fPath.match(/src\/(\S*)(.ts|.js)/);
+      let name = match[1];
 
       if (name === 'index') {
         entryList['o-orange'] = `./${name}.ts`
       }
       else {
-        entryList[name] = `./${name}.ts`;
+        entryList[name] = `./${name}.${match[2] === '.js' ? 'js' : 'ts'}`;
       }
     }
   });

@@ -4,6 +4,7 @@ import compose from './compose';
 import curry from './curry';
 import dateFormat from './dateFormat';
 import debounce from './debounce';
+import get from './get';
 import isArray from './isArray';
 import isNumber from './isNumber';
 import isObject from './isObject';
@@ -21,6 +22,7 @@ export default {
   curry,
   dateFormat,
   debounce,
+  get,
   isArray,
   isNumber,
   isObject,

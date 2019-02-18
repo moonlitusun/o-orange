@@ -8,7 +8,7 @@
  * @returns {Function}
  * @example
  * 
- * function sum(a, b, b) {
+ * function sum(a, b, c) {
  *  return a + b + c;
  * }
  * 

@@ -10,23 +10,23 @@
  * 
  */
 function debounce(func, wait = 0, options) {
-  let lastInvokeTime = +new Date();
-  let timerId;
+  // let lastInvokeTime = +new Date();
+  // let timerId;
 
-  function cancel() {
-    clearTimeout(timerId);
-  }
+  // function cancel() {
+  //   clearTimeout(timerId);
+  // }
 
-  function debounced(...arg) {
-    clearTimeout(timerId);
+  // function debounced(...arg) {
+  //   clearTimeout(timerId);
 
-    timerId = setTimeout(() => {
-      func.apply(this, arg);
-    }, wait)
-  }
+  //   timerId = setTimeout(() => {
+  //     func.apply(this, arg);
+  //   }, wait)
+  // }
 
-  debounced.cancel = cancel;
-  return debounced;
+  // debounced.cancel = cancel;
+  // return debounced;
 }
 
 export default debounce;

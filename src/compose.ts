@@ -18,7 +18,7 @@
  *  return `hello, ${x}`;
  * }
  *
- * const fn = O.compose([toUpperCase, join]);
+ * const fn = compose([toUpperCase, join]);
  * fn('jacky')
  * // => HELLO, JACKY
  *

@@ -7,12 +7,19 @@ function log(...rest) {
   }
 }
 
-const move = O.debounce((time) => {
-  log(time);
-  move.cancel();
-}, 1000)
+// const move = O.debounce((time) => {
+//   log(time);
+//   move.cancel();
+// }, 1000)
 
-window.addEventListener('mousemove', () => move(+new Date))
+// window.addEventListener('mousemove', () => move(+new Date))
+
+// log(
+// );
+
+var obj = { a: { a1: { a2: [ { a3: 3 } ] }}, b: 6, c: 7 };
 
 log(
+  O.get(obj, ['a', 'a1', 'a2', '1', 'a3'], 666),
+  O.get(obj, 'b'),
 );
