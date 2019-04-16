@@ -1,1 +1,2 @@
 - fixedTimerd终结
+- toFixed传字符串报错

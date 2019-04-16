@@ -1,5 +1,7 @@
 import isNumber from './isNumber';
 
+import { stringNumber } from './utils/types';
+
 /**
  * Convert numbers to fixed
  * 
@@ -21,10 +23,12 @@ import isNumber from './isNumber';
  * // => 'xxxx'
  * 
  */
-function toFixed(num: number = 0, length: number = 2, replace: string = '---'): string {
-  if (!isNumber(num) || isNaN(num)) return replace;
+function toFixed(num: stringNumber = 0, length: number = 2, replace: string = '---'): string {
+  const _num: number = Number(num);
 
-  return num.toFixed(length);
+  if (!isNumber(_num) || isNaN(_num)) return replace;
+
+  return _num.toFixed(length);
 }
 
 export default toFixed;

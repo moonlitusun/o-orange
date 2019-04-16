@@ -24,6 +24,4 @@ export function debounce(duration: number = 2000) {
   };
 }
 
-export default {
-  debounce,
-};
+export default debounce;
