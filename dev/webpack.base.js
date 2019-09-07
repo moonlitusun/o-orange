@@ -42,6 +42,7 @@ module.exports = env => {
     output: {
       library: 'o-orange',
       libraryTarget: 'umd',
+      path: path.resolve(__dirname, '../lib/'),
     },
     module: {
       rules: [{

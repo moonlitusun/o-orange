@@ -1,37 +1,27 @@
 
-import bind from './bind';
-import compose from './compose';
-import curry from './curry';
 import dateFormat from './dateFormat';
-import debounce from './debounce';
-import get from './get';
 import isArray from './isArray';
 import isNumber from './isNumber';
 import isObject from './isObject';
 import isUndefined from './isUndefined';
 import pagination from './pagination';
-import parseUrl, { parseUrlSearch, parseUrlHash } from './parseUrl';
-import shuffle from './shuffle';
+import parseKeyHeader from './parseKeyHeader';
+import parseUrl, { parseUrlByHash, parseUrlBySearch } from './parseUrl';
 import toFixed from './toFixed';
 import toPercent from './toPercent';
 import toThousand from './toThousand';
 
 export default {
-  bind,
-  compose,
-  curry,
   dateFormat,
-  debounce,
-  get,
   isArray,
   isNumber,
   isObject,
   isUndefined,
   pagination,
+  parseKeyHeader,
   parseUrl,
-  parseUrlHash,
-  parseUrlSearch,
-  shuffle,
+  parseUrlByHash,
+  parseUrlBySearch,
   toFixed,
   toPercent,
   toThousand,

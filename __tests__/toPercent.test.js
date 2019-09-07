@@ -1,4 +1,4 @@
-import toPercent from '../dist/toPercent';
+import toPercent from '../lib/toPercent';
 
 test('toPercent', () => {
   expect(toPercent(0.6515)).toBe('65.15%');

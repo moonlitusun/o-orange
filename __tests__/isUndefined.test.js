@@ -1,4 +1,4 @@
-import isUndefined from '../dist/isUndefined';
+import isUndefined from '../lib/isUndefined';
 
 test('is undefined', () => {
   const

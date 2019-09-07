@@ -1,4 +1,4 @@
-import isArray from '../dist/isArray';
+import isArray from '../lib/isArray';
 
 test('is array', () => {
   const

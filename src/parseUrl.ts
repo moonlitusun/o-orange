@@ -13,15 +13,15 @@
  * parseUrl(url, 'key')
  * // => 3
  *
- * parseUrlSearch('key')
+ * parseUrlBySearch('key')
  * // => 3
  *
  * const url = 'http://localhost:8080/#/?key=3';
  *
- * parseUrlHash('key')
+ * parseUrlByHash('key')
  * // => 3
  *
- * parseUrlHash('value')
+ * parseUrlByHash('value')
  * // => null
  *
  */
@@ -32,8 +32,8 @@ function parser(address: string): Function {
   }
 }
 
-export const parseUrlHash: Function = parser(window.location.hash);
+export const parseUrlByHash: Function = parser(window.location.hash);
 
-export const parseUrlSearch: Function = parser(window.location.search);
+export const parseUrlBySearch: Function = parser(window.location.search);
 
 export default (address, key) => parser(address)(key);

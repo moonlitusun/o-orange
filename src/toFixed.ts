@@ -1,6 +1,6 @@
 import isNumber from './isNumber';
 
-import { stringNumber } from './utils/types';
+import { stringNumber } from './helper/types';
 
 /**
  * Convert numbers to fixed

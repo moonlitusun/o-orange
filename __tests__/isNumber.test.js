@@ -1,4 +1,4 @@
-import isNumber from '../dist/isNumber';
+import isNumber from '../lib/isNumber';
 
 test('is number', () => {
   const

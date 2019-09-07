@@ -1,4 +1,4 @@
-import toFixed from '../dist/toFixed';
+import toFixed from '../lib/toFixed';
 
 test('toFixed', () => {
   expect(toFixed(NaN, 2, 'xxxx')).toBe('xxxx');

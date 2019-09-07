@@ -1,4 +1,4 @@
-import isObject from '../dist/isObject';
+import isObject from '../lib/isObject';
 
 test('is object', () => {
   const
