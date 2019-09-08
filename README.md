@@ -33,23 +33,28 @@ import isNumber from 'o-orange/lib/isNumber';
 - [Date](#Date)
 
   - [dateFormat()](#dateFormat)
+  - [dateRange()](#dateRange)
 
 - [Utils](#Utils)
 
   - [parseUrl()](#parseUrl)
   - [parseUrlByHash()](#parseUrl)
   - [parseUrlBySearch()](#parseUrl)
-  - [isNumber()](#isNumber)
-  - [isObject()](#isObject)
-  - [isArray()](#isArray)
-  - [isUndefined()](#isUndefined)
 
 - [Finace](#Finace)
 
-  - [toFixed()](#toFixed)
-  - [toPercent()](#toPercent)
   - [toThousand()](#toThousand)
+  - [toPercent()](#toPercent)
+  - [toFixed()](#toFixed)
   - [parseKeyHeader()](#parseKeyHeader)
+
+- [Lang](#Lang)
+
+  - [isArray()](#isArray)
+  - [isObject()](#isObject)
+  - [isUndefined()](#isUndefined)
+  - [isNumber()](#isNumber)
+
 
 ## Array
 
@@ -71,7 +76,7 @@ import isNumber from 'o-orange/lib/isNumber';
  */
 ```
 
-*eg:*
+*e.g:*
 
 ```js
 import pagination from 'o-orange/lib/pagination';
@@ -106,7 +111,7 @@ pagination(arr, -1, 5) // [7, 8, 9, 10, 11]
   */
 ```
 
-*eg:*
+*e.g:*
 
 ```js
 import dateFormat from 'o-orange/lib/dateFormat';
@@ -118,6 +123,34 @@ dateFormat(new Date(), 'yyyy-MM-dd HH:mm:ss')    // 2018-11-28 11:20:46
 dateFormat('2018-5-12', 'yyyy-MM-dd HH:mm:ss')   // 2018-05-12 00:00:00
 
 dateFormat(1543375099132, 'HH:mm:ss')            // 11:18:19
+```
+
+### dateRange()
+
+[⬆️](#API)
+
+```js
+/**
+ *
+ * Generate an ordered time interval array
+ *
+ * @category Date
+ * @since 2.0.4
+ * @param {string | number | Date} beginTime beginTime(Can be converted by new Date())
+ * @param {string | number | Date} endTime endTime(Can be converted by new Date())
+ * @param {Object} options
+ * @param {The second argument of the dateFormat function} options.dateType output time format
+ * @param {string} options.rangeType Time interval
+ * @param {number} options.rangeMultiple Time interval multiple
+ * @param {bool} options.fixedEndTime No matter how keep endTime exists
+ * @returns {Array}
+ *
+ */
+```
+
+*e.g:*
+
+```js
 ```
 
 ## Utils
@@ -139,7 +172,7 @@ dateFormat(1543375099132, 'HH:mm:ss')            // 11:18:19
  */
 ```
 
-*eg:*
+*e.g:*
 
 ```js
 import parseUrl, { parseUrlByHash, parseUrlBySearch } from 'o-orange/lib/parseUrl';
@@ -161,7 +194,7 @@ parseUrlHash('value'); // null
 
 ## Finace
 
-### convertToThousand()
+### toThousand()
 
 [⬆️](#API)
 
@@ -169,140 +202,150 @@ parseUrlHash('value'); // null
 /**
  * Convert numbers to thousands of digits
  *
- * @param { number } targetNum    The number to convert
- * @param { string } [sign = ','] Splitter
- * @returns { string }
+ * @categry Number
  * @since 0.0.1
+ * @param {number} num The number to convert
+ * @param {string} [sign = ','] Splitter
+ * @returns  {string}
+ *
  */
 ```
 
-*eg:*
+*e.g:*
 
 ```js
-convertToThousand('16000')      // 16,000
+toThousand('16000')      // 16,000
 
-convertToThousand('16000.1021') // 16,000.1021
+toThousand('16000.1021') // 16,000.1021
 
-convertToThousand('16000', ' ') // 16 000
+toThousand('16000', ' ') // 16 000
 ```
 
 ---
 
-### convertToPercent()
+### toPercent()
+
+[⬆️](#API)
 
 ```js
 /**
  * Convert numbers to percentage
  *
- * @param { number } targetNum          The number to convert
- * @param { number } [length = 2]       The length to Keep
- * @param { string } [replace = '---']  Replace string when targetNum is NaN or not number
- * @returns { string }
+ * @categry Finace
  * @since 0.0.1
+ * @param {number} num The number to convert
+ * @param {number} [length = 2] The length to Keep
+ * @param {string} [replace = '---'] Replace string when num is NaN or not number
+ * @returns {string}
+ *
  */
 ```
 
-*eg:*
+*e.g:*
 
 ```js
-convertToPercent(0.3)            // 30.00%
+toPercent(0.3)            // 30.00%
 
-convertToPercent(0.3235, 1)      // 32.4%
+toPercent(0.3235, 1)      // 32.4%
 
-convertToPercent(0.32, 3)        // 32.000%
+toPercent(0.32, 3)        // 32.000%
 
-convertToPercent('notNumber')    // ---
+toPercent('notNumber')    // ---
 
-convertToPercent(NaN)            // ---
+toPercent(NaN)            // ---
 
-convertToPercent('x', 2, '0000') // 0000
+toPercent('x', 2, '0000') // 0000
 ```
 
 ---
 
-### convertToFixed()
+### toFixed()
+
+[⬆️](#API)
 
 ```js
 /**
  * Convert numbers to fixed
  *
- * @param { number | string } targetNum The number to convert
- * @param { number } [length = 2]       The length to Keep
- * @param { string } [replace = '---']  Replace string when targetNum is NaN or not number
- * @returns { string }
+ * @categry Finace
  * @since 0.0.1
+ * @param {number | string} num The number to convert
+ * @param {number} [length = 2] The length to Keep
+ * @param {string} [replace = '---'] Replace string when targetNum is NaN or not number
+ * @returns {string}
+ *
  */
 ```
 
-*eg:*
+*e.g:*
 
 ```js
-convertToFixed(3)              // 3.00
+toFixed(3)              // 3.00
 
-convertToFixed(3.15511, 1)     // 3.2
+toFixed(3.15511, 1)     // 3.2
 
-convertToFixed(3.2, 3)         // 3.200
+toFixed(3.2, 3)         // 3.200
 
-convertToFixed('notNumber')    // ---
+toFixed('notNumber')    // ---
 
-convertToFixed(NaN)            // ---
+toFixed(NaN)            // ---
 
-convertToFixed('x', 2, '0000') // 0000
+toFixed('x', 2, '0000') // 0000
 ```
 
-## _time
-
-```shell
-import _time from 'o-orange/dist/time';
-
-or
-
-import { fixedTimerd, ... } from 'o-orange/dist/time';
-```
-
-### fixedTimerd()
+## parseKeyHeader()
 
 ```js
 /**
- * Correction timer
+ * Convert the first subproject to an array of keys to a json array
  *
- * @param  { number } duration   The time of timerd
- * @param  { function } handleFn The function of timerd
- * @returns { void }
- * @since 0.0.1
+ * @since 2.0.4
+ * @category Finace
+ * @param {Array} target The array to execute
+ * @returns {Array}
+ *
  */
 ```
 
-*eg:*
+*e.g:*
 
 ```js
-fixedTimerd(2000, () => console.log('run')) // run run run ....
+const k_line_data = [
+  ['time', 'high', 'low', 'open', 'close', 'volume'],
+  ['09: 30', '1.05', '5', '5.01', '5', '1000'],
+  ['09: 31', '2.06', '5', '5.01', '5', '1000'],
+  ['09: 32', '3.05', '5', '5.01', '5', '1000'],
+  ['09: 33', '4.05', '5', '5.01', '5', '1000'],
+  ['09: 34', '5.05', '5', '5.01', '5', '1000'],
+];
+
+parseKeyHeader(k_line_data);
+
+//
+[
+  {"time":"09: 30","high":"1.05","low":"5","open":"5.01","close":"5","volume":"1000"},
+  {"time":"09: 31","high":"2.06","low":"5","open":"5.01","close":"5","volume":"1000"},
+  {"time":"09: 32","high":"3.05","low":"5","open":"5.01","close":"5","volume":"1000"},
+  {"time":"09: 33","high":"4.05","low":"5","open":"5.01","close":"5","volume":"1000"},
+  {"time":"09: 34","high":"5.05","low":"5","open":"5.01","close":"5","volume":"1000"}
+]
 ```
 
----
-
-## _type
-
-```shell
-import _type from 'o-orange/dist/type';
-
-or
-
-import { isArray, ... } from 'o-orange/dist/type';
-```
+## Lang
 
 ### isArray()
 
 ```js
 /**
- * check-array
- *
- * @returns { boolean }
  * @since 0.0.1
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean}
+ *
  */
 ```
 
-*eg:*
+*e.g:*
 
 ```js
 isArray(3) // false
@@ -316,14 +359,15 @@ isArray([]) // true
 
 ```js
 /**
- * check-object
- *
- * @returns { boolean }
  * @since 0.0.1
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean}
+ *
  */
 ```
 
-*eg:*
+*e.g:*
 
 ```js
 isObject(3)  // false
@@ -337,10 +381,11 @@ isObject({}) // true
 
 ```js
 /**
- * check-undefined
- *
- * @returns { boolean }
  * @since 0.0.1
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean}
+ *
  */
 ```
 
@@ -358,10 +403,11 @@ isUndefined({}.property) // true
 
 ```js
 /**
- * check-number
- *
- * @returns { boolean }
  * @since 0.0.1
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean}
+ *
  */
 ```
 

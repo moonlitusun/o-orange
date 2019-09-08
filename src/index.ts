@@ -1,5 +1,6 @@
 
 import dateFormat from './dateFormat';
+import dateRange from './dateRange';
 import isArray from './isArray';
 import isNumber from './isNumber';
 import isObject from './isObject';
@@ -13,6 +14,7 @@ import toThousand from './toThousand';
 
 export default {
   dateFormat,
+  dateRange,
   isArray,
   isNumber,
   isObject,

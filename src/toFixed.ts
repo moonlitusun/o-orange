@@ -5,7 +5,7 @@ import { stringNumber } from './helper/types';
 /**
  * Convert numbers to fixed
  * 
- * @categry Number
+ * @categry Finace
  * @since 0.0.1
  * @param {number | string} num The number to convert
  * @param {number} [length = 2] The length to Keep

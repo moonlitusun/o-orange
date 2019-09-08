@@ -1,6 +1,6 @@
 {
   "name": "o-orange",
-  "version": "2.1.1",
+  "version": "2.0.4",
   "description": "A javascript utility library",
   "main": "./index.js",
   "keywords": [

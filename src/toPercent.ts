@@ -4,7 +4,7 @@ import toFixed from './toFixed';
 /**
  * Convert numbers to percentage
  * 
- * @categry Number
+ * @categry Finace
  * @since 0.0.1
  * @param {number} num The number to convert
  * @param {number} [length = 2] The length to Keep

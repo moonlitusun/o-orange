@@ -1,3 +1,5 @@
+import { stringNumber } from './helper/types';
+
 /**
   * Conversion time format
   *
@@ -12,7 +14,7 @@
   * // => 2019-01-24 10:43:05
   * 
   */
-function dateFormat(date: string | number, format: string): string {
+function dateFormat(date: stringNumber | Date, format: string): string {
   if (!date) throw new Error('Invalid Date');
   if (!format) throw new Error('Please enter the date format you want to convert');
 
