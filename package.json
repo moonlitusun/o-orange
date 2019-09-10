@@ -1,6 +1,6 @@
 {
   "name": "o-orange",
-  "version": "2.0.5",
+  "version": "2.0.7",
   "description": "A javascript utility library",
   "main": "./index.js",
   "keywords": [
@@ -33,7 +33,8 @@
   "files": [
     "lib",
     "index.js",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "types"
   ],
   "homepage": "https://moonlitusun.github.io/o-orange/",
   "devDependencies": {

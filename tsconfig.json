@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-      "outDir": "./dist",
-      "allowJs": true,
+      "outDir": "./lib",
+      // "allowJs": true,
       "target": "es2016",
-      "experimentalDecorators": true, // 装饰器
+      "declaration": true,
+      "experimentalDecorators": true // 装饰器
   },
   "include": [
       "./src/**/*"
