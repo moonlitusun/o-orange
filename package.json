@@ -33,8 +33,7 @@
   "files": [
     "lib",
     "index.js",
-    "CHANGELOG.md",
-    "types"
+    "CHANGELOG.md"
   ],
   "homepage": "https://moonlitusun.github.io/o-orange/",
   "devDependencies": {
