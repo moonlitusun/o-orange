@@ -1,4 +1,4 @@
-import { GenericObject } from './helper/interface-common';
+import { GenericObject } from './types/interface-common';
 
 /**
  * Convert the first subproject to an array of keys to a json array
@@ -17,5 +17,5 @@ export default function parseKeyHeader(target: any[]): any[] {
     item.forEach((valueItem, valueIndex) => resultObj[keys[valueIndex]] = valueItem);
 
     return resultObj;
-  })
+  });
 }

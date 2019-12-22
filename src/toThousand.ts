@@ -16,10 +16,10 @@
  *
  */
 function toThousand(num: number = 0, sign: string = ','): string {
-  let [integer, decimals] = num.toString().split('.');
+  const [integer, decimals]: string[] = num.toString().split('.');
 
-  integer = integer.replace(/\B(?=(\d{3})+(?!\d))/g, sign);
-  return decimals ? `${integer}.${decimals}` : integer;
+  const thousandInteger = integer.replace(/\B(?=(\d{3})+(?!\d))/g, sign);
+  return decimals ? `${thousandInteger}.${decimals}` : thousandInteger;
 }
 
 export default toThousand;

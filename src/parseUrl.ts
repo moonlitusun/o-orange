@@ -1,3 +1,5 @@
+type ReturnFunction = (key: string) => string;
+
 /**
  * Match the parameter value of url by key
  *
@@ -9,7 +11,7 @@
  * @example
  *
  * const url = 'http://localhost:8080/?key=3';
- * 
+ *
  * parseUrl(url, 'key')
  * // => 3
  *
@@ -25,15 +27,15 @@
  * // => null
  *
  */
-function parser(address: string): Function {
+function parser(address: string): ReturnFunction {
   return function(key: string): string {
     const result: any = address.match(new RegExp(`(\\?|\\&)${key}=([^\\&]+)`));
     return result ? result[2] : null;
-  }
+  };
 }
 
-export const parseUrlByHash: Function = parser(window.location.hash);
+export const parseUrlByHash: ReturnFunction = parser(window.location.hash);
 
-export const parseUrlBySearch: Function = parser(window.location.search);
+export const parseUrlBySearch: ReturnFunction = parser(window.location.search);
 
 export default (address, key) => parser(address)(key);

@@ -1,17 +1,17 @@
 import dateFormat from './dateFormat';
-import { stringNumber } from './helper/types';
+import { stringNumber } from './types/custom-types';
 
 interface IOptions {
   rangeType?: string;
-  dateType?:string;
-  rangeMultiple?:number;
+  dateType?: string;
+  rangeMultiple?: number;
   fixedEndTime?: false;
 }
 
 interface IRangeTypeListChildrenObject {
-  get: string,
-  set: string,
-  unit: number,
+  get: string;
+  set: string;
+  unit: number;
 }
 
 interface IRangeTypeList {
@@ -66,17 +66,17 @@ const RANGE_TYPE_LIST: IRangeTypeList = {
     set: 'setFullYear',
     unit: 1,
   },
-}
+};
 
 /**
- * 
+ *
  * Generate an ordered time interval array
- * 
+ *
  * @category Date
  * @since 2.0.4
  * @param {string | number | Date} beginTime beginTime(Can be converted by new Date())
  * @param {string | number | Date} endTime endTime(Can be converted by new Date())
- * @param {Object} options 
+ * @param {Object} options
  * @param {The second argument of the dateFormat function} options.dateType output time format
  * @param {string} options.rangeType Time interval
  * @param {number} options.rangeMultiple Time interval multiple
@@ -99,15 +99,15 @@ export default function dateRange(
   } = options;
   const result = [];
 
-  const beginTimeInstance = new Date(beginTime);
-  const endTimeInstance = new Date(endTime);
-  const endTimestamp = endTimeInstance.getTime();
+  const beginTimeInstance: Date = new Date(beginTime);
+  const endTimeInstance: Date = new Date(endTime);
+  const endTimestamp: number = endTimeInstance.getTime();
   const { get, set, unit } = RANGE_TYPE_LIST[rangeType];
 
-  let nextTimeInstance = new Date(beginTimeInstance);
+  const nextTimeInstance: Date = new Date(beginTimeInstance);
 
   while (nextTimeInstance.getTime() <= endTimestamp) {
-    result.push(dateFormat(nextTimeInstance, dateType))
+    result.push(dateFormat(nextTimeInstance, dateType));
 
     nextTimeInstance[set](nextTimeInstance[get]() + (unit * rangeMultiple));
   }

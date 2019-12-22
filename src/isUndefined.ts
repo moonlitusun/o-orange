@@ -4,13 +4,13 @@
  * @param {*} value The value to check.
  * @returns {boolean}
  * @example
- * 
+ *
  * isUndefined(undefined)
  * // => true
- * 
+ *
  * isObject([0, 1, 2, 3])
  * // => false
- * 
+ *
  */
 function isUndefined(value: any): boolean {
   return value === void 0;
