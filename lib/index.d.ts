@@ -9,6 +9,7 @@ import parseKeyHeader from './parseKeyHeader';
 import toFixed from './toFixed';
 import toPercent from './toPercent';
 import toThousand from './toThousand';
+import toUnit from './toUnit';
 declare const _default: {
     dateFormat: typeof dateFormat;
     dateRange: typeof dateRange;
@@ -18,11 +19,12 @@ declare const _default: {
     isUndefined: typeof isUndefined;
     pagination: typeof pagination;
     parseKeyHeader: typeof parseKeyHeader;
-    parseUrl: (address: any, key: any) => any;
-    parseUrlByHash: Function;
-    parseUrlBySearch: Function;
+    parseUrl: (address: any, key: any) => string;
+    parseUrlByHash: (key: string) => string;
+    parseUrlBySearch: (key: string) => string;
     toFixed: typeof toFixed;
     toPercent: typeof toPercent;
     toThousand: typeof toThousand;
+    toUnit: typeof toUnit;
 };
 export default _default;

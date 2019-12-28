@@ -1,12 +1,14 @@
-import { stringNumber } from './helper/types';
+import { stringNumber } from './types/common/type';
+import { IOption } from './types/toFixed';
 /**
  * Convert numbers to fixed
  *
  * @categry Finace
  * @since 0.0.1
  * @param {number | string} num The number to convert
- * @param {number} [length = 2] The length to Keep
- * @param {string} [replace = '---'] Replace string when targetNum is NaN or not number
+ * @param {number} [fixedLen = 2] The length to Keep
+ * @param {Object} [option = {}]
+ * @param {string} [option.placeholder = '--'] Replace string when targetNum is NaN or not number
  * @returns {string}
  * @example
  *
@@ -20,5 +22,5 @@ import { stringNumber } from './helper/types';
  * // => 'xxxx'
  *
  */
-declare function toFixed(num?: stringNumber, length?: number, replace?: string): string;
+declare function toFixed(num?: stringNumber, fixedLen?: number, option?: IOption): string;
 export default toFixed;

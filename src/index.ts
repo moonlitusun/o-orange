@@ -11,6 +11,7 @@ import parseUrl, { parseUrlByHash, parseUrlBySearch } from './parseUrl';
 import toFixed from './toFixed';
 import toPercent from './toPercent';
 import toThousand from './toThousand';
+import toUnit from './toUnit';
 
 export default {
   dateFormat,
@@ -27,4 +28,5 @@ export default {
   toFixed,
   toPercent,
   toThousand,
+  toUnit,
 };

@@ -1,6 +1,7 @@
-import isNumber from './isNumber';
+import { DEFAULT_FIXED_LEN, DEFAULT_PLACEHOLDER } from './constant/default';
 
-import { stringNumber } from './types/custom-types';
+import { stringNumber } from './types/common/type';
+import { IOption } from './types/toFixed';
 
 /**
  * Convert numbers to fixed
@@ -8,8 +9,9 @@ import { stringNumber } from './types/custom-types';
  * @categry Finace
  * @since 0.0.1
  * @param {number | string} num The number to convert
- * @param {number} [length = 2] The length to Keep
- * @param {string} [replace = '---'] Replace string when targetNum is NaN or not number
+ * @param {number} [fixedLen = 2] The length to Keep
+ * @param {Object} [option = {}]
+ * @param {string} [option.placeholder = '--'] Replace string when targetNum is NaN or not number
  * @returns {string}
  * @example
  *
@@ -23,12 +25,17 @@ import { stringNumber } from './types/custom-types';
  * // => 'xxxx'
  *
  */
-function toFixed(num: stringNumber = 0, length: number = 2, replace: string = '---'): string {
+function toFixed(
+  num: stringNumber = 0,
+  fixedLen: number = DEFAULT_FIXED_LEN,
+  option: IOption = {},
+): string {
+  const { placeholder = DEFAULT_PLACEHOLDER } = option;
   const pureNum: number = Number(num);
 
-  if (Number.isNaN(pureNum)) return replace;
+  if (Number.isNaN(pureNum)) return placeholder;
 
-  return pureNum.toFixed(length);
+  return pureNum.toFixed(fixedLen);
 }
 
 export default toFixed;

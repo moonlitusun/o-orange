@@ -1,29 +1,7 @@
 import dateFormat from './dateFormat';
-import { stringNumber } from './types/custom-types';
 
-interface IOptions {
-  rangeType?: string;
-  dateType?: string;
-  rangeMultiple?: number;
-  fixedEndTime?: false;
-}
-
-interface IRangeTypeListChildrenObject {
-  get: string;
-  set: string;
-  unit: number;
-}
-
-interface IRangeTypeList {
-  millsecond: IRangeTypeListChildrenObject;
-  second: IRangeTypeListChildrenObject;
-  minute: IRangeTypeListChildrenObject;
-  hour: IRangeTypeListChildrenObject;
-  day: IRangeTypeListChildrenObject;
-  week: IRangeTypeListChildrenObject;
-  month: IRangeTypeListChildrenObject;
-  year: IRangeTypeListChildrenObject;
-}
+import { stringNumber } from './types/common/type';
+import { IOptions, IRangeTypeList } from './types/dateRange';
 
 const RANGE_TYPE_LIST: IRangeTypeList = {
   millsecond: {
@@ -89,7 +67,7 @@ export default function dateRange(
   endTime: stringNumber,
   options: IOptions = {},
 ): string[] {
-  if (!beginTime || !endTime) throw new Error('You must specify the start ant end time');
+  if (!beginTime || !endTime) throw new Error('You must specify the start and end time');
 
   const {
     dateType = 'yyyy-MM-dd HH:mm:ss',

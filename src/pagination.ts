@@ -16,7 +16,7 @@
  * // => [7, 8, 9]
  *
  */
-function pagination(array: Array<any>, pageNum: number = 1, pageSize: number = 10): Array<any> {
+function pagination<T>(array: T[], pageNum: number = 1, pageSize: number = 10): T[] {
   const beginIndex: number = (pageNum - 1) * pageSize;
   const endIndex: number = pageNum * pageSize;
 

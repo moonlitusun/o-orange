@@ -1,4 +1,5 @@
-export declare const parseUrlByHash: Function;
-export declare const parseUrlBySearch: Function;
-declare const _default: (address: any, key: any) => any;
+declare type ReturnFunction = (key: string) => string;
+export declare const parseUrlByHash: ReturnFunction;
+export declare const parseUrlBySearch: ReturnFunction;
+declare const _default: (address: any, key: any) => string;
 export default _default;

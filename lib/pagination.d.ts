@@ -16,5 +16,5 @@
  * // => [7, 8, 9]
  *
  */
-declare function pagination(array: Array<any>, pageNum?: number, pageSize?: number): Array<any>;
+declare function pagination<T>(array: T[], pageNum?: number, pageSize?: number): T[];
 export default pagination;

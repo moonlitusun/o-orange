@@ -1,6 +1,6 @@
 {
   "name": "o-orange",
-  "version": "2.0.7",
+  "version": "2.1.0",
   "description": "A javascript utility library",
   "main": "./index.js",
   "keywords": [
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "clean": "rimraf lib/",
-    "dist": "npm run clean && webpack --config ./dev/webpack.config.js",
+    "build": "npm run clean && webpack --config ./dev/webpack.config.js",
     "example": "webpack --config ./dev/webpack.example.js",
     "start": "node ./dev/serve.js",
     "prepublishOnly": "npm run dist && npm run example",

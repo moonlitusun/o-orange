@@ -1,18 +1,5 @@
-import { stringNumber } from './types/custom-types';
-
-interface DateDict {
-  yyyy: () => number;
-  M: () => number;
-  d: () => number;
-  H: () => number;
-  m: () => number;
-  s: () => number;
-  MM: () => string;
-  dd: () => string;
-  HH: () => string;
-  mm: () => string;
-  ss: () => string;
-}
+import { stringNumber } from './types/common/type';
+import { IDateDict } from './types/dateFormat';
 
 /**
  * Get date dictionary
@@ -20,8 +7,9 @@ interface DateDict {
  * @param {string | number} date The date to convert
  *
  */
-function getDateDict(date: stringNumber): DateDict {
+function getDateDict(date: stringNumber): IDateDict {
   const currentDate: Date = new Date(date);
+
   return {
     yyyy: currentDate.getFullYear(),
     M: currentDate.getMonth() + 1,
@@ -38,29 +26,31 @@ function getDateDict(date: stringNumber): DateDict {
 }
 
 /**
-  * Conversion time format
-  *
-  * @category Date
-  * @since 0.0.1
-  * @param {string | number} date The date to convert
-  * @param {string} format [yyyy, M, MM, dd, d, HH, H, mm, m, ss, s]
-  * @returns {string}
-  * @example
-  *
-  * dateFormat(1548297785895, 'yyyy-MM-dd HH:mm:ss')
-  * // => 2019-01-24 10:43:05
-  *
-  */
+ *
+ * Conversion time format
+ *
+ * @category Date
+ * @since 0.0.1
+ * @param {string | number} date The date to convert
+ * @param {string} format yyyy, M, MM, dd, d, HH, H, mm, m, ss, s
+ * @returns {string}
+ * @example
+ *
+ * dateFormat(1548297785895, 'yy
+ * yy-MM-dd HH:mm:ss')
+ * // => 2019-01-24 10:43:05
+ *
+ */
 function dateFormat(date: stringNumber | Date, format: string): string {
   if (!date) throw new Error('Invalid Date');
   if (!format) throw new Error('Please enter the date format you want to convert');
 
   // Compatible with ios system
-  let internalDate = date;
+  let internalDate: stringNumber | Date = date;
   if (typeof internalDate === 'string') internalDate = internalDate.replace(/-/g, '/');
 
   try {
-    return format.replace(/(yyyy|MM?|dd?|HH?|mm?|ss?)/g, f => getDateDict(internalDate)[f]);
+    return format.replace(/(yyyy|MM?|dd?|HH?|mm?|ss?)/g, f => getDateDict(internalDate as string)[f]);
   } catch (e) {
     throw new Error('The date format is wrong!');
   }

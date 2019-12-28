@@ -1,5 +1,5 @@
 # 2.1.0
 
-- 💄 `toFixed` the first parameter increases the **string** type
+`Dec 28, 2019`
 
-# 2.1.7
+- 💄 `toUnit` 

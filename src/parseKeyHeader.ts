@@ -1,4 +1,4 @@
-import { GenericObject } from './types/interface-common';
+import { IGenericObject } from './types/common/interface';
 
 /**
  * Convert the first subproject to an array of keys to a json array
@@ -13,7 +13,7 @@ export default function parseKeyHeader(target: any[]): any[] {
   const [keys, valueArr] = [target[0], target.slice(1)];
 
   return valueArr.map(item => {
-    const resultObj: GenericObject = {};
+    const resultObj: IGenericObject<any> = {};
     item.forEach((valueItem, valueIndex) => resultObj[keys[valueIndex]] = valueItem);
 
     return resultObj;
