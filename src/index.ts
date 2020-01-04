@@ -9,6 +9,7 @@ import pagination from './pagination';
 import parseKeyHeader from './parseKeyHeader';
 import parseUrl, { parseUrlByHash, parseUrlBySearch } from './parseUrl';
 import toFixed from './toFixed';
+import toPositiveSign from './toPositiveSign';
 import toPercent from './toPercent';
 import toThousand from './toThousand';
 import toUnit from './toUnit';
@@ -27,6 +28,7 @@ export default {
   parseUrlBySearch,
   toFixed,
   toPercent,
+  toPositiveSign,
   toThousand,
   toUnit,
 };

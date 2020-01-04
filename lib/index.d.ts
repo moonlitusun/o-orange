@@ -7,6 +7,7 @@ import isUndefined from './isUndefined';
 import pagination from './pagination';
 import parseKeyHeader from './parseKeyHeader';
 import toFixed from './toFixed';
+import toPositiveSign from './toPositiveSign';
 import toPercent from './toPercent';
 import toThousand from './toThousand';
 import toUnit from './toUnit';
@@ -24,6 +25,7 @@ declare const _default: {
     parseUrlBySearch: (key: string) => string;
     toFixed: typeof toFixed;
     toPercent: typeof toPercent;
+    toPositiveSign: typeof toPositiveSign;
     toThousand: typeof toThousand;
     toUnit: typeof toUnit;
 };
