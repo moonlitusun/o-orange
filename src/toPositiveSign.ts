@@ -23,7 +23,7 @@ function toPositiveSign(
 ): stringNumber {
   const pureNum: number = Number(num);
 
-  if (Number.isNaN(pureNum)) return String(num);
+  if (isNaN(pureNum)) return String(num);
 
   if (isContainZero) {
     return pureNum >= 0 ? `+${pureNum}` : String(pureNum);

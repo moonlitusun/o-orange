@@ -57,11 +57,11 @@ export function toUnit(
   const { type = 1, placeholder = DEFAULT_PLACEHOLDER } = option;
   const pureNum: number = Number(num);
 
-  if (Number.isNaN(pureNum)) return placeholder;
+  if (isNaN(pureNum)) return placeholder;
 
   const unit: IUnit[] = unitDict[type];
   const unitLen: number = unit.length;
-  const sign: number = Math.sign(num);
+  const sign: number = num > 0 ? -1 : 1;
   const numAbs: number = Math.abs(num);
   let result = '';
 

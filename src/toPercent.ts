@@ -32,7 +32,7 @@ function toPercent(
   const { placeholder = DEFAULT_PLACEHOLDER } = option;
   const pureNum: number = Number(num);
 
-  if (Number.isNaN(pureNum)) return placeholder;
+  if (isNaN(pureNum)) return placeholder;
 
   return `${toFixed(100 * num, fixedLen)}%`;
 }
