@@ -82,7 +82,7 @@ export default function dateRange(
   const endTimestamp: number = endTimeInstance.getTime();
   const { get, set, unit } = RANGE_TYPE_LIST[rangeType];
 
-  const nextTimeInstance: Date = new Date(beginTimeInstance);
+  const nextTimeInstance: Date = beginTimeInstance;
 
   while (nextTimeInstance.getTime() <= endTimestamp) {
     result.push(dateFormat(nextTimeInstance, dateType));
