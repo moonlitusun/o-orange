@@ -61,7 +61,6 @@ export function toUnit(
 
   const unit: IUnit[] = unitDict[type];
   const unitLen: number = unit.length;
-  const sign: number = num > 0 ? -1 : 1;
   const numAbs: number = Math.abs(num);
   let result = '';
 
@@ -71,7 +70,7 @@ export function toUnit(
     const { label, value } = unit[i];
 
     if (numAbs >= value) {
-      result = `${sign === -1 ? '-' : ''}${toFixed((numAbs / value), fixedLen, { placeholder })}${label}`;
+      result = `${num < 0 ? '-' : ''}${toFixed((numAbs / value), fixedLen, { placeholder })}${label}`;
       break;
     }
   }
