@@ -8,9 +8,13 @@
 
 # Installation
 
+Use npm
+
 ```bash
 npm install o-orange
 ```
+
+Use yarn
 
 ```bash
 yarn add o-orange
@@ -33,6 +37,7 @@ import isNumber from 'o-orange/lib/isNumber';
 - [Array](#Array)
 
   - [pagination()](#pagination)
+  - [parseKeyHeader()](#parseKeyHeader)
 
 - [Date](#Date)
 
@@ -50,7 +55,6 @@ import isNumber from 'o-orange/lib/isNumber';
   - [toThousand()](#toThousand)
   - [toPercent()](#toPercent)
   - [toFixed()](#toFixed)
-  - [parseKeyHeader()](#parseKeyHeader)
 
 - [Lang](#Lang)
 
@@ -59,12 +63,11 @@ import isNumber from 'o-orange/lib/isNumber';
   - [isUndefined()](#isUndefined)
   - [isNumber()](#isNumber)
 
-
 ## Array
 
 ### pagination()
 
-[⬆️](#API)
+[⬆️ Back to menu](#API)
 
 ```js
 /**
@@ -74,7 +77,7 @@ import isNumber from 'o-orange/lib/isNumber';
  * @since 0.0.1
  * @param {Array} array The array to execute
  * @param {number} [pageNum = 1] Current page number(Calculate the page number from the back when it is negative)
- * @param {number} [pageSize = 10] One page of Size
+ * @param {number} [pageSize = 10] One page of size
  * @returns {Array}
  *
  */
@@ -96,48 +99,9 @@ pagination(arr, -1, 5) // [7, 8, 9, 10, 11]
 
 ---
 
-## Utils
+## parseKeyHeader
 
-### parseUrl()
-
-[⬆️](#API)
-
-```js
-/**
- * Match the parameter value of url by key
- *
- * @category Util
- * @since 2.0.1
- * @param {string} url the url to match
- * @param {string} key The key to match
- * @returns {string} Matched value
- *
- */
-```
-
-*e.g:*
-
-```js
-import parseUrl, { parseUrlByHash, parseUrlBySearch } from 'o-orange/lib/parseUrl';
-
-const url = 'http://localhost:8080/?key=3';
-
-parseUrl(url, 'key'); // 3
-parseUrl(url, 'value'); // null
-
-parseUrlBySearch('key'); // 3
-parseUrlBySearch('value'); // null
-
-// And can use parseUrlByHash
-const hashUrl = 'http://localhost:8080/#/?key=3';
-
-parseUrlHash('key'); // 3
-parseUrlHash('value'); // null
-```
-
-## Finace
-
-## parseKeyHeader()
+[⬆️ Back to menu](#API)
 
 ```js
 /**
@@ -173,6 +137,100 @@ parseKeyHeader(k_line_data);
   {"time":"09: 33","high":"4.05","low":"5","open":"5.01","close":"5","volume":"1000"},
   {"time":"09: 34","high":"5.05","low":"5","open":"5.01","close":"5","volume":"1000"}
 ]
+```
+
+---
+
+## Date
+
+### dateFormat
+
+[⬆️ Back to menu](#API)
+
+```js
+/**
+ *
+ * Conversion time format
+ *
+ * @category Date
+ * @since 0.0.1
+ * @param {string | number} date The date to convert
+ * @param {string} format yyyy, M, MM, dd, d, HH, H, mm, m, ss, s
+ * @returns {string}
+ *
+ */
+```
+
+*e.g：*
+
+```js
+dateFormat(1548297785895, 'yyyy-MM-dd HH:mm:ss');
+
+// 2019-01-24 10:43:05
+```
+
+---
+
+### dateRange
+
+[⬆️ Back to menu](#API)
+
+```js
+/**
+ *
+ * Generate an ordered time interval array
+ *
+ * @category Date
+ * @since 2.0.4
+ * @param {string | number | Date} beginTime beginTime(Can be converted by new Date())
+ * @param {string | number | Date} endTime endTime(Can be converted by new Date())
+ * @param {Object} options
+ * @param {The second argument of the dateFormat function} [options.dateType = 'yyyy-MM-dd HH:mm:ss'] output time format
+ * @param {string} [options.rangeType = 'minute'] Time interval
+ * @param {number} [options.rangeMultiple = 1] Time interval multiple
+ * @param {bool} [options.fixedEndTime = false] No matter how keep endTime exists
+ * @returns {Array}
+ *
+ */
+```
+
+## Utils
+
+### parseUrl()
+
+[⬆️ Back to menu](#API)
+
+```js
+/**
+ * Match the parameter value of url by key
+ *
+ * @category Util
+ * @since 2.0.1
+ * @param {string} url the url to match
+ * @param {string} key The key to match
+ * @returns {string} Matched value
+ *
+ */
+```
+
+*e.g:*
+
+```js
+import parseUrl, { parseUrlByHash, parseUrlBySearch } from 'o-orange/lib/parseUrl';
+
+const url = 'http://localhost:8080/?key=3';
+
+parseUrl(url, 'key'); // 3
+parseUrl(url, 'value'); // null
+
+parseUrlBySearch('key'); // 3
+parseUrlBySearch('value'); // null
+
+// And can use parseUrlByHash
+const hashUrl = 'http://localhost:8080/#/?key=3';
+
+parseUrlHash('key'); // 3
+parseUrlHash('value'); // null
 ```
 
 ## Lang
