@@ -9,10 +9,10 @@ import { IOptions } from './types/dateRange';
  * @param {string | number | Date} beginTime beginTime(Can be converted by new Date())
  * @param {string | number | Date} endTime endTime(Can be converted by new Date())
  * @param {Object} options
- * @param {The second argument of the dateFormat function} options.dateType output time format
- * @param {string} options.rangeType Time interval
- * @param {number} options.rangeMultiple Time interval multiple
- * @param {bool} options.fixedEndTime No matter how keep endTime exists
+ * @param {The second argument of the dateFormat function} [options.dateType = 'yyyy-MM-dd HH:mm:ss'] output time format
+ * @param {string} [options.rangeType = 'minute'] Time interval
+ * @param {number} [options.rangeMultiple = 1] Time interval multiple
+ * @param {bool} [options.fixedEndTime = false] No matter how keep endTime exists
  * @returns {Array}
  *
  */
