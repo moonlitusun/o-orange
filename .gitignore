@@ -4,3 +4,4 @@ coverage/
 .DS_Store
 example-dist/
 *.lock
+
