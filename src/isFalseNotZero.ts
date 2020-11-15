@@ -13,7 +13,9 @@
  *
  */
 function isFalseNotZero(value: any): boolean {
-  return !value && value !== 0;
+  const numberValue = +value;
+
+  return !numberValue && numberValue !== 0;
 }
 
 export default isFalseNotZero;

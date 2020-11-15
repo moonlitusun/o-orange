@@ -17,6 +17,7 @@ log(
   O.isFalseNotZero(0),
   O.isFalseNotZero(undefined),
   O.isFalseNotZero(1),
+  O.isFalseNotZero(NaN),
 );
 
 // console.log(O.dateRange('2010-09-01 11:30', '2010-09-01 12:00', { rangeType: 'minute', rangeMultiple: 3, fixedEndTime: true }))
