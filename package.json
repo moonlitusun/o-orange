@@ -1,6 +1,6 @@
 {
   "name": "o-orange",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A javascript utility library",
   "main": "./index.js",
   "keywords": [
@@ -15,7 +15,7 @@
     "example": "webpack --config ./dev/webpack.example.js",
     "start": "node ./dev/serve.js",
     "prepublishOnly": "npm run build && npm run example",
-    "pub": "npm publish --access public",
+    "pub": "npm publish --access public --registry https://registry.npmjs.org/",
     "test": "node ./dev/jest/start.js",
     "test:coverage": "npm run test -- --coverage",
     "ghpages": "npm run example && git subtree push --prefix example-dist/ origin gh-pages",
