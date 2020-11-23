@@ -54,7 +54,7 @@ function getConfigList() {
           exclude: 'node_modules/**',
           extensions: ['.ts'],
         }),
-        // terser(),
+        terser(),
       ]
     });
   }
