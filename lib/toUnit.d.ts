@@ -19,5 +19,5 @@ import { IOption } from './types/toUnit';
  * // 1.01百億
  *
  */
-export declare function toUnit(num?: number, fixedLen?: number, option?: IOption): string;
+declare function toUnit(num?: number, fixedLen?: number, option?: IOption): string;
 export default toUnit;

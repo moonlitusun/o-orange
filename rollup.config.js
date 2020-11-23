@@ -1,13 +1,14 @@
 import typescript from 'rollup-plugin-typescript2';
 import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
+import { terser } from 'rollup-plugin-terser';
 
-const path = require('path');
 const fs = require('fs');
 const join = require('path').join;
 
 /**
- * 
+ *
  * @param startPath
  * @returns {Array}
  */
@@ -27,25 +28,38 @@ function findSync(startPath = './src') {
     }
   });
 
-  console.log(entryList, '<-- entryList');
   return entryList;
 }
 
-const config = {
-  input: findSync(),
-  output: {
-    dir: 'lib',
-    format: 'esm',
-    name: '[name]',
-  },
-  plugins: [
-    resolve(),
-    typescript({
-    }),
-    commonjs({
-      extensions: ['.js', '.ts'],
-    }),
-  ]
-};
+function getConfigList() {
+  const configList = [];
+  const fileDict = findSync();
 
-export default config;
+  for (const fileName in fileDict) {
+    configList.push({
+      input: fileDict[fileName],
+      output: {
+        dir: 'lib',
+        format: 'umd',
+        name: fileName,
+      },
+      plugins: [
+        resolve(),
+        typescript(),
+        commonjs({
+          extensions: ['.js', '.ts'],
+        }),
+        babel({
+          babelHelpers: 'bundled',
+          exclude: 'node_modules/**',
+          extensions: ['.ts'],
+        }),
+        // terser(),
+      ]
+    });
+  }
+
+  return configList;
+}
+
+export default getConfigList();

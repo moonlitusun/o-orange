@@ -49,7 +49,7 @@ const unitDict: IUnitDict = {
  * // 1.01百億
  *
  */
-export function toUnit(
+function toUnit(
   num: number = 0,
   fixedLen = DEFAULT_FIXED_LEN,
   option: IOption = {}

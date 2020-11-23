@@ -16,7 +16,6 @@
     "removeComments": false,
     "preserveConstEnums": true,
     "noResolve": true,
-    "outDir": "lib"
   },
   "exclude": [
     "node_modules",
