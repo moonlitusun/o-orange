@@ -31,6 +31,3 @@ Or
 ```js
 import isNumber from 'o-orange/lib/isNumber';
 ```
-
-# API
-
