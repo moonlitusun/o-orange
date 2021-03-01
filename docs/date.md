@@ -2,8 +2,6 @@
 
 ## dateFormat
 
-[⬆️ Back to menu](#API)
-
 ```js
 /**
  *
@@ -29,8 +27,6 @@ dateFormat(1548297785895, 'yyyy-MM-dd HH:mm:ss');
 ---
 
 ## dateRange
-
-[⬆️ Back to menu](#API)
 
 ```js
 /**

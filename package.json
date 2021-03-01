@@ -19,7 +19,7 @@
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "docs:dev": "dumi dev",
     "docs:build": "dumi build",
-    "docs:deploy": "npm run docs:build && git subtree push --prefix dist/ origin gh-pages"
+    "docs:deploy": "yarn docs:build && git subtree push --prefix dist/ origin gh-pages"
   },
   "repository": {
     "type": "git",
