@@ -12,6 +12,7 @@ import toPositiveSign from './toPositiveSign';
 import toPlaceholder from './toPlaceholder';
 import toPlaceholderNotZero from './toPlaceholderNotZero';
 import toPercent from './toPercent';
+import toSlice from './toSlice';
 import toThousand from './toThousand';
 import toUnit from './toUnit';
 declare const _default: {
@@ -32,6 +33,7 @@ declare const _default: {
     toPlaceholder: typeof toPlaceholder;
     toPlaceholderNotZero: typeof toPlaceholderNotZero;
     toPositiveSign: typeof toPositiveSign;
+    toSlice: typeof toSlice;
     toThousand: typeof toThousand;
     toUnit: typeof toUnit;
 };

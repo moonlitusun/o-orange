@@ -14,6 +14,7 @@ import toPositiveSign from './toPositiveSign';
 import toPlaceholder from './toPlaceholder';
 import toPlaceholderNotZero from './toPlaceholderNotZero';
 import toPercent from './toPercent';
+import toSlice from './toSlice';
 import toThousand from './toThousand';
 import toUnit from './toUnit';
 
@@ -35,6 +36,7 @@ export default {
   toPlaceholder,
   toPlaceholderNotZero,
   toPositiveSign,
+  toSlice,
   toThousand,
   toUnit,
 };
