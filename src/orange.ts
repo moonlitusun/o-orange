@@ -16,7 +16,7 @@ import toPlaceholderNotZero from './toPlaceholderNotZero';
 import toPercent from './toPercent';
 import toSlice from './toSlice';
 import toThousand from './toThousand';
-import toUnit from './toUnit';
+// import toUnit from './toUnit';
 
 export default {
   dateFormat,
@@ -38,5 +38,5 @@ export default {
   toPositiveSign,
   toSlice,
   toThousand,
-  toUnit,
+  // toUnit,
 };

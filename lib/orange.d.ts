@@ -14,7 +14,6 @@ import toPlaceholderNotZero from './toPlaceholderNotZero';
 import toPercent from './toPercent';
 import toSlice from './toSlice';
 import toThousand from './toThousand';
-import toUnit from './toUnit';
 declare const _default: {
     dateFormat: typeof dateFormat;
     dateRange: typeof dateRange;
@@ -35,6 +34,5 @@ declare const _default: {
     toPositiveSign: typeof toPositiveSign;
     toSlice: typeof toSlice;
     toThousand: typeof toThousand;
-    toUnit: typeof toUnit;
 };
 export default _default;

@@ -35,7 +35,9 @@ function getConfigList() {
   const configList = [];
   const fileDict = findSync();
 
+  console.log(fileDict, '<-- fileDict');
   for (const fileName in fileDict) {
+    console.log(fileName, '<-- fileName');
     configList.push({
       input: fileDict[fileName],
       output: {
