@@ -3,4 +3,6 @@ node_js:
     - "14"
 before_script:
     - npm install
-after_success: npm run fix-memory-limit && npm run test:coverage
+    - npm run fix-memory-limit
+after_success:
+    - npm run test:coverage
