@@ -1,5 +1,5 @@
 import { DEFAULT_PLACEHOLDER } from './constant/default';
-import isFalseNotZero from './isFalseNotZero';
+import isTrue from './isTrue';
 
 /**
  * @since 2.1.3
@@ -19,7 +19,7 @@ import isFalseNotZero from './isFalseNotZero';
  *
  */
 function toPlaceholderNotZero(value: any): any {
-  return isFalseNotZero(value) ? DEFAULT_PLACEHOLDER : value;
+  return !isTrue(value) ? DEFAULT_PLACEHOLDER : value;
 }
 
 export default toPlaceholderNotZero;

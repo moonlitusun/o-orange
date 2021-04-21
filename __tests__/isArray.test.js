@@ -1,5 +1,4 @@
-// import isArray from '../lib/isArray';
-const isArray = require('../lib/isArray');
+import isArray from '../lib/isArray';
 
 test('is array', () => {
   const

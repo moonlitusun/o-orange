@@ -1,3 +1,4 @@
+import { DEFAULT_PLACEHOLDER } from './constant/default';
 import { stringNumber } from './types/common/type';
 import { IDateDict } from './types/dateFormat';
 
@@ -41,9 +42,8 @@ function getDateDict(date: stringNumber): IDateDict {
  * // => 2019-01-24 10:43:05
  *
  */
-function dateFormat(date: Date | stringNumber, format: string): string {
-  if (!date) throw new Error('Invalid Date');
-  if (!format) throw new Error('Please enter the date format you want to convert');
+function dateFormat(date: Date | stringNumber, format = "yyyy-MM-dd HH:mm:ss"): string {
+  if (!date) return DEFAULT_PLACEHOLDER;
 
   // Compatible with ios system
   let internalDate: stringNumber | Date = date;

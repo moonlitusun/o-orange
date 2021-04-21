@@ -15,5 +15,5 @@ import { stringNumber } from './types/common/type';
  * // => 2019-01-24 10:43:05
  *
  */
-declare function dateFormat(date: Date | stringNumber, format: string): string;
+declare function dateFormat(date: Date | stringNumber, format?: string): string;
 export default dateFormat;
