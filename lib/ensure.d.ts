@@ -13,5 +13,5 @@
  * ensure(0, )
  *
  */
-declare function ensure<T, N>(value: any, failureCallback: string | (() => T), successCallback: string | (() => N)): string | T | N;
+declare function ensure<T, N>(value: any, failureCallback?: string | (() => T), successCallback?: string | (() => N)): string | T | N;
 export default ensure;

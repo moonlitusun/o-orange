@@ -18,8 +18,8 @@ import isUndefined from './isUndefined';
  */
 function ensure<T, N>(
   value: any,
-  failureCallback: string | (() => T),
-  successCallback: string | (() => N)
+  failureCallback?: string | (() => T),
+  successCallback?: string | (() => N)
 ): string | T | N {
   if (!value) {
     if (failureCallback === null || isUndefined(failureCallback)) return DEFAULT_PLACEHOLDER;
