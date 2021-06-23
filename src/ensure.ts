@@ -1,4 +1,5 @@
 import { DEFAULT_PLACEHOLDER } from './constant/default';
+import isUndefined from './isUndefined';
 
 /**
  * @since 3.1.0
@@ -12,11 +13,7 @@ import { DEFAULT_PLACEHOLDER } from './constant/default';
  * ensure(0)
  * // => true
  *
- * isArray({a: 1, b: 2})
- * // => false
- *
- * isArray(1)
- * // => false
+ * ensure(0, )
  *
  */
 function ensure<T, N>(
@@ -25,14 +22,14 @@ function ensure<T, N>(
   successCallback: string | (() => N)
 ): string | T | N {
   if (!value) {
-    if (!failureCallback) return DEFAULT_PLACEHOLDER;
+    if (failureCallback === null || isUndefined(failureCallback)) return DEFAULT_PLACEHOLDER;
 
-    return typeof failureCallback === 'string' ? failureCallback : failureCallback();
+    return typeof failureCallback === 'function' ? failureCallback() : failureCallback;
   }
 
-  if (!successCallback) return value;
+  if (isUndefined(successCallback)) return value;
 
-  return typeof successCallback === 'string' ? successCallback : successCallback();
+  return typeof successCallback === 'function' ? successCallback() : successCallback;
 }
 
 export default ensure;

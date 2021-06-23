@@ -35,8 +35,6 @@ function getConfigList() {
   const configList = [];
   const fileDict = findSync();
 
-  console.log(fileDict, '<-- fileDict');
-  console.log(process.memoryUsage().heapTotal);
   for (const fileName in fileDict) {
     configList.push({
       input: fileDict[fileName],
@@ -64,5 +62,4 @@ function getConfigList() {
   return configList;
 }
 
-console.log(getConfigList())
 export default getConfigList();

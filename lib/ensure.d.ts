@@ -10,11 +10,7 @@
  * ensure(0)
  * // => true
  *
- * isArray({a: 1, b: 2})
- * // => false
- *
- * isArray(1)
- * // => false
+ * ensure(0, )
  *
  */
 declare function ensure<T, N>(value: any, failureCallback: string | (() => T), successCallback: string | (() => N)): string | T | N;
