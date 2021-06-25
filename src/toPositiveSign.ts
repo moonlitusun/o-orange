@@ -1,5 +1,11 @@
 import { stringNumber } from './types/common/type';
 
+interface IExtraInfo {
+  balance?: number;
+  canEqual?: boolean;
+  parser?: (target: stringNumber) => string;
+}
+
 /**
  * Convert numbers to positive and negative signs
  *
@@ -19,10 +25,11 @@ import { stringNumber } from './types/common/type';
  */
 function toPositiveSign(
   target: stringNumber,
-  balance = 0,
-  canEqual = false,
+  extraInfo: IExtraInfo = {},
 ): stringNumber {
+  const { canEqual = false, balance = 0, parser } = extraInfo;
   const isMoreThan = canEqual ? target >= balance : target > balance;
+  if (parser) target = parser(target);
 
   return isMoreThan ? `+${target}` : target;
 }
