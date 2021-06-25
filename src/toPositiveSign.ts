@@ -18,18 +18,13 @@ import { stringNumber } from './types/common/type';
  *
  */
 function toPositiveSign(
-  num: number = 0,
-  isContainZero: boolean = false,
+  target: stringNumber,
+  balance = 0,
+  canEqual = false,
 ): stringNumber {
-  const pureNum: number = Number(num);
+  const isMoreThan = canEqual ? target >= balance : target > balance;
 
-  if (isNaN(pureNum)) return String(num);
-
-  if (isContainZero) {
-    return pureNum >= 0 ? `+${pureNum}` : String(pureNum);
-  }
-
-  return pureNum > 0 ? `+${pureNum}` : String(pureNum);
+  return isMoreThan ? `+${target}` : target;
 }
 
 export default toPositiveSign;

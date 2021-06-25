@@ -16,5 +16,5 @@ import { stringNumber } from './types/common/type';
  * // => -15
  *
  */
-declare function toPositiveSign(num?: number, isContainZero?: boolean): stringNumber;
+declare function toPositiveSign(target: stringNumber, balance?: number, canEqual?: boolean): stringNumber;
 export default toPositiveSign;
