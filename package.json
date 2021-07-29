@@ -33,6 +33,7 @@
   },
   "files": [
     "lib",
+    "es",
     "CHANGELOG.md"
   ],
   "homepage": "https://moonlitusun.github.io/o-orange/",

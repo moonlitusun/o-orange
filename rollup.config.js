@@ -31,35 +31,52 @@ function findSync(startPath = './src') {
   return entryList;
 }
 
-function getConfigList() {
-  const configList = [];
-  const fileDict = findSync();
+const configList = [];
+const fileDict = findSync();
 
-  for (const fileName in fileDict) {
-    configList.push({
-      input: fileDict[fileName],
-      output: {
-        dir: 'lib',
-        format: 'umd',
-        name: fileName,
-      },
-      plugins: [
-        resolve(),
-        typescript(),
-        commonjs({
-          extensions: ['.js', '.ts'],
-        }),
-        babel({
-          babelHelpers: 'bundled',
-          exclude: 'node_modules/**',
-          extensions: ['.ts'],
-        }),
-        terser(),
-      ]
-    });
-  }
-
-  return configList;
+for (const fileName in fileDict) {
+  configList.push({
+    input: fileDict[fileName],
+    output: {
+      dir: 'lib',
+      format: 'umd',
+      name: fileName,
+    },
+    plugins: [
+      resolve(),
+      typescript(),
+      commonjs({
+        extensions: ['.js', '.ts'],
+      }),
+      babel({
+        babelHelpers: 'bundled',
+        exclude: 'node_modules/**',
+        extensions: ['.ts'],
+      }),
+      terser(),
+    ]
+  });
 }
 
-export default getConfigList();
+configList.push({
+  input: './src/index.ts',
+  output: {
+    dir: 'es',
+    format: 'es',
+  },
+  plugins: [
+    resolve(),
+    typescript(),
+    commonjs({
+      extensions: ['.js', '.ts'],
+    }),
+    babel({
+      babelHelpers: 'bundled',
+      exclude: 'node_modules/**',
+      extensions: ['.ts'],
+    }),
+    terser(),
+  ]
+});
+
+export default configList;
