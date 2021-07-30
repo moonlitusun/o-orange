@@ -1,4 +1,9 @@
 import { stringNumber } from './types/common/type';
+interface IExtraInfo {
+    balance?: number;
+    canEqual?: boolean;
+    parser?: (target: stringNumber) => string;
+}
 /**
  * Convert numbers to positive and negative signs
  *
@@ -16,5 +21,5 @@ import { stringNumber } from './types/common/type';
  * // => -15
  *
  */
-declare function toPositiveSign(num?: number, isContainZero?: boolean): stringNumber;
+declare function toPositiveSign(target: stringNumber, extraInfo?: IExtraInfo): stringNumber;
 export default toPositiveSign;
