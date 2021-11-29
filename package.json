@@ -9,6 +9,9 @@
     "javascript",
     "frontend"
   ],
+  "publishConfig": {
+    "@moonlitusun:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "clean": "rimraf lib/",
     "start": "npm run clean && rollup -c",
