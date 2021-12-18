@@ -10,7 +10,7 @@ export interface IUnitDict {
 }
 
 export interface IOption {
-  fixedLen?: number;
+  precision?: number;
   type?: number;
   placeholder?: string;
 }

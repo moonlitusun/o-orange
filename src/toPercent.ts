@@ -1,7 +1,12 @@
-import { DEFAULT_FIXED_LEN, DEFAULT_PLACEHOLDER } from './constant/default';
+import { DEFAULT_PRECISION, DEFAULT_PLACEHOLDER } from './constant/default';
 
 import toFixed from './toFixed';
 import { IOption } from './types/toPercent';
+
+interface IToPercentOptions extends IOption {
+  multiply?: number;
+}
+
 /**
  * Convert numbers to percentage
  *
@@ -12,29 +17,19 @@ import { IOption } from './types/toPercent';
  * @param {Object} [option = {}]
  * @param {string} [option.placeholder = '--'] Replace string when targetNum is NaN or not number
  * @returns {string}
- * @example
- *
- * toPercent(0.6515)
- * // => 65.15%
- *
- * toPercent(0.651525, 3)
- * // => 65.153%
- *
- * toPercent(NaN)
- * // => '--'
  *
  */
 function toPercent(
   num: number = 0,
-  fixedLen: number = DEFAULT_FIXED_LEN,
-  option: IOption = {},
+  
+  option: IToPercentOptions = {},
 ): string {
-  const { placeholder = DEFAULT_PLACEHOLDER } = option;
+  const { placeholder = DEFAULT_PLACEHOLDER, multiply = 1, precision = DEFAULT_PRECISION, } = option;
   const pureNum: number = Number(num);
 
   if (isNaN(pureNum)) return placeholder;
 
-  return `${toFixed(100 * num, fixedLen)}%`;
+  return `${toFixed(multiply * num, precision)}%`;
 }
 
 export default toPercent;

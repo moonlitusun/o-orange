@@ -1,5 +1,5 @@
 import toFixed from './toFixed';
-import { DEFAULT_FIXED_LEN, DEFAULT_PLACEHOLDER } from './constant/default';
+import { DEFAULT_PRECISION, DEFAULT_PLACEHOLDER } from './constant/default';
 import { IUnit, IUnitDict, IOption } from './types/toUnit';
 
 const unitDict: IUnitDict = {
@@ -35,7 +35,6 @@ const unitDict: IUnitDict = {
  *
  * @since 2.1.0
  * @param {number} num The number to convert
- * @param {number} [fixedLen] The length to Keep
  * @param {Object} [option = {}]
  * @param {string} [option.placeholder = '--'] Replace string when num is NaN or not number
  * @param {1 | 2 | 3} [option.type = 1] Unit 1 => en-us | 2 => zh-cn | 2 => zh-hk
@@ -51,10 +50,9 @@ const unitDict: IUnitDict = {
  */
 function toUnit(
   num: number = 0,
-  fixedLen = DEFAULT_FIXED_LEN,
   option: IOption = {}
 ): string {
-  const { type = 1, placeholder = DEFAULT_PLACEHOLDER } = option;
+  const { type = 1, placeholder = DEFAULT_PLACEHOLDER, precision = DEFAULT_PRECISION, } = option;
   const pureNum: number = Number(num);
 
   if (isNaN(pureNum)) return placeholder;
@@ -64,13 +62,13 @@ function toUnit(
   const numAbs: number = Math.abs(num);
   let result = '';
 
-  if (numAbs < unit[unitLen - 1].value) return toFixed(num, fixedLen, { placeholder });
+  if (numAbs < unit[unitLen - 1].value) return toFixed(num, precision, { placeholder });
 
   for (let i = 0; i < unitLen; i++) {
     const { label, value } = unit[i];
 
     if (numAbs >= value) {
-      result = `${num < 0 ? '-' : ''}${toFixed((numAbs / value), fixedLen, { placeholder })}${label}`;
+      result = `${num < 0 ? '-' : ''}${toFixed((numAbs / value), precision, { placeholder })}${label}`;
       break;
     }
   }
