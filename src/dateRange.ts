@@ -1,7 +1,30 @@
 import dateFormat from './dateFormat';
 
 import { stringNumber } from './types/common/type';
-import { IOptions, IRangeTypeList } from './types/dateRange';
+
+interface IOptions {
+  rangeType?: string;
+  dateType?: string;
+  rangeMultiple?: number;
+  fixedEndTime?: false;
+}
+
+interface IRangeTypeListChildrenObject {
+  get: string;
+  set: string;
+  unit: number;
+}
+
+interface IRangeTypeList {
+  millsecond: IRangeTypeListChildrenObject;
+  second: IRangeTypeListChildrenObject;
+  minute: IRangeTypeListChildrenObject;
+  hour: IRangeTypeListChildrenObject;
+  day: IRangeTypeListChildrenObject;
+  week: IRangeTypeListChildrenObject;
+  month: IRangeTypeListChildrenObject;
+  year: IRangeTypeListChildrenObject;
+}
 
 const RANGE_TYPE_LIST: IRangeTypeList = {
   millsecond: {

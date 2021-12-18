@@ -1,4 +1,10 @@
-import { DEFAULT_FIXED_LEN } from './constant/default';
+import { DEFAULT_PRECISION, DEFAULT_PLACEHOLDER } from './constant/default';
+import isTrue from './isTrue';
+
+interface IOption {
+  placeholder?: string;
+  precision?: number;
+}
 
 /**
  * Slice decimal
@@ -6,27 +12,22 @@ import { DEFAULT_FIXED_LEN } from './constant/default';
  * @categry Finace
  * @since 3.0.3
  * @param {number} num The number to convert
- * @param {number} [sliceLen = 2] The length to slice
  * @param {Object} [option = {}]
+ * @param {string} [option.placeholder = '--'] Replace string when targetNum is NaN or not number
+ * @param {number} [option.precision = 2] The length to slice
  * @returns {string}
  * @example
- *
- * toSlice(1.63456461, 2)
- * // => 1.63
- *
- * toSlice(1.63456461, 3)
- * // => 1.634
- *
- * toSlice(1, 2)
- * // => 1.00
  *
  */
 function toSlice(
   num: number = 0,
-  sliceLen: number = DEFAULT_FIXED_LEN,
+  option: IOption = {},
 ): string {
-  const multiple = Math.pow(10, sliceLen);
-  return  (parseInt(String(num * multiple), 10) / multiple).toFixed(sliceLen);
+  const { placeholder = DEFAULT_PLACEHOLDER, precision = DEFAULT_PRECISION } = option;
+
+  if (!isTrue(num)) return placeholder;
+  const multiple = Math.pow(10, precision);
+  return  (parseInt(String(num * multiple), 10) / multiple).toFixed(precision);
 }
 
 export default toSlice;

@@ -1,6 +1,19 @@
 import { DEFAULT_PLACEHOLDER } from './constant/default';
 import { stringNumber } from './types/common/type';
-import { IDateDict } from './types/dateFormat';
+
+export interface IDateDict {
+  yyyy: number;
+  M: number;
+  d: number;
+  H: number;
+  m: number;
+  s: number;
+  MM: string;
+  dd: string;
+  HH: string;
+  mm: string;
+  ss: string;
+}
 
 /**
  * Get date dictionary
@@ -42,10 +55,10 @@ function getDateDict(date: stringNumber): IDateDict {
  * // => 2019-01-24 10:43:05
  *
  */
-function dateFormat(date: Date | stringNumber, format = "yyyy-MM-dd HH:mm:ss"): string {
+function dateFormat(date: Date | stringNumber, format = 'yyyy-MM-dd HH:mm:ss'): string {
   if (!date) return DEFAULT_PLACEHOLDER;
 
-  // Compatible with ios system
+  // Compatible with iOS
   let internalDate: stringNumber | Date = date;
   if (typeof internalDate === 'string') internalDate = internalDate.replace(/-/g, '/');
 

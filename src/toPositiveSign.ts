@@ -1,9 +1,10 @@
+import { DEFAULT_PLACEHOLDER } from './constant/default';
 import { stringNumber } from './types/common/type';
-
-interface IExtraInfo {
+import isTrue from './isTrue';
+interface IOption {
   balance?: number;
   canEqual?: boolean;
-  parser?: (target: stringNumber) => string;
+  placeholder?: string;
 }
 
 /**
@@ -16,22 +17,16 @@ interface IExtraInfo {
  * @returns {string}
  * @example
  *
- * toPositiveSign(15)
- * // => +15
- *
- * toThousand(-15)
- * // => -15
- *
  */
 function toPositiveSign(
   target: stringNumber,
-  extraInfo: IExtraInfo = {},
-): stringNumber {
-  const { canEqual = false, balance = 0, parser } = extraInfo;
+  option: IOption = {},
+): string {
+  const { canEqual = false, balance = 0, placeholder = DEFAULT_PLACEHOLDER } = option;
+  if (!isTrue(target)) return placeholder;
   const isMoreThan = canEqual ? target >= balance : target > balance;
-  if (parser) target = parser(target);
 
-  return isMoreThan ? `+${target}` : target;
+  return isMoreThan ? `+${target}` : target.toString();
 }
 
 export default toPositiveSign;

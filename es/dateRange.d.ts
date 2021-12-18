@@ -1,5 +1,10 @@
 import { stringNumber } from './types/common/type';
-import { IOptions } from './types/dateRange';
+interface IOptions {
+    rangeType?: string;
+    dateType?: string;
+    rangeMultiple?: number;
+    fixedEndTime?: false;
+}
 /**
  *
  * Generate an ordered time interval array
@@ -17,3 +22,4 @@ import { IOptions } from './types/dateRange';
  *
  */
 export default function dateRange(beginTime: stringNumber, endTime: stringNumber, options?: IOptions): string[];
+export {};

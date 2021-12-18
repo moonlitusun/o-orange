@@ -1,6 +1,23 @@
 import toFixed from './toFixed';
 import { DEFAULT_PRECISION, DEFAULT_PLACEHOLDER } from './constant/default';
-import { IUnit, IUnitDict, IOption } from './types/toUnit';
+
+export interface IUnit {
+  label: string;
+  value: number;
+}
+
+export interface IUnitDict {
+  1: IUnit[];
+  2: IUnit[];
+  3: IUnit[];
+}
+
+export interface IOption {
+  precision?: number;
+  type?: number;
+  placeholder?: string;
+}
+
 
 const unitDict: IUnitDict = {
   1: [
@@ -62,13 +79,13 @@ function toUnit(
   const numAbs: number = Math.abs(num);
   let result = '';
 
-  if (numAbs < unit[unitLen - 1].value) return toFixed(num, precision, { placeholder });
+  if (numAbs < unit[unitLen - 1].value) return toFixed(num, { placeholder, precision });
 
   for (let i = 0; i < unitLen; i++) {
     const { label, value } = unit[i];
 
     if (numAbs >= value) {
-      result = `${num < 0 ? '-' : ''}${toFixed((numAbs / value), precision, { placeholder })}${label}`;
+      result = `${num < 0 ? '-' : ''}${toFixed((numAbs / value), { placeholder, precision })}${label}`;
       break;
     }
   }
