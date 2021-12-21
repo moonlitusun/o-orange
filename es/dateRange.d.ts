@@ -21,5 +21,5 @@ interface IOptions {
  * @returns {Array}
  *
  */
-export default function dateRange(beginTime: stringNumber, endTime: stringNumber, options?: IOptions): string[];
+export default function dateRange(beginTime: stringNumber | Date, endTime: stringNumber | Date, options?: IOptions): string[];
 export {};

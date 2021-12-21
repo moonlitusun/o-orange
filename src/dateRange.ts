@@ -86,8 +86,8 @@ const RANGE_TYPE_LIST: IRangeTypeList = {
  *
  */
 export default function dateRange(
-  beginTime: stringNumber,
-  endTime: stringNumber,
+  beginTime: stringNumber | Date,
+  endTime: stringNumber | Date,
   options: IOptions = {},
 ): string[] {
   if (!beginTime || !endTime) throw new Error('You must specify the start and end time');
