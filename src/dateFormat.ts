@@ -39,6 +39,10 @@ function getDateDict(date: stringNumber): IDateDict {
   };
 }
 
+interface IOption {
+  isNoSignDate?: boolean;
+}
+
 /**
  *
  * Conversion time format
@@ -47,6 +51,8 @@ function getDateDict(date: stringNumber): IDateDict {
  * @since 0.0.1
  * @param {string | number} date The date to convert
  * @param {string} format yyyy, M, MM, dd, d, HH, H, mm, m, ss, s
+ * @param {Object} [option = {}]
+ * @param {boolean} [option.isNoSignDate = false] is no sign date, e.g. 20211121
  * @returns {string}
  * @example
  *
@@ -55,12 +61,15 @@ function getDateDict(date: stringNumber): IDateDict {
  * // => 2019-01-24 10:43:05
  *
  */
-function dateFormat(date: Date | stringNumber, format = 'yyyy-MM-dd HH:mm:ss'): string {
+function dateFormat(date: Date | stringNumber, format = 'yyyy-MM-dd HH:mm:ss', options: IOption = {}): string {
   if (!date) return DEFAULT_PLACEHOLDER;
 
+  const { isNoSignDate = false } = options;
   // Compatible with iOS
   let internalDate: stringNumber | Date = date;
   if (typeof internalDate === 'string') internalDate = internalDate.replace(/-/g, '/');
+
+  if (isNoSignDate) internalDate = date.toString().replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3');
 
   try {
     return format.replace(/(yyyy|MM?|dd?|HH?|mm?|ss?)/g, f => getDateDict(internalDate as string)[f]);
