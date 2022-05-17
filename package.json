@@ -1,5 +1,5 @@
 {
-  "name": "@moonlitusun/o-orange",
+  "name": "@dz-web/o-orange",
   "version": "3.5.7",
   "description": "A javascript utility library",
   "main": "./lib/orange.js",
@@ -9,9 +9,6 @@
     "javascript",
     "frontend"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "clean": "rimraf lib/",
     "start": "npm run clean && rollup -c",
