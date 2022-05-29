@@ -3,6 +3,7 @@
   "version": "3.5.7",
   "description": "A javascript utility library",
   "main": "./lib/orange.js",
+  "module": "./es/index.js",
   "keywords": [
     "utils",
     "util",

@@ -8,55 +8,55 @@ const fs = require('fs');
 const join = require('path').join;
 
 /**
- *
- * @param startPath
- * @returns {Array}
- */
-function findSync(startPath = './src') {
-  const entryList = {};
-  const files = fs.readdirSync(startPath);
+//  *
+//  * @param startPath
+//  * @returns {Array}
+//  */
+// function findSync(startPath = './src') {
+//   const entryList = {};
+//   const files = fs.readdirSync(startPath);
 
-  files.forEach(val => {
-    const fPath = join(startPath, val);
-    const stats = fs.statSync(fPath);
-    // if (stats.isDirectory()) findSync(fPath);
-    if (stats.isFile()) {
-      const match = fPath.match(/src\/(\S*)(.ts|.js)/);
-      const name = match[1];
+//   files.forEach(val => {
+//     const fPath = join(startPath, val);
+//     const stats = fs.statSync(fPath);
+//     // if (stats.isDirectory()) findSync(fPath);
+//     if (stats.isFile()) {
+//       const match = fPath.match(/src\/(\S*)(.ts|.js)/);
+//       const name = match[1];
 
-      entryList[name] = `./src/${name}.${match[2] === '.js' ? 'js' : 'ts'}`;
-    }
-  });
+//       entryList[name] = `./src/${name}.${match[2] === '.js' ? 'js' : 'ts'}`;
+//     }
+//   });
 
-  return entryList;
-}
+//   return entryList;
+// }
 
 const configList = [];
-const fileDict = findSync();
+// const fileDict = findSync();
 
-for (const fileName in fileDict) {
-  configList.push({
-    input: fileDict[fileName],
-    output: {
-      dir: 'lib',
-      format: 'umd',
-      name: fileName,
-    },
-    plugins: [
-      resolve(),
-      typescript(),
-      commonjs({
-        extensions: ['.js', '.ts'],
-      }),
-      babel({
-        babelHelpers: 'bundled',
-        exclude: 'node_modules/**',
-        extensions: ['.ts'],
-      }),
-      terser(),
-    ]
-  });
-}
+// for (const fileName in fileDict) {
+//   configList.push({
+//     input: fileDict[fileName],
+//     output: {
+//       dir: 'lib',
+//       format: 'umd',
+//       name: fileName,
+//     },
+//     plugins: [
+//       resolve(),
+//       typescript(),
+//       commonjs({
+//         extensions: ['.js', '.ts'],
+//       }),
+//       babel({
+//         babelHelpers: 'bundled',
+//         exclude: 'node_modules/**',
+//         extensions: ['.ts'],
+//       }),
+//       terser(),
+//     ]
+//   });
+// }
 
 configList.push({
   input: './src/index.ts',
