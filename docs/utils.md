@@ -28,7 +28,7 @@ const url = 'http://localhost:8080/?key=3';
 parseUrl(url, 'key'); // 3
 parseUrl(url, 'value'); // null
 
-parseUrlBySearch('key'); // 3
+console.log(parseUrlBySearch('key'));
 parseUrlBySearch('value'); // null
 
 // And can use parseUrlByHash

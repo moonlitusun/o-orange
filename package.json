@@ -14,7 +14,6 @@
   "scripts": {
     "clean": "rimraf lib/",
     "start": "npm run clean && rollup -c",
-    "pub": "npm publish --registry https://registry.npmjs.org/",
     "test": "jest --coverage && coveralls < coverage/lcov.info",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch --notify",
