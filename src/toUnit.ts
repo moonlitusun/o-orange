@@ -1,4 +1,4 @@
-import toFixed from './toFixed';
+import toFixed, { IToFixedOption } from './toFixed';
 import { DEFAULT_PRECISION, DEFAULT_PLACEHOLDER } from './constant/default';
 
 export interface IUnit {
@@ -12,10 +12,8 @@ export interface IUnitDict {
   3: IUnit[];
 }
 
-export interface IOption {
-  precision?: number;
+export interface IOption extends IToFixedOption {
   type?: number;
-  placeholder?: string;
 }
 
 
@@ -69,7 +67,7 @@ function toUnit(
   num: number = 0,
   option: IOption = {}
 ): string {
-  const { type = 1, placeholder = DEFAULT_PLACEHOLDER, precision = DEFAULT_PRECISION, } = option;
+  const { type = 1, placeholder = DEFAULT_PLACEHOLDER, precision = DEFAULT_PRECISION, ignoreIntegerPrecision = true } = option;
   const pureNum: number = Number(num);
 
   if (isNaN(pureNum)) return placeholder;
@@ -78,14 +76,15 @@ function toUnit(
   const unitLen: number = unit.length;
   const numAbs: number = Math.abs(num);
   let result = '';
+  const toFixedParams = { placeholder, precision, ignoreIntegerPrecision: true };
 
-  if (numAbs < unit[unitLen - 1].value) return toFixed(num, { placeholder, precision });
+  if (numAbs < unit[unitLen - 1].value) return toFixed(num, toFixedParams);
 
   for (let i = 0; i < unitLen; i++) {
     const { label, value } = unit[i];
 
     if (numAbs >= value) {
-      result = `${num < 0 ? '-' : ''}${toFixed((numAbs / value), { placeholder, precision })}${label}`;
+      result = `${num < 0 ? '-' : ''}${toFixed((numAbs / value), toFixedParams)}${label}`;
       break;
     }
   }

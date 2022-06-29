@@ -1,7 +1,8 @@
 import { stringNumber } from './types/common/type';
-interface IOption {
+export interface IToFixedOption {
     placeholder?: string;
     precision?: number;
+    ignoreIntegerPrecision?: boolean;
 }
 /**
  * Convert numbers to fixed
@@ -16,5 +17,5 @@ interface IOption {
  * @example
  *
  */
-declare function toFixed(num?: stringNumber, option?: IOption): string;
+declare function toFixed(num?: stringNumber, option?: IToFixedOption): string;
 export default toFixed;

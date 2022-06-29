@@ -1,3 +1,4 @@
+import { IToFixedOption } from './toFixed';
 export interface IUnit {
     label: string;
     value: number;
@@ -7,10 +8,8 @@ export interface IUnitDict {
     2: IUnit[];
     3: IUnit[];
 }
-export interface IOption {
-    precision?: number;
+export interface IOption extends IToFixedOption {
     type?: number;
-    placeholder?: string;
 }
 /**
  *

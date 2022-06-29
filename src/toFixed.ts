@@ -2,9 +2,10 @@ import { DEFAULT_PRECISION, DEFAULT_PLACEHOLDER } from './constant/default';
 
 import { stringNumber } from './types/common/type';
 
- interface IOption {
+export interface IToFixedOption {
   placeholder?: string;
   precision?: number;
+  ignoreIntegerPrecision?: boolean;
 }
 
 /**
@@ -22,12 +23,16 @@ import { stringNumber } from './types/common/type';
  */
 function toFixed(
   num: stringNumber = 0,
-  option: IOption = {},
+  option: IToFixedOption = {},
 ): string {
-  const { placeholder = DEFAULT_PLACEHOLDER, precision = DEFAULT_PRECISION } = option;
+  const { placeholder = DEFAULT_PLACEHOLDER, precision = DEFAULT_PRECISION, ignoreIntegerPrecision = false } = option;
   const pureNum: number = Number(num);
 
   if (isNaN(pureNum)) return placeholder;
+
+  if (ignoreIntegerPrecision && Number.parseFloat(pureNum.toString()) === Number.parseInt(pureNum.toString())) {
+    return num as string;
+  }
 
   return pureNum.toFixed(precision);
 }
