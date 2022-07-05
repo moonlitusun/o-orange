@@ -1,6 +1,6 @@
 {
   "name": "@dz-web/o-orange",
-  "version": "3.5.11",
+  "version": "3.5.12",
   "description": "A javascript utility library",
   "main": "./lib/orange.js",
   "module": "./es/index.js",

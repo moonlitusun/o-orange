@@ -1,4 +1,5 @@
 export { default as dateRange } from './dateRange';
+export { default as dateFormat } from './dateFormat';
 export { default as ensure } from './ensure';
 export { default as isTrue } from './isTrue';
 export { default as isUndefined } from './isUndefined';
