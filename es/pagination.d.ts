@@ -7,7 +7,7 @@
  * @param {number} [pageNum = 1] Current page number(Calculate the page number from the back when it is negative)
  * @param {number} [pageSize = 10] One page of size
  * @returns {Array}
- * @example
+ * @Examples
  *
  * pagination([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2, 8)
  * // => [9, 10]

@@ -3,7 +3,7 @@
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean}
- * @example
+ * @Examples
  *
  * isArray([0, 1, 2, 3])
  * // => true

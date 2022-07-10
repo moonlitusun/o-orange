@@ -1,24 +1,22 @@
+# parseUrl
 
-# Utils
+**待废弃，推荐使用[query-string](https://github.com/sindresorhus/query-string)**
+ Match the parameter value of url by key
 
-## parseUrl()
+## Since
 
-[⬆️ Back to menu](#API)
+`2.0.4`
 
-```js
-/**
- * Match the parameter value of url by key
- *
- * @category Util
- * @since 2.0.1
- * @param {string} url the url to match
- * @param {string} key The key to match
- * @returns {string} Matched value
- *
- */
-```
+## Arguments
 
-*e.g:*
+- `url: string`: the url to match
+- `key: string`: The key to match
+
+## Returns
+
+- `Returns: string`: Matched value
+
+## Examples
 
 ```js
 import parseUrl, { parseUrlByHash, parseUrlBySearch } from 'o-orange/lib/parseUrl';

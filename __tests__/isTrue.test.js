@@ -1,4 +1,4 @@
-import isTrue from '../lib/isTrue';
+import { isTrue } from '../es';
 
 test('is false not zero', () => {
   expect(isTrue(0)).toBeTruthy();

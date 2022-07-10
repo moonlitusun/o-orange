@@ -7,14 +7,14 @@ export interface IToFixedOption {
 /**
  * Convert numbers to fixed
  *
- * @categry Finace
  * @since 0.0.1
  * @param {number | string} num The number to convert
  * @param {Object} [option = {}]
  * @param {string} [option.placeholder = '--'] Replace string when targetNum is NaN or not number
  * @param {number} [option.precision = 2] The length to Keep
+ * @param {boolean} [option.ignoreIntegerPrecision = false] if target is inter, ignore toFixed
  * @returns {string}
- * @example
+ * @Examples
  *
  */
 declare function toFixed(num?: stringNumber, option?: IToFixedOption): string;

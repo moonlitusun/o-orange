@@ -1,9 +1,9 @@
 /**
  * @since 3.1.0
  * @category Finace
- * @param {*} value The value to check.
+ * @param {number | string} value The value to check.
  * @returns {boolean}
- * @example
+ * @Examples
  *
  * isTrue(false)
  * // => false
@@ -12,8 +12,8 @@
  * // => true
  *
  */
- function isTrue(value: any): boolean {
-  return value || value === 0;
+ function isTrue(value: number | string): boolean {
+  return !!(value) || value === 0;
 }
 
 export default isTrue;

@@ -3,7 +3,7 @@
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean}
- * @example
+ * @Examples
  *
  * isUndefined(undefined)
  * // => true

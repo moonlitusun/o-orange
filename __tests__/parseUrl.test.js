@@ -1,4 +1,4 @@
-import parseUrl from '../lib/parseUrl';
+import { parseUrl } from '../es';
 
 test('parseUrl', () => {
   const url = 'http://localhost:8080/?key=3'

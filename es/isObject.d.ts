@@ -3,7 +3,7 @@
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean}
- * @example
+ * @Examples
  *
  * isObject({a: 1, b: 2})
  * // => true

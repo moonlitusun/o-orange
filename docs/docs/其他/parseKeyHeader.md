@@ -1,56 +1,20 @@
-# Array
-
-## pagination()
-
-Cut the array
-
-### Since
-
-`0.0.1`
-
-### Arguments
-
-- `array: Array`: The array to execute
-- `[pageNum = 1]: number`: Current page number(Calculate the page number from the back when it is negative)
-- `[pageSize = 10]: number`: The size of one page.
-
-### Returns
-
-- `result: Array`: Returns the new array of result.
-
-### Examples
-
-```js
-import pagination from 'o-orange/lib/pagination';
-
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-
-pagination(arr, 1, 5)  // [1, 2, 3, 4, 5]
-
-pagination(arr, 2, 3)  // [4, 5, 6]
-
-pagination(arr, -1, 5) // [7, 8, 9, 10, 11]
-```
-
----
-
-## parseKeyHeader()
+# parseKeyHeader
 
 Convert the first subproject to an array of keys to a json array
 
-### Since
+## Since
 
 `2.0.4`
 
-### Arguments
+## Arguments
 
 - `target: Array`: The array to execute
 
-### Returns
+## Returns
 
-- `result: Array`: Returns the new array of result.
+- `Returns: Array`: Returns the new array of result.
 
-### Examples
+## Examples
 
 ```js
 const k_line_data = [

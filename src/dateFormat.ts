@@ -54,7 +54,7 @@ interface IOption {
  * @param {Object} [option = {}]
  * @param {boolean} [option.isNoSignDate = false] is no sign date, e.g. 20211121
  * @returns {string}
- * @example
+ * @Examples
  *
  * dateFormat(1548297785895, 'yy
  * yy-MM-dd HH:mm:ss')

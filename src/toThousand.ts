@@ -1,12 +1,11 @@
 /**
  * Convert numbers to thousands of digits
  *
- * @categry Finace
  * @since 0.0.1
  * @param {number} num The number to convert
  * @param {string} [sign = ','] Splitter
  * @returns {string}
- * @example
+ * @Examples
  *
  * toThousand(11345)
  * // => 11,345

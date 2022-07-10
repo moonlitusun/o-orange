@@ -1,4 +1,12 @@
-<h2 align="center" style="color: #b5b928b5;font-size:45px">🍊 o-orange</h1>
+---
+title: 开始
+nav:
+  order: 1
+group:
+  order: 1
+---
+
+<h2 align="center" style="color: #b5b928b5;font-size:45px">o-orange</h2>
 
 <h5 align="center" style="color: #b5b928b5;fontSize: 25px;marginBottom: 100px">Implementation of some useful functions</h5>
 
@@ -12,23 +20,17 @@
 Use npm
 
 ```bash
-npm install o-orange
+npm install @dz-web/o-orange
 ```
 
 Use yarn
 
 ```bash
-yarn add o-orange
+yarn add @dz-web/o-orange
 ```
 
 # Usage
 
 ```js
-import O from 'o-orange';
-```
-
-Or
-
-```js
-import isNumber from 'o-orange/lib/isNumber';
+import { ensure } from '@dz-web/o-orange';
 ```

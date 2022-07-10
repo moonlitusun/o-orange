@@ -5,7 +5,7 @@
  * @param {string | Function} failureCallback failureCallback.
  * @param {string | Function} successCallback successCallback.
  * @returns {string}
- * @example
+ * @Examples
  *
  * ensure(0)
  * // => true

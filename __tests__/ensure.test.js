@@ -1,5 +1,4 @@
-import ensure from '../lib/ensure';
-import isTrue from '../lib/isTrue';
+import { ensure, isTrue } from '../es';
 
 test('ensure', () => {
   expect(ensure(1)).toEqual(1);

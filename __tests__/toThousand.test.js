@@ -1,4 +1,4 @@
-import toThousand from '../lib/toThousand';
+import { toThousand } from '../es';
 
 test('toThousand', () => {
   expect(toThousand(11345)).toBe('11,345');

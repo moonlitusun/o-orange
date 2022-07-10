@@ -1,4 +1,4 @@
-import toPercent from '../lib/toPercent';
+import { toPercent } from '../es';
 
 test('toPercent', () => {
   expect(toPercent(0.6515, { multiply: 100, precision: 2 })).toBe('65.15%');

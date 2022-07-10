@@ -9,8 +9,7 @@ export { default as parseUrl, parseUrlByHash, parseUrlBySearch } from './parseUr
 export { default as toFixed } from './toFixed';
 export { default as toPositiveSign } from './toPositiveSign';
 export { default as toPlaceholder } from './toPlaceholder';
-export { default as toPlaceholderNotZero } from './toPlaceholderNotZero';
 export { default as toPercent } from './toPercent';
 export { default as toSlice } from './toSlice';
 export { default as toThousand } from './toThousand';
-export { default as toUnit } from './toUnit';
+export { default as toUnit, UNIT_LAN } from './toUnit';

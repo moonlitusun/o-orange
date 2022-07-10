@@ -15,7 +15,7 @@ interface IOption {
  * @param {number} num The number to convert
  * @param {boolean} [isContainZero = false] Whether contain zero
  * @returns {string}
- * @example
+ * @Examples
  *
  */
 function toPositiveSign(

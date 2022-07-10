@@ -3,7 +3,7 @@
  * @category Finace
  * @param {*} value The value to convert.
  * @returns {any}
- * @example
+ * @Examples
  *
  * toPlaceholderNotZero(1)
  * // => 1

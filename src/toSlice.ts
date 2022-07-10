@@ -4,30 +4,38 @@ import isTrue from './isTrue';
 interface IOption {
   placeholder?: string;
   precision?: number;
+  ignoreIntegerPrecision?: boolean;
 }
 
 /**
  * Slice decimal
  *
- * @categry Finace
  * @since 3.0.3
  * @param {number} num The number to convert
  * @param {Object} [option = {}]
  * @param {string} [option.placeholder = '--'] Replace string when targetNum is NaN or not number
  * @param {number} [option.precision = 2] The length to slice
+ * @param {boolean} [option.ignoreIntegerPrecision = false] if target is inter, ignore toFixed
  * @returns {string}
- * @example
+ * @Examples
  *
  */
 function toSlice(
-  num: number = 0,
+  num: number | string,
   option: IOption = {},
 ): string {
-  const { placeholder = DEFAULT_PLACEHOLDER, precision = DEFAULT_PRECISION } = option;
-
+  const { placeholder = DEFAULT_PLACEHOLDER, precision = DEFAULT_PRECISION, ignoreIntegerPrecision = false } = option;
   if (!isTrue(num)) return placeholder;
+  const pureNum = Number(num);
+
+  if (isNaN(pureNum)) return placeholder;
+
+  if (ignoreIntegerPrecision && Number.parseFloat(pureNum.toString()) === Number.parseInt(pureNum.toString())) {
+    return pureNum.toString();
+  }
+
   const multiple = Math.pow(10, precision);
-  return  (parseInt(String(num * multiple), 10) / multiple).toFixed(precision);
+  return  (parseInt(String(pureNum * multiple), 10) / multiple).toFixed(precision);
 }
 
 export default toSlice;

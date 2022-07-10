@@ -1,4 +1,4 @@
-import parseKeyHeader from '../lib/parseKeyHeader';
+import { parseKeyHeader } from '../es';
 
 test('is parseKeyHeader', () => {
   const arr = [

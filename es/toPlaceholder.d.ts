@@ -1,9 +1,8 @@
 /**
  * @since 2.1.3
- * @category Finace
- * @param {*} value The value to convert.
- * @returns {any}
- * @example
+ * @param {string | number} num The value to convert.
+ * @returns {T}
+ * @Examples
  *
  * toPlaceholder(1)
  * // => 1
@@ -12,5 +11,5 @@
  * // => '--'
  *
  */
-declare function toPlaceholder<T>(value: any): T | string;
+declare function toPlaceholder(num: string | number): string | number;
 export default toPlaceholder;

@@ -8,7 +8,7 @@ type ReturnFunction = (key: string) => string;
  * @param {string} url the url to match
  * @param {string} key The key to match
  * @returns {string} Matched value
- * @example
+ * @Examples
  *
  * const url = 'http://localhost:8080/?key=3';
  *

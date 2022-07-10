@@ -1,10 +1,14 @@
 node_modules/
 coverage/
 .DS_Store
-example-dist/
-.umi
+Examples-dist/
 
 #
 *.lock
 *-error.log
+
+# umi
+.umi*
+.mfsu-*
+.mfsu
 
