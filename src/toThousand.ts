@@ -1,3 +1,5 @@
+import { stringNumber } from './types/common/type';
+
 /**
  * Convert numbers to thousands of digits
  *
@@ -14,7 +16,7 @@
  * // => 11 345.2345
  *
  */
-function toThousand(num: number = 0, sign: string = ','): string {
+function toThousand(num: stringNumber = 0, sign: string = ','): string {
   const [integer, decimals]: string[] = num.toString().split('.');
 
   const thousandInteger = integer.replace(/\B(?=(\d{3})+(?!\d))/g, sign);

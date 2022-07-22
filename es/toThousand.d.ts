@@ -1,3 +1,4 @@
+import { stringNumber } from './types/common/type';
 /**
  * Convert numbers to thousands of digits
  *
@@ -14,5 +15,5 @@
  * // => 11 345.2345
  *
  */
-declare function toThousand(num?: number, sign?: string): string;
+declare function toThousand(num?: stringNumber, sign?: string): string;
 export default toThousand;
