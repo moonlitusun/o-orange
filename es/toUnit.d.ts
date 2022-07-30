@@ -4,9 +4,9 @@ export interface IUnit {
     value: number;
 }
 export declare enum UNIT_LAN {
-    'cn' = "zh-CN",
-    'tw' = "zh-TW",
-    'us' = "en-US"
+    ZH_CN = "zh-CN",
+    ZH_TW = "zh-TW",
+    en_US = "en-US"
 }
 export interface IOptions extends IToFixedOption {
     lanType?: UNIT_LAN;
@@ -29,5 +29,5 @@ export interface IOptions extends IToFixedOption {
  * // 100.800K
  *
  */
-declare function toUnit(num?: number, options?: IOptions): string;
+declare function toUnit(num?: number | string, options?: IOptions): string;
 export default toUnit;

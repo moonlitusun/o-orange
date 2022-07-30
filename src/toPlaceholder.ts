@@ -14,7 +14,7 @@ import { DEFAULT_PLACEHOLDER } from './constant/default';
  * // => '--'
  *
  */
-function toPlaceholder(num: string | number): string | number {
+function toPlaceholder(num: any): any {
   return isTrue(num) ? num : DEFAULT_PLACEHOLDER;
 }
 

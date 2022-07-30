@@ -7,7 +7,7 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
-  publicPath: '/ld/o-orange/',
+  publicPath: '/',
   mode: 'doc',
   mfsu: {
     development : {
@@ -17,13 +17,6 @@ export default defineConfig({
     //   output : "./.mfsu-prod",
     // }
   },
-  themeConfig: {
-    repository: {
-       url: '',
-       branch: 'master',
-       platform: 'github',
-     },
-   },
   favicon: './images/dz-logo.jpg',
   logo: './images/dz-logo.jpg',
 });

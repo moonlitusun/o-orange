@@ -1,6 +1,6 @@
 {
   "name": "@dz-web/o-orange",
-  "version": "3.6.1",
+  "version": "3.6.5",
   "description": "A javascript utility library",
   "main": "./lib/orange.js",
   "module": "./es/index.js",
@@ -25,12 +25,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/moonlitusun/o-orange"
+    "url": ""
   },
   "author": "moonlit",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/moonlitusun/o-orange/issues"
+    "url": ""
   },
   "files": [
     "lib",

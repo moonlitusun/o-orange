@@ -11,5 +11,5 @@
  * // => '--'
  *
  */
-declare function toPlaceholder(num: string | number): string | number;
+declare function toPlaceholder(num: any): any;
 export default toPlaceholder;
