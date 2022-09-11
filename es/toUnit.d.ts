@@ -6,7 +6,7 @@ export interface IUnit {
 export declare enum UNIT_LAN {
     ZH_CN = "zh-CN",
     ZH_TW = "zh-TW",
-    en_US = "en-US"
+    EN_US = "en-US"
 }
 export interface IOptions extends IToFixedOption {
     lanType?: UNIT_LAN;

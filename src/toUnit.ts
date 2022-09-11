@@ -9,7 +9,7 @@ export interface IUnit {
 export enum UNIT_LAN {
   ZH_CN = 'zh-CN',
   ZH_TW = 'zh-TW',
-  en_US = 'en-US'
+  EN_US = 'en-US'
 }
 
 export interface IOptions extends IToFixedOption {
@@ -17,7 +17,7 @@ export interface IOptions extends IToFixedOption {
 }
 
 const unitDict: Record<UNIT_LAN, IUnit[]> = {
-  [UNIT_LAN.en_US]: [
+  [UNIT_LAN.EN_US]: [
     { value: Math.pow(10, 12), label: 'T' },
     { value: Math.pow(10, 9), label: 'B' },
     { value: Math.pow(10, 6), label: 'M' },
@@ -55,7 +55,7 @@ const unitDict: Record<UNIT_LAN, IUnit[]> = {
  */
 function toUnit(num: number | string = 0, options: IOptions = {}): string {
   const {
-    lanType = UNIT_LAN.en_US,
+    lanType = UNIT_LAN.EN_US,
     placeholder = DEFAULT_PLACEHOLDER,
     precision = DEFAULT_PRECISION,
     ignoreIntegerPrecision = true,
@@ -64,7 +64,7 @@ function toUnit(num: number | string = 0, options: IOptions = {}): string {
 
   if (isNaN(pureNum)) return placeholder;
 
-  const unit: IUnit[] = unitDict[lanType] || unitDict[UNIT_LAN.en_US];
+  const unit: IUnit[] = unitDict[lanType] || unitDict[UNIT_LAN.EN_US];
   const unitLen: number = unit.length;
   const numAbs: number = Math.abs(+num);
   let result = '';
