@@ -5,6 +5,7 @@ interface IOption {
   balance?: number;
   canEqual?: boolean;
   placeholder?: string;
+  parseFloat?: boolean;
 }
 
 /**
@@ -18,13 +19,14 @@ interface IOption {
  * @Examples
  *
  */
-function toPositiveSign(
-  target: stringNumber,
+function toPositiveSign<T extends stringNumber>(
+  target: T,
   option: IOption = {},
 ): string {
-  const { canEqual = false, balance = 0, placeholder = DEFAULT_PLACEHOLDER } = option;
+  const { canEqual = false, balance = 0, placeholder = DEFAULT_PLACEHOLDER, parseFloat = true } = option;
+  const parserTarget = parseFloat ? Number.parseFloat(target as string) : target;
   if (!isTrue(target)) return placeholder;
-  const isMoreThan = canEqual ? target >= balance : target > balance;
+  const isMoreThan = canEqual ? parserTarget >= balance : parserTarget > balance;
 
   return isMoreThan ? `+${target}` : target.toString();
 }

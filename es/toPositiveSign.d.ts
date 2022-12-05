@@ -3,6 +3,7 @@ interface IOption {
     balance?: number;
     canEqual?: boolean;
     placeholder?: string;
+    parseFloat?: boolean;
 }
 /**
  * Convert numbers to positive and negative signs
@@ -15,5 +16,5 @@ interface IOption {
  * @Examples
  *
  */
-declare function toPositiveSign(target: stringNumber, option?: IOption): string;
+declare function toPositiveSign<T extends stringNumber>(target: T, option?: IOption): string;
 export default toPositiveSign;
