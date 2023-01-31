@@ -20,6 +20,7 @@
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "docs:start": "cross-env APP_ROOT=docs dumi dev",
     "docs:build": "cross-env APP_ROOT=docs dumi build",
+    "docs:dep": "yarn docs:build && npx dz-ud /ld/o-orange",
     "docs:deploy": "yarn docs:build && git subtree push --prefix dist/ origin gh-pages",
     "fix-memory-limit": "cross-env LIMIT=5000 increase-memory-limit"
   },
