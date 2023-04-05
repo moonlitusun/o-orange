@@ -1,4 +1,4 @@
-import { toPositiveSign } from '../es';
+import { toPositiveSign } from '../dist';
 
 test('toPositiveSign', () => {
   expect(toPositiveSign(1)).toBe('+1');

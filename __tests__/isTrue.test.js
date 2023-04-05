@@ -1,4 +1,4 @@
-import { isTrue } from '../es';
+import { isTrue } from '../dist';
 
 test('is false not zero', () => {
   expect(isTrue(0)).toBeTruthy();

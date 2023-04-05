@@ -12,4 +12,6 @@ Examples-dist/
 .umi-production
 .mfsu-*
 .mfsu
+.dumi
 
+dist/

@@ -1,4 +1,4 @@
-import { ensure, isTrue } from '../es';
+import { ensure, isTrue } from '../dist';
 
 test('ensure', () => {
   expect(ensure(1)).toEqual(1);

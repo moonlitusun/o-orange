@@ -1,4 +1,4 @@
-import { toSlice } from '../es';
+import { toSlice } from '../dist';
 
 test('toSlice', () => {
   expect(toSlice(1.63456461, { precision: 2 })).toBe('1.63');

@@ -1,3 +1,8 @@
+---
+group:
+  order: 2
+---
+
 # dateRange
 
 Generate an ordered time interval array

@@ -61,7 +61,7 @@ const configList = [];
 configList.push({
   input: './src/index.ts',
   output: {
-    dir: 'es',
+    dir: 'dist/es',
     format: 'es',
   },
   plugins: [

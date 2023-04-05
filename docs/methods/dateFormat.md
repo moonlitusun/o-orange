@@ -1,11 +1,11 @@
 ---
 group:
-  order: 3
+  order: 2
 ---
 
 # dateFormat
 
-**待废弃，推荐使用[dayjs](https://day.js.org/en/**
+**待废弃，推荐使用[dayjs](https://day.js.org/en/)**
 
 ## Since
 

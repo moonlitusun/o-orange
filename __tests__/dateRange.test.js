@@ -1,4 +1,4 @@
-import { dateRange } from '../es';
+import { dateRange } from '../dist';
 
 test('dateRange', () => {
   expect(

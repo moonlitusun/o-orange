@@ -1,4 +1,4 @@
-import { toPlaceholder } from '../es';
+import { toPlaceholder } from '../dist';
 
 test('toPlaceholder', () => {
   expect(toPlaceholder(0)).toBe(0);

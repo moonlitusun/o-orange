@@ -1,4 +1,4 @@
-import { pagination } from '../es';
+import { pagination } from '../dist';
 
 test('is pagination', () => {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
