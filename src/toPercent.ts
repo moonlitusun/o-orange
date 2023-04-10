@@ -21,7 +21,7 @@ interface IOption {
  *
  */
 function toPercent(
-  num: number = 0,
+  num: number,
   option: IOption = {},
 ): string {
   const { placeholder = DEFAULT_PLACEHOLDER, multiply = 1, precision = DEFAULT_PRECISION } = option;

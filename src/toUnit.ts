@@ -53,7 +53,7 @@ const unitDict: Record<UNIT_LAN, IUnit[]> = {
  * // 100.800K
  *
  */
-function toUnit(num: number | string = 0, options: IOptions = {}): string {
+function toUnit(num: number | string, options: IOptions = {}): string {
   const {
     lanType = UNIT_LAN.EN_US,
     placeholder = DEFAULT_PLACEHOLDER,
