@@ -1,6 +1,6 @@
 {
   "name": "@dz-web/o-orange",
-  "version": "3.7.1",
+  "version": "3.7.2",
   "description": "A javascript utility library",
   "main": "./dist/index.js",
   "module": "dist/index.js",
@@ -34,8 +34,7 @@
     "url": ""
   },
   "files": [
-    "lib",
-    "es",
+    "dist",
     "CHANGELOG.md"
   ],
   "homepage": "https://moonlitusun.github.io/o-orange/",
