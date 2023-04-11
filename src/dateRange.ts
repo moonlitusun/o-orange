@@ -26,7 +26,7 @@ interface IRangeTypeList {
   year: IRangeTypeListChildrenObject;
 }
 
-const RANGE_TYPE_LIST: IRangeTypeList = {
+export const RANGE_TYPE_LIST: IRangeTypeList = {
   millsecond: {
     get: 'getMillseconds',
     set: 'setMillseconds',
@@ -85,7 +85,7 @@ const RANGE_TYPE_LIST: IRangeTypeList = {
  * @returns {Array}
  *
  */
-export default function dateRange(
+export function dateRange(
   beginTime: stringNumber | Date,
   endTime: stringNumber | Date,
   options: IOptions = {},
