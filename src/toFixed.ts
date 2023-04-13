@@ -25,7 +25,7 @@ export interface IToFixedOption {
  * @Examples
  *
  */
-function toFixed(num: stringNumber = 0, option: IToFixedOption = {}): string {
+function toFixed(num: stringNumber, option: IToFixedOption = {}): string {
   const {
     placeholder = DEFAULT_PLACEHOLDER,
     precision = DEFAULT_PRECISION,
