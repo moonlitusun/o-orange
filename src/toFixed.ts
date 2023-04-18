@@ -42,7 +42,7 @@ function toFixed(num: stringNumber, option: IToFixedOption = {}): string {
     Number.parseFloat(pureNum.toString()) ===
       Number.parseInt(pureNum.toString())
   ) {
-    return num as string;
+    return String(num);
   }
 
   return new Big(Number(pureNum)).toFixed(precision, RM);
