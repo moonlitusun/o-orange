@@ -35,7 +35,7 @@ function toFixed(num: stringNumber, option: IToFixedOption = {}): string {
   if (!isTrue(num)) return placeholder;
   const pureNum = Number(num);
 
-  if (isNaN(pureNum)) return placeholder;
+  if (isNaN(pureNum) || !isFinite(pureNum)) return placeholder;
 
   if (
     ignoreIntegerPrecision &&
