@@ -1,6 +1,5 @@
 stages:
   - build
-  - test
 
 build-job:
   stage: build
@@ -8,11 +7,4 @@ build-job:
   script:
     - npm install --registry "http://npm.web.dz"
     - npm run build
-  artifacts:
-    paths:
-      - "dist/"
-
-test-job:
-  stage: test
-  script:
     - npm run test
