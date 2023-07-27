@@ -1,6 +1,5 @@
 include:
   - project: common-lib
-  - ref: main
   - file: dingtalk-notice.yml
 
 variables:
