@@ -1,4 +1,4 @@
-states:
+stages:
   - build
   - test
 
@@ -6,15 +6,15 @@ default:
   image: node
 
 build-job:
-  state: build
+  stage: build
   script:
     - npm install
     - npm run build
   artifacts:
-    path:
+    paths:
       - "dist/"
 
 test-job:
-  state: test
+  stage: test
   script:
     - npm run test
