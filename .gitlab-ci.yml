@@ -8,7 +8,7 @@ default:
 build-job:
   stage: build
   script:
-    - npm install
+    - npm install --registry "http://npm.web.dz"
     - npm run build
   artifacts:
     paths:
