@@ -1,4 +1,4 @@
-import { toThousand } from '../dist';
+const toThousand = require('../dist/cjs/toThousand').default;
 
 test('toThousand', () => {
   expect(toThousand(11345)).toBe('11,345');

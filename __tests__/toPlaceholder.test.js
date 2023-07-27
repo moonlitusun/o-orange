@@ -1,4 +1,4 @@
-import { toPlaceholder } from '../dist';
+const toPlaceholder = require('../dist/cjs/toPlaceholder').default;
 
 test('toPlaceholder', () => {
   expect(toPlaceholder(0)).toBe(0);

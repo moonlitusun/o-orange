@@ -1,4 +1,4 @@
-import { isUndefined } from '../dist';
+const isUndefined = require('../dist/cjs/isUndefined').default;
 
 test('is undefined', () => {
   const

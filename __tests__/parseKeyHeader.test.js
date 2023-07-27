@@ -1,4 +1,4 @@
-import { parseKeyHeader } from '../dist';
+const parseKeyHeader = require('../dist/cjs/parseKeyHeader').default;
 
 test('is parseKeyHeader', () => {
   const arr = [

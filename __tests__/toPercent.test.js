@@ -1,4 +1,4 @@
-import { toPercent } from '../dist';
+const toPercent = require('../dist/cjs/toPercent').default;
 
 test('toPercent', () => {
   expect(toPercent(0.6515, { multiply: 100, precision: 2 })).toBe('65.15%');

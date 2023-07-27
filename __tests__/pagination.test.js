@@ -1,4 +1,4 @@
-import { pagination } from '../dist';
+const pagination = require('../dist/cjs/pagination').default;
 
 test('is pagination', () => {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

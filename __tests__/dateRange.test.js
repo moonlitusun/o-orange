@@ -1,4 +1,4 @@
-import { dateRange } from '../dist';
+const { dateRange } = require('../dist/cjs/dateRange');
 
 test('dateRange', () => {
   expect(

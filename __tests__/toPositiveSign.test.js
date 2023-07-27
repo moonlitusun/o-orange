@@ -1,4 +1,4 @@
-import { toPositiveSign } from '../dist';
+const toPositiveSign = require('../dist/cjs/toPositiveSign').default;
 
 test('toPositiveSign', () => {
   expect(toPositiveSign(1)).toBe('+1');

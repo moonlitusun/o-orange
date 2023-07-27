@@ -1,0 +1,20 @@
+states:
+  - build
+  - test
+
+default:
+  image: node
+
+build-job:
+  state: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    path:
+      - "dist/"
+
+test-job:
+  state: test
+  script:
+    - npm run test

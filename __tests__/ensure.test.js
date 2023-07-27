@@ -1,4 +1,5 @@
-import { ensure, isTrue } from '../dist';
+const ensure = require('../dist/cjs/ensure').default;
+const isTrue = require('../dist/cjs/isTrue').default;
 
 test('ensure', () => {
   expect(ensure(1)).toEqual(1);
