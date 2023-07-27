@@ -3,7 +3,7 @@ stages:
   - test
 
 default:
-  image: node
+  image: node:16.10.0
 
 build-job:
   stage: build
