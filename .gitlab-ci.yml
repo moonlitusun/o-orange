@@ -2,11 +2,9 @@ stages:
   - build
   - test
 
-default:
-  image: node:16.10.0
-
 build-job:
   stage: build
+  image: node:16.10.0
   script:
     - npm install --registry "http://npm.web.dz"
     - npm run build
