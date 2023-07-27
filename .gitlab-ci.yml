@@ -4,7 +4,7 @@ include:
     file: /dingtalk-notice.yml
 
 variables:
-  D_ACCESS_TOKEN: 53c1f187efff18b66f1b220a2f4994776ae2a4bf72a8ea898c5b33355e7d90a2
+  DINGTALK_ACCESS_TOKEN: 53c1f187efff18b66f1b220a2f4994776ae2a4bf72a8ea898c5b33355e7d90a2
 
 stages:
   - build
