@@ -1,6 +1,6 @@
 {
   "name": "@dz-web/o-orange",
-  "version": "3.7.13",
+  "version": "3.7.15",
   "description": "A javascript utility library",
   "main": "./dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -35,7 +35,7 @@
     "dist",
     "CHANGELOG.md"
   ],
-  "homepage": "https://moonlitusun.github.io/o-orange/",
+  "homepage": "",
   "devDependencies": {
     "coveralls": "^3.1.0",
     "cross-env": "^7.0.3",

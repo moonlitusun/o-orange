@@ -22,3 +22,14 @@ test('toSlice', () => {
   expect(toSlice(1.43543, { precision: 0 })).toBe('1');
 });
 ```
+
+```tsx
+import { toSlice } from '@dz-web/o-orange'
+
+
+export default () => {
+  console.log(toSlice(4843.69))
+
+  return (<div>1</div>)
+}
+```

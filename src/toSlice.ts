@@ -1,4 +1,5 @@
 import { DEFAULT_PRECISION, DEFAULT_PLACEHOLDER } from './constant/default';
+import Big from 'big.js';
 import isTrue from './isTrue';
 
 interface IOption {
@@ -35,7 +36,7 @@ function toSlice(
   }
 
   const multiple = Math.pow(10, precision);
-  return  (parseInt(String(pureNum * multiple), 10) / multiple).toFixed(precision);
+  return  (Big(pureNum).mul(multiple).div(multiple)).toFixed(precision);
 }
 
 export default toSlice;
