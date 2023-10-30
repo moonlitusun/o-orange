@@ -28,7 +28,7 @@ import { toSlice } from '@dz-web/o-orange'
 
 
 export default () => {
-  console.log(toSlice(4843.69))
+  console.log(toSlice(0.9636, { precision: 3 }))
 
   return (<div>1</div>)
 }

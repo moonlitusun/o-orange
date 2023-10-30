@@ -1,6 +1,8 @@
 import { DEFAULT_PRECISION, DEFAULT_PLACEHOLDER } from './constant/default';
 import Big from 'big.js';
+import toFixed from './toFixed';
 import isTrue from './isTrue';
+import { RoundingMode } from './orange';
 
 interface IOption {
   placeholder?: string;
@@ -36,7 +38,8 @@ function toSlice(
   }
 
   const multiple = Math.pow(10, precision);
-  return  (Big(pureNum).mul(multiple).div(multiple)).toFixed(precision);
+  
+  return toFixed((Big(pureNum).mul(multiple).div(multiple)), { precision, RM: RoundingMode.roundDown });
 }
 
 export default toSlice;
