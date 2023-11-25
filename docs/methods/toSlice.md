@@ -1,6 +1,15 @@
+---
+group:
+  title: Deprecated
+  order: 3
+order: 100
+---
+
 # toSlice
 
 和`toFixed`唯一不同的就是`toSlice`是直接截取，而不是四舍五入。
+
+**不推荐使用了，直接使用toFixed方法的RM参数**
 
 ## Since
 

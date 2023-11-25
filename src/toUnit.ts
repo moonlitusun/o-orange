@@ -80,7 +80,7 @@ function toUnit(num: number | string, options: IOptions = {}): string {
     const { label, value } = unit[i];
 
     if (numAbs >= value) {
-      result = `${num < 0 ? '-' : ''}${toFixed(
+      result = `${pureNum < 0 ? '-' : ''}${toFixed(
         numAbs / value,
         toFixedParams
       )}${label}`;

@@ -8,10 +8,11 @@ Examples-dist/
 *-error.log
 
 # umi
-.umi
-.umi-production
 .mfsu-*
 .mfsu
-.dumi
+
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production
 
 dist/

@@ -1,7 +1,10 @@
 ---
 nav:
-  title: 方法
+  title: Methods
+group:
+  title: 数据转换
   order: 1
+order: 1
 ---
 
 # toFixed

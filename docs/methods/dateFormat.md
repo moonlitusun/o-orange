@@ -1,11 +1,13 @@
 ---
 group:
-  order: 2
+  title: Deprecated
+  order: 3
+order: 100
 ---
 
 # dateFormat
 
-**待废弃，推荐使用[dayjs](https://day.js.org/en/)**
+**废弃，推荐使用[dayjs](https://day.js.org/en/)**
 
 ## Since
 

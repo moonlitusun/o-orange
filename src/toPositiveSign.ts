@@ -24,7 +24,7 @@ function toPositiveSign<T extends stringNumber>(
   option: IOption = {},
 ): string {
   const { canEqual = false, balance = 0, placeholder = DEFAULT_PLACEHOLDER, parseFloat = true } = option;
-  const parserTarget = parseFloat ? Number.parseFloat(target as string) : target;
+  const parserTarget: number = parseFloat ? Number.parseFloat(target as string) : Number(target);
   if (!isTrue(target)) return placeholder;
   const isMoreThan = canEqual ? parserTarget >= balance : parserTarget > balance;
 

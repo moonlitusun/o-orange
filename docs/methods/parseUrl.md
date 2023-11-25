@@ -1,6 +1,13 @@
+---
+group:
+  title: Deprecated
+  order: 3
+order: 100
+---
+
 # parseUrl
 
-**待废弃，推荐使用[query-string](https://github.com/sindresorhus/query-string)**
+**废弃，推荐使用[query-string](https://github.com/sindresorhus/query-string)**
  Match the parameter value of url by key
 
 ## Since

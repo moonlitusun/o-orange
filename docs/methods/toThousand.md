@@ -1,3 +1,9 @@
+---
+group:
+  title: 数据转换
+order: 2
+---
+
 # toThousand
 
 将数字转换为千分位数字。

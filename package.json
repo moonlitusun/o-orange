@@ -18,7 +18,7 @@
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "build": "father build",
     "dev": "dumi dev",
-    "docs:build": "cross-env APP_ROOT=docs dumi build",
+    "docs:build": "dumi build",
     "docs:dep": "yarn docs:build && npx dz-ud /ld/o-orange",
     "docs:deploy": "yarn docs:build && git subtree push --prefix dist/ origin gh-pages"
   },
@@ -39,7 +39,7 @@
   "devDependencies": {
     "coveralls": "^3.1.0",
     "cross-env": "^7.0.3",
-    "dumi": "^2.1.19",
+    "dumi": "^2.2.14",
     "father": "^4.1.7",
     "increase-memory-limit": "^1.0.7",
     "jest": "^29.5.0",

@@ -1,3 +1,9 @@
+---
+group:
+  title: 数据转换
+order: 2
+---
+
 # toPercent
 
 将数字转换为百分数。
@@ -30,4 +36,12 @@ test('toPercent', () => {
   expect(toPercent(NaN)).toBe('--');
   expect(toPercent(NaN, { placeholder: 'xxxx' })).toBe('xxxx');
 })
+```
+
+```tsx
+import { toPercent, toPositiveSign } from '@dz-web/o-orange';
+
+console.log(toPositiveSign(toPercent(-0.3)))
+
+export default () => null;
 ```
