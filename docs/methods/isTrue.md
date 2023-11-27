@@ -19,13 +19,12 @@
 ## Examples
 
 ```js
-import { ensure, isTrue } from '../es';
+const isTrue = require('../dist/cjs/isTrue').default;
 
-test('ensure', () => {
-  expect(ensure(1)).toEqual(1);
-  expect(ensure()).toEqual('--');
-  expect(ensure(0, 'hh')).toEqual('hh');
-  expect(ensure(0)).toEqual('--');
-  expect(ensure(isTrue(0), null, 'test')).toEqual('test');
+test('is false not zero', () => {
+  expect(isTrue(0)).toBeTruthy();
+  expect(isTrue(1)).toBeTruthy();
+  expect(isTrue(null)).toBeFalsy();
+  expect(isTrue(undefined)).toBeFalsy();
 })
 ```
