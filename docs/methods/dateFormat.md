@@ -1,7 +1,7 @@
 ---
 group:
   title: Deprecated
-  order: 3
+  order: 5
 order: 100
 ---
 

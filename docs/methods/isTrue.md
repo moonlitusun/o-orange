@@ -1,3 +1,9 @@
+---
+group:
+  title: 辅助函数
+order: 2
+---
+
 # isTrue
 
 判断是一个值是否是true，基于js的判断，唯一不同的就是0也是true。

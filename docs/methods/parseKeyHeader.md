@@ -1,4 +1,12 @@
+---
+group:
+  title: Deprecated
+order: 100
+---
+
 # parseKeyHeader
+
+**待废弃，推荐使用csvArray**
 
 Convert the first subproject to an array of keys to a json array
 

@@ -1,3 +1,9 @@
+---
+group:
+  title: 数组处理
+order: 2
+---
+
 # pagination
 
 切割数组

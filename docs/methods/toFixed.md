@@ -2,7 +2,7 @@
 nav:
   title: Methods
 group:
-  title: 数据转换
+  title: 数字处理
   order: 1
 order: 1
 ---
