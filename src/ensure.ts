@@ -1,5 +1,6 @@
 import { DEFAULT_PLACEHOLDER } from './constant/default';
 import isUndefined from './isUndefined';
+import isTrue from './isTrue';
 
 /**
  * @since 3.1.0
@@ -21,15 +22,20 @@ function ensure<T, N>(
   failureCallback?: string | (() => T),
   successCallback?: string | (() => N)
 ): string | T | N {
-  if (!value) {
-    if (failureCallback === null || isUndefined(failureCallback)) return DEFAULT_PLACEHOLDER;
+  if (!isTrue(value)) {
+    if (failureCallback === null || isUndefined(failureCallback))
+      return DEFAULT_PLACEHOLDER;
 
-    return typeof failureCallback === 'function' ? failureCallback() : failureCallback;
+    return typeof failureCallback === 'function'
+      ? failureCallback()
+      : failureCallback;
   }
 
   if (isUndefined(successCallback)) return value;
 
-  return typeof successCallback === 'function' ? successCallback() : successCallback;
+  return typeof successCallback === 'function'
+    ? successCallback()
+    : successCallback;
 }
 
 export default ensure;
