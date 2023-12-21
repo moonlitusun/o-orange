@@ -1,6 +1,6 @@
 ---
 nav:
-  title: 开始
+  title: Begin
   order: 0
 ---
 
