@@ -20,7 +20,7 @@
     "dev": "dumi dev",
     "docs:build": "dumi build",
     "docs:dep": "yarn docs:build && npx dz-ud /ld/o-orange",
-    "docs:deploy": "yarn docs:build && git subtree push --prefix docs/dist/ origin gh-pages"
+    "docs:deploy": "yarn docs:build && git subtree push --prefix docs/dist origin gh-pages"
   },
   "repository": {
     "type": "git",
