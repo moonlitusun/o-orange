@@ -5,11 +5,11 @@ export { default as isTrue } from './isTrue';
 export { default as isUndefined } from './isUndefined';
 export { default as pagination } from './pagination';
 export { default as parseKeyHeader } from './parseKeyHeader';
-export {
-  default as parseUrl,
-  parseUrlByHash,
-  parseUrlBySearch,
-} from './parseUrl';
+// export {
+//   default as parseUrl,
+//   parseUrlByHash,
+//   parseUrlBySearch,
+// } from './parseUrl';
 export { default as toFixed } from './toFixed';
 export { default as toPositiveSign } from './toPositiveSign';
 export { default as toPlaceholder } from './toPlaceholder';
