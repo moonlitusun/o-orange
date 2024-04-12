@@ -1,5 +1,4 @@
 import dateFormat from './dateFormat';
-
 import { stringNumber } from './types/common/type';
 
 interface IOptions {

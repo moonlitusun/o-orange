@@ -1,5 +1,5 @@
 import isTrue from './isTrue';
-import { DEFAULT_PLACEHOLDER } from './constant/default';
+import orange from './orange';
 
 /**
  * @since 2.1.3
@@ -15,7 +15,7 @@ import { DEFAULT_PLACEHOLDER } from './constant/default';
  *
  */
 function toPlaceholder(num: any): any {
-  return isTrue(num) ? num : DEFAULT_PLACEHOLDER;
+  return isTrue(num) ? num : orange.placeholder;
 }
 
 export default toPlaceholder;

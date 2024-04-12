@@ -17,7 +17,7 @@ order: 2
 ## Examples
 
 ```js
-import { toSlice } from '../es';
+import { toSlice } from '@dz-web/o-orange'
 
 test('toSlice', () => {
   expect(toSlice(1.63456461, { precision: 2 })).toBe('1.63');
@@ -31,7 +31,7 @@ test('toSlice', () => {
 });
 ```
 
-```tsx
+<!-- ```tsx
 import { toSlice } from '@dz-web/o-orange'
 
 
@@ -40,4 +40,4 @@ export default () => {
 
   return (<div>1</div>)
 }
-```
+``` -->

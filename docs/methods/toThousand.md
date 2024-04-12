@@ -14,7 +14,7 @@ order: 4
 
 ## Arguments
 
-- `num: string | number`: 待转换数字
+- `num: string | number`: 待转换值
 - `[sign = ,]: string`: 分隔符
 
 ## Returns
@@ -24,7 +24,7 @@ order: 4
 ## Examples
 
 ```js
-import { toThousand } from '../es';
+import { toThousand } from '@dz-web/o-orange';
 
 test('toThousand', () => {
   expect(toThousand(11345)).toBe('11,345');

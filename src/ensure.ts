@@ -1,4 +1,4 @@
-import { DEFAULT_PLACEHOLDER } from './constant/default';
+import orange from './orange';
 import isUndefined from './isUndefined';
 import isTrue from './isTrue';
 
@@ -24,7 +24,7 @@ function ensure<T, N>(
 ): string | T | N {
   if (!isTrue(value)) {
     if (failureCallback === null || isUndefined(failureCallback))
-      return DEFAULT_PLACEHOLDER;
+      return orange.placeholder;
 
     return typeof failureCallback === 'function'
       ? failureCallback()

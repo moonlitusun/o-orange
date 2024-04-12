@@ -14,10 +14,10 @@ order: 3
 
 ## Arguments
 
-- `num: string | number`: 待转换数字
+- `num: string | number`: 待转换值
 - `[options = {}]: Object`
-  - `[options.placeholder = --]: string` 当待转换数字是NaN或者空的时候的缺省
-  - `[options.precision = 2]: number` 保留小数位
+  - `[options.placeholder = orange.placeholder]: string` 当待转换值是NaN或者空的时候的缺省
+  - `[options.precision = orange.precision]: number` 保留小数位
   - `[options.multiply = 1]: number` 计算之前先乘于基数
 
 ## Returns

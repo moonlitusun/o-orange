@@ -1,34 +1,28 @@
-import toFixed, { IToFixedOption } from './toFixed';
-import { DEFAULT_PRECISION, DEFAULT_PLACEHOLDER } from './constant/default';
+import orange, { Lang } from './orange';
+import toFixed, { ToFixedOption } from './toFixed';
 
-export interface IUnit {
+export interface Unit {
   label: string;
   value: number;
 }
 
-export enum UNIT_LAN {
-  ZH_CN = 'zh-CN',
-  ZH_TW = 'zh-TW',
-  EN_US = 'en-US'
+export interface IOptions extends ToFixedOption {
+  lanType?: Lang;
 }
 
-export interface IOptions extends IToFixedOption {
-  lanType?: UNIT_LAN;
-}
-
-const unitDict: Record<UNIT_LAN, IUnit[]> = {
-  [UNIT_LAN.EN_US]: [
+const unitDict: Record<Lang, Unit[]> = {
+  [Lang.EN_US]: [
     { value: Math.pow(10, 12), label: 'T' },
     { value: Math.pow(10, 9), label: 'B' },
     { value: Math.pow(10, 6), label: 'M' },
     { value: Math.pow(10, 3), label: 'K' },
   ],
-  [UNIT_LAN.ZH_CN]: [
+  [Lang.ZH_CN]: [
     { value: Math.pow(10, 12), label: '万亿' },
     { value: Math.pow(10, 8), label: '亿' },
     { value: Math.pow(10, 4), label: '万' },
   ],
-  [UNIT_LAN.ZH_TW]: [
+  [Lang.ZH_TW]: [
     { value: Math.pow(10, 12), label: '萬億' },
     { value: Math.pow(10, 8), label: '億' },
     { value: Math.pow(10, 4), label: '萬' },
@@ -40,31 +34,20 @@ const unitDict: Record<UNIT_LAN, IUnit[]> = {
  * Convert value to English units, like 1B 1M 1K
  *
  * @since 2.1.0
- * @param {number | string} num The number to convert
- * @param {Object} [option = {}]
- * @param {string} [option.placeholder = '--'] Replace string when targetNum is NaN or not number
- * @param {number} [option.precision = 2] The length to Keep
- * @param {boolean} [option.ignoreIntegerPrecision = false] if target is inter, ignore toFixed
- * @param {UNIT_LAN} [option.lanType = en-US] Unit 1 => en-US | 2 => zh-CN | 2 => zh-TW
- * @returns {string}
- * @Examples
- *
- * toUnit(100800, 3, { type: 1 })
- * // 100.800K
- *
+ * 
  */
 function toUnit(num: number | string, options: IOptions = {}): string {
   const {
-    lanType = UNIT_LAN.EN_US,
-    placeholder = DEFAULT_PLACEHOLDER,
-    precision = DEFAULT_PRECISION,
-    ignoreIntegerPrecision = true,
+    lanType = orange.lang,
+    placeholder = orange.placeholder,
+    precision = orange.precision,
+    ignoreIntegerPrecision = orange.ignoreIntegerPrecision,
   } = options;
   const pureNum: number = Number(num);
 
   if (isNaN(pureNum)) return placeholder;
 
-  const unit: IUnit[] = unitDict[lanType] || unitDict[UNIT_LAN.EN_US];
+  const unit: Unit[] = unitDict[lanType] || unitDict[Lang.EN_US];
   const unitLen: number = unit.length;
   const numAbs: number = Math.abs(+num);
   let result = '';

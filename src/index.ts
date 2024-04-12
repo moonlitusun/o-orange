@@ -16,6 +16,12 @@ export { default as toPlaceholder } from './toPlaceholder';
 export { default as toPercent } from './toPercent';
 export { default as toSlice } from './toSlice';
 export { default as toThousand } from './toThousand';
-export { default as toUnit, UNIT_LAN } from './toUnit';
+export { default as toUnit } from './toUnit';
 export { csvArrayToObjects, csvArrayWithoutKeysToObjects } from './csv-array';
-export { default as orange, RoundingMode } from './orange';
+export {
+  default as orange,
+  RoundingMode,
+  Lang,
+  // Instability, For compatible v3
+  Lang as UNIT_LAN,
+} from './orange';

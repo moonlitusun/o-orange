@@ -1,4 +1,4 @@
-import { DEFAULT_PLACEHOLDER } from './constant/default';
+import orange from './orange';
 import { stringNumber } from './types/common/type';
 
 export interface IDateDict {
@@ -62,7 +62,7 @@ interface IOption {
  *
  */
 function dateFormat(date: Date | stringNumber, format = 'yyyy-MM-dd HH:mm:ss', options: IOption = {}): string {
-  if (!date) return DEFAULT_PLACEHOLDER;
+  if (!date) return orange.placeholder;
 
   const { isNoSignDate = false } = options;
   // Compatible with iOS

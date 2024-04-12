@@ -1,4 +1,4 @@
-import { DEFAULT_PLACEHOLDER } from './constant/default';
+import orange from './orange';
 import { stringNumber } from './types/common/type';
 import isTrue from './isTrue';
 interface IOption {
@@ -11,19 +11,14 @@ interface IOption {
 /**
  * Convert numbers to positive and negative signs
  *
- * @categry Finace
  * @since 2.1.0
- * @param {number} num The number to convert
- * @param {boolean} [isContainZero = false] Whether contain zero
- * @returns {string}
- * @Examples
  *
  */
 function toPositiveSign<T extends stringNumber>(
   target: T,
   option: IOption = {},
 ): string {
-  const { canEqual = false, balance = 0, placeholder = DEFAULT_PLACEHOLDER, parseFloat = true } = option;
+  const { canEqual = false, balance = 0, placeholder = orange.placeholder, parseFloat = true } = option;
   const parserTarget: number = parseFloat ? Number.parseFloat(target as string) : Number(target);
   if (!isTrue(target)) return placeholder;
   const isMoreThan = canEqual ? parserTarget >= balance : parserTarget > balance;

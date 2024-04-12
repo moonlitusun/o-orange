@@ -16,7 +16,7 @@ order: 6
 
 ## Arguments
 
-- `num: string | number`: 待转换数字
+- `num: string | number`: 待转换值
 
 ## Returns
 

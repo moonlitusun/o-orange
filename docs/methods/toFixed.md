@@ -11,30 +11,18 @@ order: 1
 
 JavaScript中`toFixed`的边界处理。
 
-## Constans
-
-```ts
-// see https://mikemcl.github.io/big.js/#rm
-export enum RoundingMode {
-  roundDown,
-  roundHalfUp,
-  roundHalfEven,
-  roundUp
-}
-```
-
 ## Since
 
 `0.0.1`
 
 ## Arguments
 
-- `num: string | number`: 待转换数字
+- `num: string | number`: 待转换值
 - `[options = {}]: Object`
-  - `[options.placeholder = --]: string` 当待转换数字是NaN或者空的时候的缺省
-  - `[options.precision = 2]: number` 保留小数位
-  - `[options.ignoreIntegerPrecision = false]: boolean` 如果是整数，就忽略
-  - `[options.RM = RoundingMode.roundHalfEven]: boolean` 小数保留规则，默认四舍六入五成双
+  - `[options.placeholder = orange.placeholder]: string` 当待转换值是NaN或者空的时候的缺省
+  - `[options.precision = orange.precision]: number` 保留小数位
+  - `[options.ignoreIntegerPrecision = orange.ignoreIntegerPrecision]: boolean` 如果是整数，就忽略
+  - `[options.RM = orange.RM]: boolean` 小数保留规则，默认四舍六入五成双
 
 ## Returns
 
@@ -43,8 +31,7 @@ export enum RoundingMode {
 ## Examples
 
 ```ts
-const { default: toFixed } = require('../dist/cjs/toFixed');
-const { default: orange, RoundingMode } = require('../dist/cjs/orange');
+import { orange, RoundingMode, toFixed } from '@dz-web/o-orange';
 
 test('toFixed', () => {
   expect(toFixed(NaN, { placeholder: 'xxxx' })).toBe('xxxx');
