@@ -7,7 +7,7 @@ export default defineConfig({
   mfsu: false,
   hash: true,
   base: publicPath,
-  outputPath: 'docs/dist',
+  outputPath: 'docs-dist',
   themeConfig: {
     name: 'o-orange',
     favicon: `${publicPath}images/dz-logo.jpg`,

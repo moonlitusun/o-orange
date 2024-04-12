@@ -10,8 +10,7 @@ coverage/
 .mfsu-*
 .mfsu
 
-.dumi/tmp
-.dumi/tmp-test
-.dumi/tmp-production
+.dumi
 
 dist/
+docs-dist
