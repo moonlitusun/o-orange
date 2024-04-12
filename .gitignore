@@ -14,4 +14,3 @@ coverage/*
 .dumi
 
 dist/
-!docs/dist
