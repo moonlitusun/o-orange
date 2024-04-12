@@ -5,6 +5,11 @@
 [![Npm](https://badgen.net/npm/v/o-orange)](https://www.npmjs.com/package/@dz-web/o-orange)
 [![Npm](https://badgen.net/npm/dependents/o-orange)](https://www.npmjs.com/package/@dz-web/o-orange)
 
+![coverage](./coverage/badge-branches.svg)
+![coverage](./coverage/badge-functions.svg)
+![coverage](./coverage/badge-lines.svg)
+![coverage](./coverage/badge-statements.svg)
+
 ## Installation
 
 Use pnpm
