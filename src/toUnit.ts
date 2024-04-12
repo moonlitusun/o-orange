@@ -41,7 +41,7 @@ function toUnit(num: number | string, options: IOptions = {}): string {
     lanType = orange.lang,
     placeholder = orange.placeholder,
     precision = orange.precision,
-    ignoreIntegerPrecision = orange.ignoreIntegerPrecision,
+    ignoreIntegerPrecision = true,
   } = options;
   const pureNum: number = Number(num);
 

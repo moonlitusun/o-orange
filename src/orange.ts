@@ -17,5 +17,5 @@ export default new class Orange {
   lang = Lang.EN_US;
   precision = 2;
   placeholder = '--';
-  ignoreIntegerPrecision = true;
+  ignoreIntegerPrecision = false;
 }();

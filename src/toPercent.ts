@@ -23,7 +23,7 @@ function toPercent(
 
   if (isNaN(pureNum)) return placeholder;
 
-  return `${toFixed(multiply * num, { precision })}%`;
+  return `${toFixed(multiply * num, { precision, ignoreIntegerPrecision: false })}%`;
 }
 
 export default toPercent;

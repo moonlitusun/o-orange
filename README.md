@@ -1,32 +1,32 @@
-<h2 align="center" style="color: #b5b928b5;font-size:45px">🍊 o-orange</h1>
+<h2 align="center" style="color: #b5b928b5;font-size:45px">🍊 o-orange</h2>
 
-<h5 align="center" style="color: #b5b928b5;fontSize: 25px;marginBottom: 100px">Implementation of some useful functions</h5>
+<h5 align="center" style="color: #b5b928b5;fontSize: 25px;marginBottom: 100px">Implementation of some useful functions for Financial Industry</h5>
 
 [![Npm](https://badgen.net/npm/v/o-orange)](https://www.npmjs.com/package/@dz-web/o-orange)
 [![Npm](https://badgen.net/npm/dependents/o-orange)](https://www.npmjs.com/package/@dz-web/o-orange)
 
-# Installation
+## Installation
 
-Use npm
+Use pnpm
 
 ```bash
-npm install o-orange
+pnpm add @dz-web/o-orange
 ```
 
 Use yarn
 
 ```bash
-yarn add o-orange
+yarn add @dz-web/o-orange
 ```
 
-# Usage
+## Usage
 
 ```js
-import O from 'o-orange';
+import { toFixed } from '@dz-web/o-orange';
+
+toFixed(1.5);
 ```
 
-Or
+# Documentation
 
-```js
-import { isNumber } from 'o-orange';
-```
+<http://moonlit.vip/o-orange>
