@@ -25,11 +25,15 @@ order: 2
 ## Exampless
 
 ```js
-import { pagination } from '../es';
+import { pagination } from '@dz-web/o-orange';
 
 test('is pagination', () => {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   
+  expect(pagination([])).toEqual([]);
+  expect(pagination(arr)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  expect(pagination(arr, 1)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  expect(pagination(arr, 1, 5)).toEqual([1, 2, 3, 4, 5]);
   expect(pagination(arr, 2, 8)).toEqual([9, 10]);
   expect(pagination(arr, 3, 3)).toEqual([7, 8, 9]);
 })

@@ -27,7 +27,7 @@ order: 3
 ## Examples
 
 ```js
-import { toPercent } from '../es';
+import { toPercent } from '@dz-web/o-orange';
 
 test('toPercent', () => {
   expect(toPercent(0.6515, { multiply: 100, precision: 2 })).toBe('65.15%');
