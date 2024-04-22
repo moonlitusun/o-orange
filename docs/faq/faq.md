@@ -42,8 +42,8 @@ const target2 = toPositiveSign(toPercent(-num, { multiply: 10 }));
 
 export default () => (
   <>
-  <p>保留小数位+正负符号：{target1}</p>
-  <p>转换百分数+正负符号：{target2}</p>
+    <p>保留小数位+正负符号：{target1}</p>
+    <p>转换百分数+正负符号：{target2}</p>
   </>
 );
 ```
@@ -68,11 +68,7 @@ function compose(...funcs) {
 }
 
 const num = 0.064385;
-const target1 = compose(toPositiveSign, toFixed)(num);
+const target = compose(toPositiveSign, toFixed)(num);
 
-export default () => (
-  <>
-    <p>{target1}</p>
-  </>
-);
+export default () => target;
 ```
