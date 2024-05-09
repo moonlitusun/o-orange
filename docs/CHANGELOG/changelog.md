@@ -6,6 +6,12 @@ nav:
 
 ## v4
 
+### v4.2.1
+
+`2024-05-09`
+
+- fix: the situation of `Number(null) = 0`
+
 ### v4.2.0
 
 `2024-05-09`

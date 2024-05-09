@@ -1,6 +1,8 @@
 import orange from './orange';
 import toFixed from './toFixed';
 import { ToFixedOption } from './toFixed';
+import { toNumber } from './utils';
+
 interface toPercentOption extends ToFixedOption {
   multiply?: number;
 }
@@ -15,7 +17,7 @@ interface toPercentOption extends ToFixedOption {
 function toPercent(num: number, option: toPercentOption = {}): string {
   const { multiply = 1, ...rest } = option;
   const { placeholder = orange.placeholder } = rest;
-  const pureNum: number = Number(num);
+  const pureNum = toNumber(num);
 
   if (isNaN(pureNum)) return placeholder;
 

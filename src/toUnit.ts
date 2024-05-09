@@ -1,5 +1,6 @@
 import orange, { Lang } from './orange';
 import toFixed, { ToFixedOption } from './toFixed';
+import { toNumber } from './utils';
 
 export interface Unit {
   label: string;
@@ -44,7 +45,7 @@ function toUnit(num: number | string, options: toUnitOptions = {}): string {
     ignoreIntegerPrecision = true,
   } = rest;
 
-  const pureNum: number = Number(num);
+  const pureNum: number = toNumber(num);
 
   if (isNaN(pureNum)) return placeholder;
 
