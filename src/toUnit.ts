@@ -6,7 +6,7 @@ export interface Unit {
   value: number;
 }
 
-export interface IOptions extends ToFixedOption {
+export interface toUnitOptions extends ToFixedOption {
   lanType?: Lang;
 }
 
@@ -34,15 +34,16 @@ const unitDict: Record<Lang, Unit[]> = {
  * Convert value to English units, like 1B 1M 1K
  *
  * @since 2.1.0
- * 
+ *
  */
-function toUnit(num: number | string, options: IOptions = {}): string {
+function toUnit(num: number | string, options: toUnitOptions = {}): string {
+  const { lanType = orange.lang, ...rest } = options;
+
   const {
-    lanType = orange.lang,
     placeholder = orange.placeholder,
-    precision = orange.precision,
     ignoreIntegerPrecision = true,
-  } = options;
+  } = rest;
+
   const pureNum: number = Number(num);
 
   if (isNaN(pureNum)) return placeholder;
@@ -52,9 +53,8 @@ function toUnit(num: number | string, options: IOptions = {}): string {
   const numAbs: number = Math.abs(+num);
   let result = '';
   const toFixedParams = {
-    placeholder,
-    precision,
     ignoreIntegerPrecision,
+    ...rest,
   };
 
   if (numAbs < unit[unitLen - 1].value) return toFixed(num, toFixedParams);

@@ -6,6 +6,13 @@ nav:
 
 ## v4
 
+### v4.2.0
+
+`2024-05-09`
+
+- feat: `toPercent` support all `toFixed` params。
+- feat: `toUnit` support all `toFixed` params。
+
 ### v4.1.0
 
 `2024-04-11`

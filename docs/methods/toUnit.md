@@ -16,10 +16,8 @@ order: 7
 
 - `num: string | number`: 待转换值
 - `[options = {}]: Object`
-  - `[options.placeholder = orange.placeholder]: string` 当待转换值是NaN或者空的时候的缺省
-  - `[options.precision = orange.precision]: number` 保留小数位
-  - `[options.ignoreIntegerPrecision = true]: boolean` 如果是整数，就忽略
   - `[options.lanType = Lang.EN_US]: Lang` 语言类型
+  - `[...rest]` 支持`toFixed`方法的所有参数
 
 ## Returns
 
