@@ -6,6 +6,12 @@ nav:
 
 ## v4
 
+### v4.3.0
+
+`2024-07-01`
+
+- feat: add `getSignByComparison`。
+
 ### v4.2.1
 
 `2024-05-09`
