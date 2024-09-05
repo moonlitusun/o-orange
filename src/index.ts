@@ -17,7 +17,7 @@ export { default as toPercent } from './toPercent';
 export { default as toSlice } from './toSlice';
 export { default as toThousand } from './toThousand';
 export { default as toUnit } from './toUnit';
-export { default as getUnit } from './getUnit';
+export { default as getUnit, unitDict } from './getUnit';
 export { default as getSignByComparison } from './getSignByComparison';
 export { csvArrayToObjects, csvArrayWithoutKeysToObjects } from './csv-array';
 export {

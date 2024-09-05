@@ -10,37 +10,47 @@ order: 8
 
 ## Since
 
-`2.1.0`
+`4.4.0`
 
 ## Arguments
 
 - `num: string | number`: 待转换值
 - `[options = {}]: Object`
   - `[options.lanType = Lang.EN_US]: Lang` 语言类型
-  - `[...rest]` 支持`toFixed`方法的所有参数
 
 ## Returns
 
-- `Returns: string`: 转换后的值
+- `Returns: null | Unit`: 转换后的值
 
 ## Examples
 
 ```js
-import { toUnit, Lang, orange } from '@dz-web/o-orange';
+import { getUnit, Lang, orange } from '@dz-web/o-orange';
 
-test('ToUnit', () => {
-  expect(toUnit(undefined)).toBe('--');
-  expect(toUnit(1100)).toBe('1.10K');
+test('GetUnit', () => {
+  expect(getUnit(undefined)).toEqual(null);
+  expect(getUnit(90)).toEqual(null);
+  expect(getUnit(1100)).toEqual(
+    unitDict[Lang.EN_US].find((unit) => unit.label === 'K')
+  );
 
-  expect(toUnit(122000)).toBe('122K');
-  expect(toUnit(122000, { lanType: Lang.ZH_CN })).toBe('12.20万');
-  expect(toUnit(122000, { lanType: Lang.ZH_TW })).toBe('12.20萬');
+  expect(getUnit(122000)).toEqual(
+    unitDict[Lang.EN_US].find((unit) => unit.label === 'K')
+  );
+  expect(getUnit(122000, { lanType: Lang.ZH_CN })).toEqual(
+    unitDict[Lang.ZH_CN].find((unit) => unit.label === '万')
+  );
+  expect(getUnit(122000, { lanType: Lang.ZH_TW })).toEqual(
+    unitDict[Lang.ZH_TW].find((unit) => unit.label === '萬')
+  );
 });
-
 ```
 
 ```tsx
-import { getUnit } from '@dz-web/o-orange';
+import { getUnit, orange, Lang } from '@dz-web/o-orange';
+
+orange.precision = 2;
+orange.lang = Lang.ZH_CN;
 
 const unit = getUnit(122000);
 console.log(unit);

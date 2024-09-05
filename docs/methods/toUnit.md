@@ -17,6 +17,7 @@ order: 7
 - `num: string | number`: 待转换值
 - `[options = {}]: Object`
   - `[options.lanType = Lang.EN_US]: Lang` 语言类型
+  - `[options.unit]: Unit` 自定义Unit(来自于[getUnit](./getUnit.md)的返回值，如果非undefined就会跳过检测unit步骤)
   - `[...rest]` 支持`toFixed`方法的所有参数
 
 ## Returns

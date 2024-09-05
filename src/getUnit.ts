@@ -7,11 +7,11 @@ export interface Unit {
   value: number;
 }
 
-export interface toUnitOptions extends ToFixedOption {
+export interface GetUnitOptions extends ToFixedOption {
   lanType?: Lang;
 }
 
-const unitDict: Record<Lang, Unit[]> = {
+export const unitDict: Record<Lang, Unit[]> = {
   [Lang.EN_US]: [
     { value: Math.pow(10, 12), label: 'T' },
     { value: Math.pow(10, 9), label: 'B' },
@@ -32,33 +32,27 @@ const unitDict: Record<Lang, Unit[]> = {
 
 /**
  *
- * Convert value to English units, like 1B 1M 1K
+ * get value's unit, like 1B 1M 1K
  *
- * @since 2.1.0
+ * @since 4.4.0
  *
  */
-function getUnit(num: number | string, options: toUnitOptions = {}): string {
-  const { lanType = orange.lang, ...rest } = options;
-
-  const {
-    placeholder = orange.placeholder,
-    ignoreIntegerPrecision = true,
-  } = rest;
+function getUnit(
+  num: number | string,
+  options: GetUnitOptions = {}
+): Unit | null {
+  const { lanType = orange.lang } = options;
 
   const pureNum: number = toNumber(num);
 
-  if (isNaN(pureNum)) return placeholder;
+  if (isNaN(pureNum)) return null;
 
   const unit: Unit[] = unitDict[lanType] || unitDict[Lang.EN_US];
   const unitLen: number = unit.length;
   const numAbs: number = Math.abs(+num);
-  let result = '';
-  const toFixedParams = {
-    ignoreIntegerPrecision,
-    ...rest,
-  };
+  let result: Unit | null = null;
 
-  if (numAbs < unit[unitLen - 1].value) return toFixed(num, toFixedParams);
+  if (numAbs < unit[unitLen - 1].value) return null;
 
   for (let i = 0; i < unitLen; i++) {
     const { label, value } = unit[i];

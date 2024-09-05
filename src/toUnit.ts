@@ -1,34 +1,13 @@
-import orange, { Lang } from './orange';
-import toFixed, { ToFixedOption } from './toFixed';
+import orange from './orange';
+import toFixed from './toFixed';
 import { toNumber } from './utils';
 
-export interface Unit {
-  label: string;
-  value: number;
-}
+import getUnit, { type GetUnitOptions, Unit } from "./getUnit";
+import { isUndefined } from ".";
 
-export interface toUnitOptions extends ToFixedOption {
-  lanType?: Lang;
+interface ToUnitOptions extends GetUnitOptions {
+  unit?: Unit;
 }
-
-const unitDict: Record<Lang, Unit[]> = {
-  [Lang.EN_US]: [
-    { value: Math.pow(10, 12), label: 'T' },
-    { value: Math.pow(10, 9), label: 'B' },
-    { value: Math.pow(10, 6), label: 'M' },
-    { value: Math.pow(10, 3), label: 'K' },
-  ],
-  [Lang.ZH_CN]: [
-    { value: Math.pow(10, 12), label: '万亿' },
-    { value: Math.pow(10, 8), label: '亿' },
-    { value: Math.pow(10, 4), label: '万' },
-  ],
-  [Lang.ZH_TW]: [
-    { value: Math.pow(10, 12), label: '萬億' },
-    { value: Math.pow(10, 8), label: '億' },
-    { value: Math.pow(10, 4), label: '萬' },
-  ],
-};
 
 /**
  *
@@ -37,8 +16,8 @@ const unitDict: Record<Lang, Unit[]> = {
  * @since 2.1.0
  *
  */
-function toUnit(num: number | string, options: toUnitOptions = {}): string {
-  const { lanType = orange.lang, ...rest } = options;
+function toUnit(num: number | string, options: ToUnitOptions = {}): string {
+  const { lanType = orange.lang, unit: _unit, ...rest } = options;
 
   const {
     placeholder = orange.placeholder,
@@ -49,30 +28,21 @@ function toUnit(num: number | string, options: toUnitOptions = {}): string {
 
   if (isNaN(pureNum)) return placeholder;
 
-  const unit: Unit[] = unitDict[lanType] || unitDict[Lang.EN_US];
-  const unitLen: number = unit.length;
   const numAbs: number = Math.abs(+num);
-  let result = '';
+  const unit = isUndefined(_unit) ? getUnit(num, options) : _unit;
   const toFixedParams = {
     ignoreIntegerPrecision,
     ...rest,
   };
-
-  if (numAbs < unit[unitLen - 1].value) return toFixed(num, toFixedParams);
-
-  for (let i = 0; i < unitLen; i++) {
-    const { label, value } = unit[i];
-
-    if (numAbs >= value) {
-      result = `${pureNum < 0 ? '-' : ''}${toFixed(
-        numAbs / value,
-        toFixedParams
-      )}${label}`;
-      break;
-    }
+  if (!unit) {
+    return toFixed(num, toFixedParams);
   }
 
-  return result;
+  const { label, value } = unit;
+  return `${pureNum < 0 ? '-' : ''}${toFixed(
+    numAbs / value,
+    toFixedParams
+  )}${label}`;
 }
 
 export default toUnit;
