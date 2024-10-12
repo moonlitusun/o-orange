@@ -20,7 +20,7 @@ order: 8
 
 ## Returns
 
-- `Returns: null | Unit`: 转换后的值
+- `Returns: Unit`: 转换后的值
 
 ## Examples
 
@@ -28,8 +28,8 @@ order: 8
 import { getUnit, Lang, orange } from '@dz-web/o-orange';
 
 test('GetUnit', () => {
-  expect(getUnit(undefined)).toEqual(null);
-  expect(getUnit(90)).toEqual(null);
+  expect(getUnit(undefined)).toEqual({ label: '', value: 1 });
+  expect(getUnit(90)).toEqual({ label: '', value: 1 });
   expect(getUnit(1100)).toEqual(
     unitDict[Lang.EN_US].find((unit) => unit.label === 'K')
   );
@@ -52,7 +52,7 @@ import { getUnit, orange, Lang } from '@dz-web/o-orange';
 orange.precision = 2;
 orange.lang = Lang.ZH_CN;
 
-const unit = getUnit(122000);
+const unit = getUnit(1);
 console.log(unit);
 
 export default function App() {

@@ -34,7 +34,7 @@ function toUnit(num: number | string, options: ToUnitOptions = {}): string {
     ignoreIntegerPrecision,
     ...rest,
   };
-  if (!unit) {
+  if (!unit.label) {
     return toFixed(num, toFixedParams);
   }
 

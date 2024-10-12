@@ -1,6 +1,8 @@
 import orange, { Lang } from './orange';
-import toFixed, { ToFixedOption } from './toFixed';
+import { ToFixedOption } from './toFixed';
 import { toNumber } from './utils';
+
+const emptyUnit: Unit = { label: '', value: 1 };
 
 export interface Unit {
   label: string;
@@ -37,22 +39,19 @@ export const unitDict: Record<Lang, Unit[]> = {
  * @since 4.4.0
  *
  */
-function getUnit(
-  num: number | string,
-  options: GetUnitOptions = {}
-): Unit | null {
+function getUnit(num: number | string, options: GetUnitOptions = {}): Unit {
   const { lanType = orange.lang } = options;
 
   const pureNum: number = toNumber(num);
 
-  if (isNaN(pureNum)) return null;
+  if (isNaN(pureNum)) return emptyUnit;
 
   const unit: Unit[] = unitDict[lanType] || unitDict[Lang.EN_US];
   const unitLen: number = unit.length;
   const numAbs: number = Math.abs(+num);
-  let result: Unit | null = null;
+  let result: Unit = emptyUnit;
 
-  if (numAbs < unit[unitLen - 1].value) return null;
+  if (numAbs < unit[unitLen - 1].value) return emptyUnit;
 
   for (let i = 0; i < unitLen; i++) {
     const { label, value } = unit[i];
