@@ -26,7 +26,7 @@ order: 100
 ## Examples
 
 ```js
-import parseUrl, { parseUrlByHash, parseUrlBySearch } from 'o-orange/lib/parseUrl';
+import parseUrl, { parseUrlByHash, parseUrlBySearch } from '@dz-web/o-orange/lib/parseUrl';
 
 const url = 'http://localhost:8080/?key=3';
 

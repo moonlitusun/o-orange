@@ -29,7 +29,7 @@ Generate an ordered time interval array
 ## Examples
 
 ```js
-import { dateRange } from '../es';
+import { dateRange } from '@dz-web/o-orange';
 
 test('dateRange', () => {
   expect(

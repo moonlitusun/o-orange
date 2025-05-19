@@ -8,12 +8,16 @@ test('ToUnit', () => {
   expect(toUnit(122000)).toBe('122K');
   expect(toUnit(122000, { lanType: Lang.ZH_CN })).toBe('12.20万');
   expect(toUnit(122000, { lanType: Lang.ZH_TW })).toBe('12.20萬');
+
+  expect(toUnit(122000, { unit: { value: 1000, label: 'K' } })).toBe('122K');
 });
 
 test('ToUnit By EN_US', () => {
   orange.precision = 2;
-  expect(toUnit(1000)).toBe("1K");
-  expect(toUnit(1000, { precision: 3, ignoreIntegerPrecision: false })).toBe("1.000K");
+  expect(toUnit(1000)).toBe('1K');
+  expect(toUnit(1000, { precision: 3, ignoreIntegerPrecision: false })).toBe(
+    '1.000K'
+  );
   expect(toUnit(12200)).toBe('12.20K');
 
   orange.precision = 3;
@@ -34,7 +38,7 @@ test('toUnit By ZH_CN', () => {
   orange.precision = 2;
   orange.lang = Lang.ZH_CN;
 
-  expect(toUnit(1000)).toBe("1000");
+  expect(toUnit(1000)).toBe('1000');
   expect(toUnit(122000)).toBe('12.20万');
   expect(toUnit(1220000)).toBe('122万');
   expect(toUnit(12200000)).toBe('1220万');
@@ -46,13 +50,13 @@ test('toUnit By ZH_CN', () => {
   expect(toUnit(12200000000000)).toBe('12.20万亿');
   expect(toUnit(122000000000000)).toBe('122万亿');
   expect(toUnit(1220000000000000)).toBe('1220万亿');
-})
+});
 
 test('toUnit By ZH_TW', () => {
   orange.precision = 2;
   orange.lang = Lang.ZH_TW;
 
-  expect(toUnit(1000)).toBe("1000");
+  expect(toUnit(1000)).toBe('1000');
   expect(toUnit(122000)).toBe('12.20萬');
   expect(toUnit(1220000)).toBe('122萬');
   expect(toUnit(12200000)).toBe('1220萬');
@@ -64,4 +68,4 @@ test('toUnit By ZH_TW', () => {
   expect(toUnit(12200000000000)).toBe('12.20萬億');
   expect(toUnit(122000000000000)).toBe('122萬億');
   expect(toUnit(1220000000000000)).toBe('1220萬億');
-})
+});
