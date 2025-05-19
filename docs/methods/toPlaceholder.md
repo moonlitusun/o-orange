@@ -25,7 +25,7 @@ order: 6
 ## Examples
 
 ```js
-import { toPlaceholder } from '../es';
+import { toPlaceholder } from '@dz-web/o-orange';
 
 test('toPlaceholder', () => {
   expect(toPlaceholder(0)).toBe(0);

@@ -1,9 +1,9 @@
-import orange from "./orange";
+import orange from './orange';
 import toFixed from './toFixed';
+import { ToFixedOption } from './toFixed';
+import { toNumber } from './utils';
 
-interface IOption {
-  placeholder?: string;
-  precision?: number;
+interface toPercentOption extends ToFixedOption {
   multiply?: number;
 }
 
@@ -14,16 +14,17 @@ interface IOption {
  *
  *
  */
-function toPercent(
-  num: number,
-  option: IOption = {},
-): string {
-  const { placeholder = orange.placeholder, multiply = 1, precision = orange.precision } = option;
-  const pureNum: number = Number(num);
+function toPercent(num: number, option: toPercentOption = {}): string {
+  const { multiply = 1, ...rest } = option;
+  const { placeholder = orange.placeholder } = rest;
+  const pureNum = toNumber(num);
 
   if (isNaN(pureNum)) return placeholder;
 
-  return `${toFixed(multiply * num, { precision, ignoreIntegerPrecision: false })}%`;
+  return `${toFixed(multiply * num, {
+    ignoreIntegerPrecision: false,
+    ...rest,
+  })}%`;
 }
 
 export default toPercent;

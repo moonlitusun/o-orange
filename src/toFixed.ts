@@ -2,6 +2,7 @@ import Big from 'big.js';
 import isTrue from './isTrue';
 import { stringNumber } from './types/common/type';
 import orange, { RoundingMode } from './orange';
+import { toNumber } from './utils';
 
 export interface ToFixedOption {
   placeholder?: string;
@@ -25,7 +26,7 @@ function toFixed(num: stringNumber, option: ToFixedOption = {}): string {
     RM = orange.RM,
   } = option;
   if (!isTrue(num)) return placeholder;
-  const pureNum = Number(num);
+  const pureNum = toNumber(num);
 
   if (isNaN(pureNum) || !isFinite(pureNum)) return placeholder;
 

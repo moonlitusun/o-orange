@@ -26,7 +26,7 @@ order: 1
 ## Examples
 
 ```js
-import { ensure, isTrue } from '../es';
+import { ensure, isTrue } from '@dz-web/o-orange';
 
 test('ensure', () => {
   expect(ensure(1)).toEqual(1);

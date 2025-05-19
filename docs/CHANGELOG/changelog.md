@@ -6,6 +6,37 @@ nav:
 
 ## v4
 
+### v4.5.0
+
+`2024-10-12`
+
+- fix: `getUnit` return value.
+
+### v4.4.0
+
+`2024-09-05`
+
+- feat: add `getUnit`。
+
+### v4.3.0
+
+`2024-07-01`
+
+- feat: add `getSignByComparison`。
+
+### v4.2.1
+
+`2024-05-09`
+
+- fix: the situation of `Number(null) = 0`
+
+### v4.2.0
+
+`2024-05-09`
+
+- feat: `toPercent` support all `toFixed` params。
+- feat: `toUnit` support all `toFixed` params。
+
 ### v4.1.0
 
 `2024-04-11`
