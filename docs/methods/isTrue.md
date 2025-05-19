@@ -25,7 +25,7 @@ order: 2
 ## Examples
 
 ```js
-const isTrue = require('../dist/cjs/isTrue').default;
+import { isTrue } from '@dz-web/o-orange'
 
 test('is false not zero', () => {
   expect(isTrue(0)).toBeTruthy();

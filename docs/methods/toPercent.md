@@ -16,9 +16,8 @@ order: 3
 
 - `num: string | number`: 待转换值
 - `[options = {}]: Object`
-  - `[options.placeholder = orange.placeholder]: string` 当待转换值是NaN或者空的时候的缺省
-  - `[options.precision = orange.precision]: number` 保留小数位
   - `[options.multiply = 1]: number` 计算之前先乘于基数
+  - `[...rest]` 支持`toFixed`方法的所有参数
 
 ## Returns
 
@@ -27,7 +26,7 @@ order: 3
 ## Examples
 
 ```js
-import { toPercent } from '../es';
+import { toPercent } from '@dz-web/o-orange';
 
 test('toPercent', () => {
   expect(toPercent(0.6515, { multiply: 100, precision: 2 })).toBe('65.15%');

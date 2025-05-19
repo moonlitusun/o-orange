@@ -27,9 +27,7 @@ order: 1
 ### Examples
 
 ```js
-const {
-  csvArrayToObjects,
-} = require('../dist/cjs/csv-array');
+import { csvArrayToObjects } from '@dz-web/o-orange';
 
 describe('函数csvArrayToObjects', () => {
   test('输入空数组应该返回空数组', () => {
@@ -91,9 +89,7 @@ describe('函数csvArrayToObjects', () => {
 ### Exampless
 
 ```js
-const {
-  csvArrayWithoutKeysToObjects,
-} = require('../dist/cjs/csv-array');
+import { csvArrayWithoutKeysToObjects } from '@dz-web/o-orange';
 
 describe('函数csvArrayWithoutKeysToObjects', () => {
   test('输入空数组应该返回空数组', () => {

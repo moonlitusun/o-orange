@@ -2,6 +2,7 @@ import Big from 'big.js';
 import toFixed from './toFixed';
 import isTrue from './isTrue';
 import orange, { RoundingMode } from './orange';
+import { toNumber } from './utils';
 
 interface IOption {
   placeholder?: string;
@@ -21,7 +22,7 @@ function toSlice(
 ): string {
   const { placeholder = orange.placeholder, precision = orange.precision, ignoreIntegerPrecision = false } = option;
   if (!isTrue(num)) return placeholder;
-  const pureNum = Number(num);
+  const pureNum = toNumber(num);
 
   if (isNaN(pureNum)) return placeholder;
 
