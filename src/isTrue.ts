@@ -12,7 +12,7 @@
  * // => true
  *
  */
- function isTrue(value: number | string): boolean {
+ function isTrue(value: number | string | null | undefined): boolean {
   return !!(value) || value === 0;
 }
 
