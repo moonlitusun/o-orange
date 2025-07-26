@@ -1,5 +1,5 @@
 import orange from './orange';
-import { stringNumber } from './types/common/type';
+import { NormalTarget } from './types/common/type';
 
 export interface IDateDict {
   yyyy: number;
@@ -21,7 +21,7 @@ export interface IDateDict {
  * @param {string | number} date The date to convert
  *
  */
-function getDateDict(date: stringNumber): IDateDict {
+function getDateDict(date: NormalTarget): IDateDict {
   const currentDate: Date = new Date(date);
 
   return {
@@ -61,12 +61,12 @@ interface IOption {
  * // => 2019-01-24 10:43:05
  *
  */
-function dateFormat(date: Date | stringNumber, format = 'yyyy-MM-dd HH:mm:ss', options: IOption = {}): string {
+function dateFormat(date: Date | NormalTarget, format = 'yyyy-MM-dd HH:mm:ss', options: IOption = {}): string {
   if (!date) return orange.placeholder;
 
   const { isNoSignDate = false } = options;
   // Compatible with iOS
-  let internalDate: stringNumber | Date = date;
+  let internalDate: NormalTarget | Date = date;
   if (typeof internalDate === 'string') internalDate = internalDate.replace(/-/g, '/');
 
   if (isNoSignDate) internalDate = date.toString().replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3');

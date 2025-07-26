@@ -2,8 +2,14 @@ const { default: orange, Lang } = require('../dist/cjs/orange');
 const { default: getUnit, unitDict } = require('../dist/cjs/getUnit');
 
 test('GetUnit', () => {
-  expect(getUnit(undefined)).toEqual(null);
-  expect(getUnit(90)).toEqual(null);
+  expect(getUnit(undefined)).toEqual({
+    label: '',
+    value: 1,
+  });
+  expect(getUnit(90)).toEqual({
+    label: '',
+    value: 1,
+  });
   expect(getUnit(1100)).toEqual(
     unitDict[Lang.EN_US].find((unit) => unit.label === 'K')
   );
@@ -71,7 +77,10 @@ test('GetUnit By ZH_CN', () => {
   orange.precision = 2;
   orange.lang = Lang.ZH_CN;
 
-  expect(getUnit(1000)).toEqual(null);
+  expect(getUnit(1000)).toEqual({
+    label: '',
+    value: 1,
+  });
   expect(getUnit(122000)).toEqual(
     unitDict[Lang.ZH_CN].find((unit) => unit.label === '万')
   );
@@ -111,7 +120,10 @@ test('GetUnit By ZH_TW', () => {
   orange.precision = 2;
   orange.lang = Lang.ZH_TW;
 
-  expect(getUnit(1000)).toEqual(null);
+  expect(getUnit(1000)).toEqual({
+    label: '',
+    value: 1,
+  });
   expect(getUnit(122000)).toEqual(
     unitDict[Lang.ZH_TW].find((unit) => unit.label === '萬')
   );

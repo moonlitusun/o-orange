@@ -1,5 +1,5 @@
 import dateFormat from './dateFormat';
-import { stringNumber } from './types/common/type';
+import { NormalTarget } from './types/common/type';
 
 interface IOptions {
   rangeType?: string;
@@ -85,8 +85,8 @@ export const RANGE_TYPE_LIST: IRangeTypeList = {
  *
  */
 export function dateRange(
-  beginTime: stringNumber | Date,
-  endTime: stringNumber | Date,
+  beginTime: NormalTarget | Date,
+  endTime: NormalTarget | Date,
   options: IOptions = {},
 ): string[] {
   if (!beginTime || !endTime) throw new Error('You must specify the start and end time');

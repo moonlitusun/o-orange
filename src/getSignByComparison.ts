@@ -1,4 +1,4 @@
-import { stringNumber } from './types/common/type';
+import { NormalTarget } from './types/common/type';
 import { toNumber } from './utils';
 
 interface GetSignByComparisonOptions {
@@ -9,7 +9,7 @@ interface GetSignByComparisonOptions {
 }
 
 export default function GetSignByComparison(
-  num: stringNumber,
+  num: NormalTarget,
   options: GetSignByComparisonOptions = {}
 ) {
   const {

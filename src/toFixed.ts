@@ -1,6 +1,6 @@
 import Big from 'big.js';
 import isTrue from './isTrue';
-import { stringNumber } from './types/common/type';
+import { NormalTarget } from './types/common/type';
 import orange, { RoundingMode } from './orange';
 import { toNumber } from './utils';
 
@@ -18,7 +18,7 @@ export interface ToFixedOption {
  *
  *
  */
-function toFixed(num: stringNumber, option: ToFixedOption = {}): string {
+function toFixed(num: NormalTarget, option: ToFixedOption = {}): string {
   const {
     placeholder = orange.placeholder,
     precision = orange.precision,

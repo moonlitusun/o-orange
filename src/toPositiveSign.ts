@@ -1,5 +1,5 @@
 import orange from './orange';
-import { stringNumber } from './types/common/type';
+import { NormalTarget } from './types/common/type';
 import isTrue from './isTrue';
 interface IOption {
   balance?: number;
@@ -14,7 +14,7 @@ interface IOption {
  * @since 2.1.0
  *
  */
-function toPositiveSign<T extends stringNumber>(
+function toPositiveSign<T extends NormalTarget>(
   target: T,
   option: IOption = {},
 ): string {

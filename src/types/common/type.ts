@@ -1,1 +1,1 @@
-export type stringNumber = string | number;
+export type NormalTarget = string | number | null | undefined;
