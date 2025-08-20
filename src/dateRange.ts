@@ -84,11 +84,11 @@ export const RANGE_TYPE_LIST: IRangeTypeList = {
  * @returns {Array}
  *
  */
-export function dateRange(
+const dateRange = (
   beginTime: NormalTarget | Date,
   endTime: NormalTarget | Date,
   options: IOptions = {},
-): string[] {
+): string[] => {
   if (!beginTime || !endTime) throw new Error('You must specify the start and end time');
 
   const {
@@ -119,3 +119,5 @@ export function dateRange(
 
   return result;
 }
+
+export default dateRange;
