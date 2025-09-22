@@ -3,7 +3,7 @@ import toFixed from './toFixed';
 import { toNumber } from './utils';
 
 import getUnit, { type GetUnitOptions, Unit } from "./getUnit";
-import { isUndefined } from ".";
+import isUndefined from "./isUndefined";
 
 interface ToUnitOptions extends GetUnitOptions {
   unit?: Unit;
