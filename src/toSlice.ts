@@ -20,7 +20,7 @@ function toSlice(
   num: number | string,
   option: IOption = {},
 ): string {
-  const { placeholder = orange.placeholder, precision = orange.precision, ignoreIntegerPrecision = false } = option;
+  const { placeholder = orange.placeholder, precision = orange.precision, ignoreIntegerPrecision = orange.ignoreIntegerPrecision } = option;
   if (!isTrue(num)) return placeholder;
   const pureNum = toNumber(num);
 

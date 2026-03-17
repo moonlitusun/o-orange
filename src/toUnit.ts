@@ -21,7 +21,7 @@ function toUnit(num: number | string, options: ToUnitOptions = {}): string {
 
   const {
     placeholder = orange.placeholder,
-    ignoreIntegerPrecision = true,
+    ignoreIntegerPrecision = orange.ignoreIntegerPrecision,
   } = rest;
 
   const pureNum: number = toNumber(num);
