@@ -1,9 +1,12 @@
 import dayjs from 'dayjs';
 import orange, { Lang } from './orange';
+import 'dayjs/locale/zh-cn';
+import 'dayjs/locale/zh-tw';
 
 export const DateFormat = {
   DATE: 'DATE',
   DATE_HYPHEN: 'DATE_HYPHEN',
+  DATE_WITH_WEEKDAY: 'DATE_WITH_WEEKDAY',
   DATE_TIME: 'DATE_TIME',
   DATE_TIME_MIN: 'DATE_TIME_MIN',
   MONTH_DAY: 'MONTH_DAY',
@@ -20,30 +23,35 @@ const REGEX_DIGITS_8 = /^\d{8}$/;
 const REGEX_CALENDAR_DATE = /^(\d{4})([-/.])(\d{1,2})\2(\d{1,2})(?=$|[T\s])/i;
 const REGEX_DASH = /-/g;
 
+const EN_FULL_DATE = 'MMM DD,YYYY';
+const EN_FULL_DATE_TIME = `${EN_FULL_DATE} HH:mm:ss`;
+const EN_FULL_DATE_TIME_MIN = `${EN_FULL_DATE} HH:mm`;
+
 const EN_FORMAT_MAP: Record<string, string> = {
-  [DateFormat.DATE]: 'MMM DD, YYYY',
-  [DateFormat.DATE_HYPHEN]: 'MMM DD, YYYY',
-  [DateFormat.DATE_TIME]: 'MMM DD, YYYY HH:mm:ss',
-  [DateFormat.DATE_TIME_MIN]: 'MMM DD, YYYY HH:mm',
+  [DateFormat.DATE]: EN_FULL_DATE,
+  [DateFormat.DATE_HYPHEN]: EN_FULL_DATE,
+  [DateFormat.DATE_WITH_WEEKDAY]: `ddd,${EN_FULL_DATE}`,
+  [DateFormat.DATE_TIME]: EN_FULL_DATE_TIME,
+  [DateFormat.DATE_TIME_MIN]: EN_FULL_DATE_TIME_MIN,
   [DateFormat.MONTH_DAY]: 'MMM DD',
   [DateFormat.MONTH_DAY_TIME]: 'MMM DD HH:mm:ss',
   [DateFormat.MONTH_DAY_TIME_MIN]: 'MMM DD HH:mm',
   [DateFormat.YEAR_MONTH]: 'MMM YYYY',
   [DateFormat.TIME]: 'HH:mm:ss',
   [DateFormat.TIME_MIN]: 'HH:mm',
-  'YYYY/MM/DD': 'MMM DD, YYYY',
-  'yyyy/MM/dd': 'MMM DD, YYYY',
-  'YYYY-MM-DD': 'MMM DD, YYYY',
-  'yyyy-MM-dd': 'MMM DD, YYYY',
-  'YYYY.MM.DD': 'MMM DD, YYYY',
-  'YYYY/MM/DD HH:mm:ss': 'MMM DD, YYYY HH:mm:ss',
-  'yyyy/MM/dd HH:mm:ss': 'MMM DD, YYYY HH:mm:ss',
-  'YYYY-MM-DD HH:mm:ss': 'MMM DD, YYYY HH:mm:ss',
-  'yyyy-MM-dd HH:mm:ss': 'MMM DD, YYYY HH:mm:ss',
-  'YYYY/MM/DD HH:mm': 'MMM DD, YYYY HH:mm',
-  'yyyy/MM/dd HH:mm': 'MMM DD, YYYY HH:mm',
-  'YYYY-MM-DD HH:mm': 'MMM DD, YYYY HH:mm',
-  'yyyy-MM-dd HH:mm': 'MMM DD, YYYY HH:mm',
+  'YYYY/MM/DD': EN_FULL_DATE,
+  'yyyy/MM/dd': EN_FULL_DATE,
+  'YYYY-MM-DD': EN_FULL_DATE,
+  'yyyy-MM-dd': EN_FULL_DATE,
+  'YYYY.MM.DD': EN_FULL_DATE,
+  'YYYY/MM/DD HH:mm:ss': EN_FULL_DATE_TIME,
+  'yyyy/MM/dd HH:mm:ss': EN_FULL_DATE_TIME,
+  'YYYY-MM-DD HH:mm:ss': EN_FULL_DATE_TIME,
+  'yyyy-MM-dd HH:mm:ss': EN_FULL_DATE_TIME,
+  'YYYY/MM/DD HH:mm': EN_FULL_DATE_TIME_MIN,
+  'yyyy/MM/dd HH:mm': EN_FULL_DATE_TIME_MIN,
+  'YYYY-MM-DD HH:mm': EN_FULL_DATE_TIME_MIN,
+  'yyyy-MM-dd HH:mm': EN_FULL_DATE_TIME_MIN,
   'YYYY年MM月': 'MMM YYYY',
   'YYYY-MM': 'MMM YYYY',
   'MM-dd HH:mm': 'MMM DD HH:mm',
@@ -58,6 +66,7 @@ const EN_FORMAT_MAP: Record<string, string> = {
 const ZH_FORMAT_MAP: Record<string, string> = {
   [DateFormat.DATE]: 'YYYY/MM/DD',
   [DateFormat.DATE_HYPHEN]: 'YYYY-MM-DD',
+  [DateFormat.DATE_WITH_WEEKDAY]: 'dddd YYYY/MM/DD',
   [DateFormat.DATE_TIME]: 'YYYY/MM/DD HH:mm:ss',
   [DateFormat.DATE_TIME_MIN]: 'YYYY/MM/DD HH:mm',
   [DateFormat.MONTH_DAY]: 'MM/DD',
@@ -154,5 +163,9 @@ export function formatDate(
   }
 
   const targetFormat = getDisplayFormat(formatOrType, language);
-  return language === Lang.EN_US ? parsed.locale('en').format(targetFormat) : parsed.format(targetFormat);
+  if (language === Lang.EN_US || formatOrType === DateFormat.DATE_WITH_WEEKDAY) {
+    const locale = language === Lang.EN_US ? 'en' : language.toLowerCase();
+    return parsed.locale(locale).format(targetFormat);
+  }
+  return parsed.format(targetFormat);
 }
