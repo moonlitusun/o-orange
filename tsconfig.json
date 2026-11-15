@@ -15,7 +15,7 @@
     "noEmitOnError": false,
     "removeComments": false,
     "preserveConstEnums": true,
-    "noResolve": true,
+    "allowSyntheticDefaultImports": true,
   },
   "exclude": [
     "node_modules",
